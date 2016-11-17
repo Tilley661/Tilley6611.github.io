@@ -2,7 +2,7 @@
 Main styles for all pages
 */
 #debug{
-	position:fixed;
+	position:absolute;
 	float:right;
 	width:200px;
 	height:400px;
