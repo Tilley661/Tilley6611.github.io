@@ -2,9 +2,11 @@
 Main styles for all pages
 */
 #debug{
-	position:absolute;
-	float:right;
-	width:200px;
-	height:400px;
-	background-color:RGBA(100,100,100,0.5);
+	position:fixed;
+	top:0;
+	width:20%;
+	height:100%;
+	left:80%;
+	background-color:RGBA(100,100,100,0.1);
+	text-align: right;
 }
