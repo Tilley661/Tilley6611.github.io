@@ -1,0 +1,10 @@
+/*
+Main styles for all pages
+*/
+#debug{
+	position:fixed;
+	float:right;
+	width:200px;
+	height:400px;
+	background-color:RGBA(100,100,100,0.5);
+}
