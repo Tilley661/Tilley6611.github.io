@@ -1,14 +1,18 @@
 //Main functions to call to every page
 
 
-
-function printLine(str){
+//my debug function
+function debugPrint(str, clear){
 	if (str === undefined){
 		str = "No debug sent";
-	}else{
-		$("#debug").html(str);
 	}
+	if (clear == true){
+		$("#debug").html("");
+	}
+	var p = document.createElement("p");
+	var t = document.createTextNode(str);
+	p.appendChild(t);
+	$("#debug").append(p);
 }
 
-printLine("testing debug");
-
+debugPrint("Debug Section:", false);
