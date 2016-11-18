@@ -2,7 +2,7 @@
 
 
 //my debug function
-function debugPrint(str, clear, dynCSS){
+function debugPrint(str, clear, bold){
 	var a = Math.random();
 	if (str === undefined){
 		str = "No debug sent";
@@ -15,9 +15,9 @@ function debugPrint(str, clear, dynCSS){
 	p.appendChild(t);
 	p.id
 	if (bold !== undefined && bold === true){
-		p.style.cssText = dynCSS;
+		p.style.cssText = "font-weight:bold;";
 	}
 	$("#debug").append(p);
 }
 
-debugPrint("Debug Section:", false, "font-weight:bold;");
+debugPrint("Debug Section:", false, true);
