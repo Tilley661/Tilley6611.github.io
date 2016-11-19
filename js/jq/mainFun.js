@@ -1,6 +1,7 @@
 //Main functions to call to every page
 
 
+
 //my debug function
 function debugPrint(str, clear, bold){
 	var a = Math.random();
@@ -13,7 +14,6 @@ function debugPrint(str, clear, bold){
 	var p = document.createElement("p");
 	var t = document.createTextNode(str);
 	p.appendChild(t);
-	p.id
 	if (bold !== undefined && bold === true){
 		p.style.cssText = "font-weight:bold;";
 	}
@@ -21,3 +21,20 @@ function debugPrint(str, clear, bold){
 }
 
 debugPrint("Debug Section:", false, true);
+
+
+//mouse move function
+
+
+function getCord(e){
+	var x = e.clientX;
+	var y = e.clientY;
+	$("#debug").html("Coordinates of mouse: (" + x + "," + y + ")");
+}
+
+$("#debug").innerHTML("onmousemove='getCord(e)'");
+
+
+
+
+
