@@ -76,13 +76,13 @@ function moveToTitle2(link){
 	
 	old.animate({top: newPosY + 'px'},500);
 	old.animate({left: newPosX + 'px'},500);
-	old.queue(function(){
-				old.css({
-					'position': 'fixed',
-					'top': newPosY,
-					'left': newPosX
-				});
-			});
+	//old.queue(function(){
+	//			old.css({
+	//				'position': 'fixed',
+	//				'top': newPosY,
+	//				'left': newPosX
+	//			});
+	//		});
 	
 	
 	
