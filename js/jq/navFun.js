@@ -40,7 +40,7 @@ function moveToTitle2(link){
 	var newPosY = newPos.top;
 	
 	//animation queue for title to nav
-	old.css({'position': 'absolute'});
+	old.css({'position': 'relative'});
 	
 	old.animate({
 		top: (wH - old.height()) + 'px'
