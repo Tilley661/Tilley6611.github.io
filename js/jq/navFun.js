@@ -44,7 +44,7 @@ moveTopLeft(cP); //move certain link
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
 	var clicked = $(this).parent().attr('data-menu-index')
-	 if $.isNumeric(clicked.val()) == true{
+	 if !isNaN(clicked) == true{
 		 alert('clicked is numeric');
 		//moveToTitle(clicked);
 	 }
