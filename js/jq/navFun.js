@@ -140,9 +140,7 @@ $( window ).resize(function() {
 	//get new size
 	$('li').each(function(){
 		$(this).css({
-			'position': 'fixed',
-			'top': $(this).position().top + 'px',
-			'left': $(this).position().left + 'px'
+			'position': 'fixed'
 		})
 	});
 	//note: can load another page if width below 680px
