@@ -82,11 +82,6 @@ function moveToTitle2(link){
 		//queue:false
 	});
 	curr.animate({left: calcMoveX + 'px'},1000, function(){
-					curr.css({
-						'position': 'fixed',
-						'top': curr.position().top - (curr.height())/2,
-						'left': curr.position().left
-					});
 					curr.addClass('new-title');
 				});
 	//end of animation
@@ -95,7 +90,14 @@ function moveToTitle2(link){
 	
 }
   
-    
+  
+  
+ /*  					curr.css({
+						'position': 'fixed',
+						'top': curr.position().top - (curr.height())/2,
+						'left': curr.position().left
+					});
+     */
   
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
