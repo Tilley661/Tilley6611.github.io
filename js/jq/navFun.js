@@ -67,11 +67,11 @@ function moveToTitle2(link){
 	
 	
 	//animation queue
-	curr.animate({'margin-top': -1*($(window).height/2) + 'px'},{
+	curr.animate({'margin-top': ($(window).height/2) + 'px'},{
 		duration:500,
 		//queue:false
 	});
-	curr.animate({'margin-left': -1*($(window).width() - curr.width()) + 'px'},1000, function(){
+	curr.animate({'margin-left': ($(window).width() - curr.width()) + 'px'},1000, function(){
 					curr.addClass('new-title');
 				});
 	//end of animation
