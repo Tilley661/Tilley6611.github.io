@@ -86,6 +86,9 @@ function moveToTitle2(link){
 				});
 	//end of animation
 	
+	//change nav box
+	$('#main-nav').removeClass('resize-nav').addClass('resize-nav');
+	
 	cP = link;
 	
 }

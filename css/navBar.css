@@ -21,8 +21,14 @@ Navigation - all pages
 .new-title{
 	transform: scale(1.5);
 	transform-origin: 100% 0 0;
+	
 	-webkit-transition: all 1s; /* Safari */
     transition: all 1s;
+}
+
+.resize-nav{
+	width:auto;
+	height:auto;
 }
 
 
