@@ -9,12 +9,14 @@ var wH = $( window ).height();
 var wW = $( window ).width();
 
 
+
 //on resize
 $( window ).resize(function() {
-	debugPrint("Window has resized: Height = " + wH + " Width = " + wW, false, false);
+	//get new size
 	wH = $( window ).height();
 	wW = $( window ).width();
-	alert('height = ' + $(window).height() + ' width = ' + $(window).width());
+	//debugPrint("Window has resized: Height = " + wH + " Width = " + wW, false, false);
+	//alert('height = ' + $(window).height() + ' width = ' + $(window).width());
 	//alert('height = ' + this.height() + ' width = ' + this.width());
 });
 
