@@ -67,7 +67,7 @@ function moveToTitle2(link){
 	//get old postion
 	
 	
-	curr.css({'position': 'relative'})
+	curr.css({'position': 'relative'});
 	curr.animate({top: calcMove*-1 +'px'},500);
 	curr.animate({left: calcMoveX + 'px'},1000);
 	//animation fiished so set new CSS
@@ -92,23 +92,19 @@ $("#main-nav ul li a").click(function(){
 	
 	                                                                                 //check is number
 	if (isNaN(clicked) === false){
-		if (cP === clicked){
+		if (cP == clicked){
 			console.log('current page has been clicked');
 			return;
-		}else{
-		 console.log('clicked is numeric');
-		 moveToTitle2(clicked);
 		}
-	 }else{
-		 console.log('There is an issue.');
-		 return;
-	 }
+		
+	 console.log('clicked is numeric');
+	 moveToTitle2(clicked);
 });
 
 //move current page to to title
 
 if (cP === 0){
-		moveToTitle2(1);  // se to home
+		moveToTitle2(1);  // set to home
 }
 
 
