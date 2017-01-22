@@ -41,10 +41,16 @@ curr.css("transform", "translate(0px, -" + calcMove + "px)");
 moveTopLeft(cP); //move certain link
 
 
+//add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
-	alert($(this).parent().attr('data-menu-index'));
-	alert('somthing has been clicked');
+	var clicked = $(this).parent().attr('data-menu-index')
+	 if $.isNumeric(clicked) == true{
+		 alert('clicked is numeric');
+		//moveToTitle(clicked);
+	 }
 });
+
+
 //how to locate menu item
 //$("#main-nav ul li[data-menu-index='1']").html()
 //move an object up -  .css(transform: translate(0px, -200px));
