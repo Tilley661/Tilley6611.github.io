@@ -78,7 +78,7 @@ function moveToTitle2(link){
 		top: '250px'
 		}, {
 			duration: 500, 
-			queue:false
+			//queue:false
 	});
 	
 	old.animate({
@@ -102,7 +102,7 @@ function moveToTitle2(link){
 	//animation queue
 	curr.animate({top: calcMove*-1 +'px'},{
 		duration:500,
-		queue:false
+		//queue:false
 	});
 	curr.animate({left: calcMoveX + 'px'},1000, function(){
 					curr.css({
