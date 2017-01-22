@@ -38,12 +38,11 @@ function moveToTitle2(link){
 	var newPos = $('#main-nav').position();
 	var newPosX = newPos.left;
 	var newPosY = newPos.top;
-	var oOff = old.offset();
 	//animation queue for title to nav
 	old.css({'position': 'relative'});
 	
 	old.animate({
-		top: (wH - 200) + 'px'
+		top: (wH - old.position().top - old.height()) + 'px'
 		}, {
 			duration: 500, 
 			//queue:false
