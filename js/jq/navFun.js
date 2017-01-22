@@ -40,19 +40,19 @@ function moveToTitle2(link){
 	//old.css({'position': 'relative'});
 	
 	old.animate({
-		top: $(window).height() - old.height() + 'px'
+		margin-top: $(window).height() - old.height() + 'px'
 		}, {
 			duration: 500, 
 			//queue:false
 	});
 
 	old.animate({
-		left: 0 + 'px'
+		margin-left: 0 + 'px'
 		}, {
 			duration: 500
 	});
 	old.animate({
-		top: 0 + 'px'
+		margin-top: 0 + 'px'
 		}, {
 			duration: 500,
 			function(){
@@ -67,11 +67,11 @@ function moveToTitle2(link){
 	
 	
 	//animation queue
-	curr.animate({top: 0 + curr.height() + 'px'},{
+	curr.animate({margin-top: 0 + curr.height() + 'px'},{
 		duration:500,
 		//queue:false
 	});
-	curr.animate({left: $(window).width() - curr.width() + 'px'},1000, function(){
+	curr.animate({margin-left: $(window).width() - curr.width() + 'px'},1000, function(){
 					curr.addClass('new-title');
 				});
 	//end of animation
