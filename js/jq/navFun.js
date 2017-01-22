@@ -71,7 +71,7 @@ function moveToTitle2(link){
 		duration:500,
 		//queue:false
 	});
-	curr.animate({left: $(window)/width() - curr.width() + 'px'},1000, function(){
+	curr.animate({left: $(window).width() - curr.width() + 'px'},1000, function(){
 					curr.addClass('new-title');
 				});
 	//end of animation
