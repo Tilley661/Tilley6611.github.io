@@ -65,10 +65,10 @@ $("#main-nav ul li a").click(function(){
 	
 	                                                                                 //check is number
 	if (isNaN(clicked) === false){
-		 alert('clicked is numeric');
+		 console.log('clicked is numeric');
 		 moveToTitle(clicked);
 	 }else{
-		 alert('There is an issue.');
+		 console.log('There is an issue.');
 		 return;
 	 }
 });
