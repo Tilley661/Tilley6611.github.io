@@ -8,6 +8,8 @@ Navigation - all pages
 	background-color:yellow;
 	color:red;
 	font-size:24px;
+	height:100%;
+	width:100%;
 	top: 50%;
 	left:0%;
 	transform: translate(0%, -50%);
