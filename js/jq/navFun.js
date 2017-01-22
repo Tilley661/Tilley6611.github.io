@@ -74,8 +74,8 @@ function moveToTitle2(link){
 	curr.queue(function(){
 		curr.css({
 			'position': 'fixed',
-			'top': curr.offset().top,
-			'left': curr.offset().left
+			'top': curr.position().top,
+			'left': curr.position().left
 		});
 	
 	});
