@@ -33,6 +33,7 @@ function moveToTitle(link){
 		
 		
 		//add class to link to actually move it
+		curr.addClass('moving');
 		curr.css( 
 					{	
 						'animation-fill-mode': 'forwards',
@@ -45,32 +46,25 @@ function moveToTitle(link){
 		cP = link;
 		console.log('Current page is = '+cP);
 		
-		
-    function whichTransitionEvent(){
-      var t;
-      var el = document.createElement('fakeelement');
-      var transitions = {
-        'transition':'transitionend',
-        'OTransition':'oTransitionEnd',
-        'MozTransition':'transitionend',
-        'WebkitTransition':'webkitTransitionEnd'
-      };
-      
-      for(t in transitions){
-        if( el.style[t] !== undefined ){
-          return transitions[t];
-        }
-      }
-    }
-    
-    var transitionEvent = whichTransitionEvent();
-    transitionEvent && curr.addEventListener(transitionEvent, function() {
-      console.log('move is completed');
-    }); 
-  }
+}
 
 
-
+function moveToTitle2(link){
+	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
+	var currOffset = curr.offset();                                                     //make offset object
+	var endPos = 50;                                                                      //50px from top
+	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
+	var calcMoveX = wW - curr.width() - endPos;
+	
+	curr.animate({
+		left: 'calcMoveX';
+	});
+	
+	
+}
+  
+  
+  
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
 	var clicked = $(this).parent().attr('data-menu-index');      //get index from data tag
@@ -78,7 +72,7 @@ $("#main-nav ul li a").click(function(){
 	                                                                                 //check is number
 	if (isNaN(clicked) === false){
 		 console.log('clicked is numeric');
-		 moveToTitle(clicked);
+		 moveToTitle2(clicked);
 	 }else{
 		 console.log('There is an issue.');
 		 return;
@@ -98,7 +92,7 @@ $( window ).resize(function() {
 	wH = $( window ).height();
 	wW = $( window ).width();
 	//note: can load another page if width below 680px
-	moveToTitle(cP);
+	moveToTitle2(cP);
 });
 
 
