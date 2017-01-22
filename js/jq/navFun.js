@@ -5,9 +5,9 @@
 //get init vars
 
 //screen variables
-var wH = $( window ).height();
-var wW = $( window ).width();
-
+var wH = $( window ).height();             //current window height
+var wW = $( window ).width();             //current window width
+var qL = $('#main-nav ul li').length;      //how many links
 
 
 //on resize
@@ -17,6 +17,10 @@ $( window ).resize(function() {
 	wW = $( window ).width();
 	//note: can load another page if width below 680px
 });
+
+
+//how to locate menu item
+//$("#main-nav ul li[data-menu-index='1']").html()
 
 
 

@@ -11,3 +11,12 @@ Navigation - all pages
 	left:0%;
 	transform: translate(0%, -50%);
 }
+
+.move-top-left{
+	top:0px;
+	
+    -moz-transition:all 2s;
+    -webkit-transition:all 2s;
+    -o-transition:all 2s;
+    transition:all 2s;
+}
