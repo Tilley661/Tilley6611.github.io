@@ -82,7 +82,7 @@ $("#main-nav ul li a").click(function(){
 //move current page to to title
 
 if (cP === 0){
-		moveToTitle(1);  // se to home
+		moveToTitle2(1);  // se to home
 }
 
 
