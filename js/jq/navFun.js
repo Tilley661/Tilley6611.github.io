@@ -56,7 +56,7 @@ function moveToTitle2(link){
 	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
 	var calcMoveX = wW - curr.width() - endPos;
 	
-	curr.css('position': 'relative')
+	curr.css({'position': 'relative'})
 	curr.animate({
 		left: "250px"
 	});
