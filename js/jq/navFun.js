@@ -37,14 +37,6 @@ var endPos = 50;                                                                
 var calcMove = currOffset.top - endPos;                                        //calculate move amount
 
 
-//translate using css
-curr.addClass( ".move-to-title" );
-//need to remove in moving to nav
-
-curr.css("transform", "translate(0px, -" + calcMove + "px)");
-
-
-
 	//create dynamic keyframe and add a number to the end
 	$.keyframe.define([{
 		name: 'move-to-title-' + kFK,
@@ -79,22 +71,7 @@ $("#main-nav ul li a").click(function(){
 		 alert('There is an issue.');
 		 return;
 	 }
-	 
-
-	 
-	 
 });
-
-
-
-
-
-
-
-
-
-
-
 
 //move current page to to title
 MoveToTitle(cP);
