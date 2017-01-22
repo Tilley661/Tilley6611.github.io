@@ -42,7 +42,7 @@ moveTopLeft(cP); //move certain link
 
 
 $("#main-nav ul li a").click(function(){
-	alert($(this).parent.html());
+	alert($(this).html());
 	alert('somthing has been clicked');
 });
 //how to locate menu item
