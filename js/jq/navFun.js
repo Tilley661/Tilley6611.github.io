@@ -57,7 +57,10 @@ function moveToTitle2(link){
 	old.animate({
 		top: 0 + 'px'
 		}, {
-			duration: 500
+			duration: 500,
+			function(){
+				old.removeClass("new-title");
+			};
 	});
 	//old.queue(function(){
 	//			old.css({
@@ -71,7 +74,7 @@ function moveToTitle2(link){
 	
 	//animation queue for nav to title
 	curr.css({'position': 'relative'});
-	curr.addClass("new-title");
+	
 	
 	//animation queue
 	curr.animate({top: calcMove*-1 +'px'},{
@@ -84,6 +87,7 @@ function moveToTitle2(link){
 						'top': curr.position().top - (curr.height())/2,
 						'left': curr.position().left
 					});
+					curr.addClass('new-title');
 				});
 	//end of animation
 	
