@@ -89,6 +89,7 @@ function moveToTitle2(link){
 			'top': curr.position().top - (curr.height())/2,
 			'left': curr.position().left
 		});
+		curr.clearQueue;
 	});
 	//end of animation
 	
