@@ -67,7 +67,7 @@ function moveToTitle2(link){
 	
 	
 	//animation queue
-	curr.animate({'margin-top': 200+ 'px'},{
+	curr.animate({'margin-top': -1*($(window).height/2) + 'px'},{
 		duration:500,
 		//queue:false
 	});
