@@ -126,36 +126,6 @@ $("#main-nav ul li a").click(function(){
 	};
 });
 
-
-	
-	
-	
-	
-	
-/* 	
-			if($(this).is(':animated')){
-			console.log('animation in progress');
-		}else{
-			alert('you have clicked and no animation');
-			//nothing is being animated
-			//check number
-
-		}
-	});
-}); */
-
-
-
-
-
-
-
-
-
-
-
-
-
 //move current page to to title
 
 if (cP === 0){
@@ -171,36 +141,5 @@ $( window ).resize(function() {
 	//note: can load another page if width below 680px
 	moveToTitle2(cP);
 });
-
-
-//how to locate menu item
-//$("#main-nav ul li[data-menu-index='1']").html()
-//move an object up -  .css(transform: translate(0px, -200px));
-
-
-
-
-/* //my debug function
-function debugPrint(str, clear, bold){
-	var a = Math.random();
-	if (str === undefined){
-		str = "No debug sent";
-	}
-	if (clear === true){
-		$("#debug").html("");
-	}
-	var p = document.createElement("p");
-	var t = document.createTextNode(str);
-	p.appendChild(t);
-	if (bold !== undefined && bold === true){
-		p.style.cssText = "font-weight:bold;";
-	}
-	$("#debug").append(p);
-}
-
-debugPrint("Debug Section:", false, true);
-
-
- */
 
 
