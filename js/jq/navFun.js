@@ -93,7 +93,20 @@ $("#main-nav ul li a").click(function(){
 	//var clicked = $(this).parent().attr('data-menu-index');
 	//is a link being animated already?
 	$("li").each(function(){
-		if($(this).is(':animated')){
+		if ($(this).is(':animated')){
+			alert($(this) + ' is being animated');
+		}
+	});
+});
+
+
+	
+	
+	
+	
+	
+/* 	
+			if($(this).is(':animated')){
 			console.log('animation in progress');
 		}else{
 			alert('you have clicked and no animation');
@@ -113,7 +126,19 @@ $("#main-nav ul li a").click(function(){
 			}	
 		}
 	});
-});
+}); */
+
+
+
+
+
+
+
+
+
+
+
+
 
 //move current page to to title
 
