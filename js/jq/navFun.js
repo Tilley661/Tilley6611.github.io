@@ -96,6 +96,7 @@ $("#main-nav ul li a").click(function(){
 			console.log('current page has been clicked');
 			return;
 		}
+  }
 		
 	 console.log('clicked is numeric');
 	 moveToTitle2(clicked);
