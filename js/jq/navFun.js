@@ -94,8 +94,10 @@ $("#main-nav ul li a").click(function(){
 	//is a link being animated already?
 	$("li").each(function(){
 		if ($(this).is(':animated')){
-			alert($(this) + ' is being animated');
-		}
+			alert('somthing is being animated');
+		}else{
+			alert('there is nothing being animated')
+		};
 	});
 });
 
