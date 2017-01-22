@@ -76,22 +76,18 @@ function moveToTitle2(link){
 	curr.css({'position': 'relative'});
 	
 	//animation queue
+	curr.animate({top: calcMove*-1 +'px'},500);
+	curr.animate({left: calcMoveX + 'px'},1000);
 	curr.queue(function(){
-		m = true;
-		}).next().animate({
-			top: calcMove*-1 +'px'
-			},500).animate({
-				left: calcMoveX + 'px'
-				},1000).queue(function(){
 					curr.css({
 						'position': 'fixed',
 						'top': curr.position().top - (curr.height())/2,
 						'left': curr.position().left
-					})
-				}).queue(function(){
-						m = true;
+					});
 				});
 	//end of animation
+	
+	
 	
 	
 	
@@ -105,16 +101,28 @@ function moveToTitle2(link){
 $("#main-nav ul li a").click(function(){
 	var clicked = $(this).parent().attr('data-menu-index');      //get index from data tag
 	
-	                                                                                 //check is number
-	if (isNaN(clicked) === false){
-		if (cP == clicked){
-			console.log('current page has been clicked');
+	//is a link being animated already?
+	$("li").each(function(){
+		if($(this).is(':animated')){
+			console.log('animation in progress');
 			return;
+		}else{
+			//nothing is being animated
+			//check number
+			if (isNaN(clicked) === false){
+				//number is all good
+				//check if current page
+				if (cP == clicked){
+					console.log('current page has been clicked');
+					return;
+				}else{
+					//not current so move
+					console.log('clicked is numeric');
+					moveToTitle2(clicked);
+				}
+			}	
 		}
-  }
-		
-	 console.log('clicked is numeric');
-	 moveToTitle2(clicked);
+	});
 });
 
 //move current page to to title
