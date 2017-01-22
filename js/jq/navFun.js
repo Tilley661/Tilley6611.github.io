@@ -141,7 +141,7 @@ $( window ).resize(function() {
 	$('li').each(function(){
 		$(this).css({
 			'position': 'fixed',
-			'top': $(this).position().top + 'px'.
+			'top': $(this).position().top + 'px',
 			'left': $(this).position().left + 'px'
 		})
 	});
