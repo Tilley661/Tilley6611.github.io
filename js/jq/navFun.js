@@ -12,10 +12,12 @@ var wW = $( window ).width();
 //on resize
 $( window ).resize(function() {
 	debugPrint("Window has resized: Height = " + wH + " Width = " + wW, false, false);
-	wH = this.height();
-	wW = this.width();
-	alert('height = ' + this.height() + ' width = ' + this.width());
+	wH = $( window ).height();
+	wW = $( window ).width();
+	alert('height = ' + $(window).height() + ' width = ' + $(window).width());
+	//alert('height = ' + this.height() + ' width = ' + this.width());
 });
+
 
 
 
