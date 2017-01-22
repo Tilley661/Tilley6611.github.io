@@ -12,11 +12,6 @@ Navigation - all pages
 	transform: translate(0%, -50%);
 }
 
-.move-to-title{
-  animation-fill-mode:forwards;
-  animation-name: moveToTitle;
-  animation-duration: 1s;
-}
 
 
 @keyframes moveToTitle {
