@@ -58,7 +58,7 @@ function moveToTitle2(link){
 	
 	curr.css({'position': 'relative'})
 	curr.animate({top: calcMove*-1 +'px'},1000)
-	curr.delay(1000).animate({left: calcMoveX + 'px'},3000);
+	curr.animate({left: calcMoveX + 'px'},3000);
 	
 	
 }
