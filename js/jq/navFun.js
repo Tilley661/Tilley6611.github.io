@@ -95,8 +95,10 @@ $("#main-nav ul li a").click(function(){
 	$("li").each(function(){
 		if ($(this).is(':animated')){
 			alert('somthing is being animated');
+			//break out
+			return false;
 		}else{
-			alert('there is nothing being animated')
+			alert('there is nothing being animated');
 		};
 	});
 });
