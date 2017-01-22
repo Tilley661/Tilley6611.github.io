@@ -92,8 +92,13 @@ $("#main-nav ul li a").click(function(){
 	
 	                                                                                 //check is number
 	if (isNaN(clicked) === false){
+		if (cP === clicked){
+			console.log('current page has been clicked');
+			return;
+		}else{
 		 console.log('clicked is numeric');
 		 moveToTitle2(clicked);
+		}
 	 }else{
 		 console.log('There is an issue.');
 		 return;
