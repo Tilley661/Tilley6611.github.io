@@ -90,19 +90,20 @@ function moveToTitle2(link){
   
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
+	var clicked = $(this).parent().attr('data-menu-index');
 	//is a link being animated already?
 	$("li").each(function(){
 		if($(this).is(':animated')){
 			console.log('animation in progress');
 		}else{
 			//nothing is being animated
-			var clicked = $(this).parent().attr('data-menu-index');
 			//check number
 			if (isNaN(clicked) === false){
 				//number is all good
 				//check if current page
 				if (cP == clicked){
 					console.log('current page has been clicked');
+	
 				}else{
 					//not current so move
 					console.log('clicked is numeric');
