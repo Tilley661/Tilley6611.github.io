@@ -85,7 +85,7 @@ function moveToTitle2(link){
 		left: '250px'
 		}, {
 			duration: 500, 
-			queue:false
+			queue:true
 	});
 	//old.queue(function(){
 	//			old.css({
