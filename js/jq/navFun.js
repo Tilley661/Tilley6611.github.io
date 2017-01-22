@@ -78,20 +78,19 @@ function moveToTitle2(link){
 	//animation queue
 	curr.queue(function(){
 		m = true;
-	}).next();
-	curr.animate({top: calcMove*-1 +'px'},500);
-	curr.animate({left: calcMoveX + 'px'},1000);
-	//animation fiished so set new CSS
-	curr.queue(function(){
-		curr.css({
-			'position': 'fixed',
-			'top': curr.position().top - (curr.height())/2,
-			'left': curr.position().left
-		});
-	});
-	curr.queue(function(){
-		m = true;
-	}).next();
+		}).next().animate({
+			top: calcMove*-1 +'px'
+			},500).animate({
+				left: calcMoveX + 'px'
+				},1000).queue(function(){
+					curr.css({
+						'position': 'fixed',
+						'top': curr.position().top - (curr.height())/2,
+						'left': curr.position().left
+					})
+				}).queue(function(){
+						m = true;
+				});
 	//end of animation
 	
 	
