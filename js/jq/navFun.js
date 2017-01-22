@@ -30,7 +30,7 @@ $( window ).resize(function() {
 
 //get curr position of object to move
 
-function moveToTitle(link){
+var moveToTitle = function (link){
 var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
 var currOffset = curr.offset();                                                     //make offset object
 var endPos = 50;                                                                      //50px from top
