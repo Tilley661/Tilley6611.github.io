@@ -26,13 +26,13 @@ function moveToTitle2(link){
 	
 	
 	//check to see if page is current - if so exit
-	if (cP === link){
+	if (cP == link){
 		console.log('current page has been clicked');
 		return;
 	}
 	
 	//check to see if init
-	if (!cP === 0){
+	if (!cP == 0){
 	//get old postion
 	//var oldOffset = old.offset();
 	var newPos = $('#main-nav').position();
