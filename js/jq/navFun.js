@@ -74,8 +74,19 @@ function moveToTitle2(link){
 	//animation queue for title to nav
 	old.css({'position': 'absolute'});
 	
-	old.animate({top: '250px'}, {duration: 500, queue:false)};
-	old.animate({left: '250px'}, {duration: 500, queue:false)};
+	old.animate({
+		top: '250px'
+		}, {
+			duration: 500, 
+			queue:false
+	});
+	
+	old.animate({
+		left: '250px'
+		}, {
+			duration: 500, 
+			queue:false
+	});
 	//old.queue(function(){
 	//			old.css({
 	//				'position': 'fixed',
