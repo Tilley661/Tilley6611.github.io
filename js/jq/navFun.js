@@ -90,12 +90,13 @@ function moveToTitle2(link){
   
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
-	var clicked = $(this).parent().attr('data-menu-index');
+	//var clicked = $(this).parent().attr('data-menu-index');
 	//is a link being animated already?
 	$("li").each(function(){
 		if($(this).is(':animated')){
 			console.log('animation in progress');
 		}else{
+			alert('you have clicked and no animation');
 			//nothing is being animated
 			//check number
 			if (isNaN(clicked) === false){
