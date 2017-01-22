@@ -17,6 +17,10 @@ Navigation - all pages
 	
 }
 
+#main-nav ul li{
+	height:auto;
+	width:auto;
+}
 
 .new-title{
 	transform: scale(1.5);
@@ -25,6 +29,8 @@ Navigation - all pages
 	-webkit-transition: all 1s; /* Safari */
     transition: all 1s;
 }
+
+
 
 .resize-nav{
 	width:auto;
