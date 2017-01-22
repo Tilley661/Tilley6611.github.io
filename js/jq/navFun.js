@@ -26,13 +26,6 @@ $( window ).resize(function() {
 });
 
 
-
-function moveToNav(link){
-	
-	
-
-
-
 //the below function moves an item from the navigation to the top right corner
 function moveToTitle(link){
 	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
@@ -61,7 +54,7 @@ function moveToTitle(link){
 		//set the curr page
 		cP = link;
 		console.log('Current page is = '+cP);
-};
+}
 
 
 
@@ -81,7 +74,7 @@ $("#main-nav ul li a").click(function(){
 
 //move current page to to title
 
-if (cP == 0){
+if (cP === 0){
 		moveToTitle(1);  // se to home
 }
 
