@@ -51,15 +51,36 @@ function moveToTitle(link){
 
 function moveToTitle2(link){
 	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
+	var old = $("#main-nav ul li[data-menu-index='" + cP +"']");
 	var currOffset = curr.offset();                                                     //make offset object
 	var endPos = 50;                                                                      //50px from top
 	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
 	var calcMoveX = wW - curr.width() - endPos;
 	
-	curr.css({'position': 'relative'})
-	curr.animate({top: calcMove*-1 +'px'},1000)
-	curr.animate({left: calcMoveX + 'px'},3000);
 	
+	//check to see if page is current - if so exit
+	if (cP === link){
+		console.log('current page has been clicked')
+		return;
+	}
+	
+	//get old postion
+	
+	
+	curr.css({'position': 'relative'})
+	curr.animate({top: calcMove*-1 +'px'},500);
+	curr.animate({left: calcMoveX + 'px'},1000);
+	//animation fiished so set new CSS
+	curr.css({
+			'position': 'fixed',
+			'top': curr.postion().top,
+			'left': curr.position().left
+	}};
+	
+	
+	
+	
+	cP = link;
 	
 }
   
