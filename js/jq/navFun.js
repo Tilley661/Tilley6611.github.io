@@ -31,10 +31,10 @@ function moveTopLeft(link){
 var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
 var currOffset = curr.offset();                                                     //make offset object
 var endPos = 50;                                                                      //50px from top
-var calcMove = currOffset.top - endPos                                        //calculate move amount
+var calcMove = currOffset.top - endPos;                                        //calculate move amount
 
 //translate using css
-curr.css(transform:translate(0px, -calcMove));
+curr.css(transform:translate(0px, -calcMove + 'px'));
 
 }
 
