@@ -10,7 +10,6 @@ var wW = $( window ).width();             //current window width
 var qL = $('#main-nav ul li').length;      //how many links
 var cP = 0;                                         //current page init = 0
 var kFK = 1;                                       //keyframe counter
-var m = false;                                    //let program know if animation is moving
 
 
 
@@ -65,10 +64,6 @@ function moveToTitle2(link){
 	}
 	
 	//check to see if animation is active
-	if (m === true){
-		console.log('Animation in progress');
-		return;
-	}
 	
 	//get old postion
 	
@@ -87,10 +82,6 @@ function moveToTitle2(link){
 				});
 	//end of animation
 	
-	
-	
-	
-	
 	cP = link;
 	
 }
@@ -99,22 +90,19 @@ function moveToTitle2(link){
   
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
-	var clicked = $(this).parent().attr('data-menu-index');      //get index from data tag
-	
 	//is a link being animated already?
 	$("li").each(function(){
 		if($(this).is(':animated')){
 			console.log('animation in progress');
-			return;
 		}else{
 			//nothing is being animated
+			var clicked = $(this).parent().attr('data-menu-index');
 			//check number
 			if (isNaN(clicked) === false){
 				//number is all good
 				//check if current page
 				if (cP == clicked){
 					console.log('current page has been clicked');
-					return;
 				}else{
 					//not current so move
 					console.log('clicked is numeric');
