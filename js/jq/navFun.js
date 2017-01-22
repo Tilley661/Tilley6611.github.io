@@ -34,7 +34,7 @@ var endPos = 50;                                                                
 var calcMove = currOffset.top - endPos;                                        //calculate move amount
 
 //translate using css
-curr.css("transform", "translate(0px, -" + calcMove "px)");
+curr.css("transform", "translate(0px, -" + calcMove + "px)");
 
 }
 
