@@ -71,7 +71,8 @@ function moveToTitle2(link){
 		duration:500,
 		//queue:false
 	});
-	console.log('the actual value used here = ' + ($(window).width()) - curr.width() );
+	var z = curr.width();
+	console.log('the actual value used here = ' + ($(window).width()) - z );
 	curr.animate({'margin-left': $(window).width() - curr.width() + 'px'},1000, function(){
 					curr.addClass('new-title');
 				});
