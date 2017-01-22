@@ -42,7 +42,7 @@ function moveToTitle2(link){
 	old.css({'position': 'relative'});
 	
 	old.animate({
-		top: (wH - old.position().top - old.height()) + 'px'
+		top: (wH / 2) - b + 'px'
 		}, {
 			duration: 500, 
 			//queue:false
