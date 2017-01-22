@@ -49,12 +49,12 @@ function moveToTitle2(link){
 	});
 
 	old.animate({
-		left: newPosX + 'px'
+		left: 0 + 'px'
 		}, {
 			duration: 500
 	});
 	old.animate({
-		top: newPosY + 'px'
+		top: 0 + 'px'
 		}, {
 			duration: 500
 	});
