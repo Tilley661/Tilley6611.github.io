@@ -109,7 +109,7 @@ $("#main-nav ul li a").click(function(){
 		return false;
 	}else{
 		//animation is not running - continue to move
-		console.print('animation not running');
+		console.log('animation not running');
 		if (isNaN(clicked) === false){
 				//number is all good
 				//check if current page
