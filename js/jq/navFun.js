@@ -5,47 +5,15 @@
 //get init vars
 
 //screen variables
-var wH = $( window ).height();             //current window height
-var wW = $( window ).width();             //current window width
-var qL = $('#main-nav ul li').length;      //how many links
-var cP = 0;                                         //current page init = 0
-var kFK = 1;                                       //keyframe counter
-var aP = false;                                    //is there an animation in progress
-var get
+var wH = $( window ).height();         	//current window height
+var wW = $( window ).width();           	//current window width
+var qL = $('#main-nav ul li').length;    	//how many links
+var cP = 0;                                       	//current page init = 0
+var kFK = 1;                                	 	//keyframe counter
+var aP = false;                                 	//is there an animation in progress
+var b = 50;										//border amount
 
 
-
-//the below function moves an item from the navigation to the top right corner
-function moveToTitle(link){
-	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
-	var currOffset = curr.offset();                                                     //make offset object
-	var endPos = 50;                                                                      //50px from top
-	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
-	var calcMoveX = wW - curr.width() - endPos;
-
-		//create dynamic keyframe and add a number to the end
-		$.keyframe.define([{
-			name: 'move-to-title-' + kFK,
-			'50%': {'transform': 'translate(0px,-' + calcMove + 'px)'},
-			'100%': {'transform': 'translate(' + calcMoveX + 'px,-' + calcMove + 'px)'}
-		}]);
-		
-		
-		//add class to link to actually move it
-		curr.addClass('moving');
-		curr.css( 
-					{	
-						'animation-fill-mode': 'forwards',
-						'animation-duration': '1s',
-						'animation-name': 'move-to-title-' + kFK 
-					});
-		//add integer to to create more later	
-		kFK = kFK + 1;
-		//set the curr page
-		cP = link;
-		console.log('Current page is = '+cP);
-		
-}
 
 
 function moveToTitle2(link){
@@ -75,14 +43,19 @@ function moveToTitle2(link){
 	old.css({'position': 'absolute'});
 	
 	old.animate({
-		top: '250px'
+		top: (wH - b - $(this).height()) + 'px'
 		}, {
 			duration: 500, 
 			//queue:false
 	});
 	
 	old.animate({
-		left: '250px'
+		left: newPosX + 'px'
+		}, {
+			duration: 500
+	});
+	old.animate({
+		left: newPosY + 'px'
 		}, {
 			duration: 500
 	});
