@@ -10,7 +10,7 @@ var wW = $( window ).width();             //current window width
 var qL = $('#main-nav ul li').length;      //how many links
 var cP = 0;                                         //current page init = 0
 var kFK = 1;                                       //keyframe counter
-
+var aP = false;                                    //is there an animation in progress
 
 
 
@@ -94,13 +94,23 @@ $("#main-nav ul li a").click(function(){
 	//is a link being animated already?
 	$("li").each(function(){
 		if ($(this).is(':animated')){
-			alert('somthing is being animated');
+			aP = true;
 			//break out
+			//this break out ends the each before false can be set again
 			return false;
 		}else{
-			alert('there is nothing being animated');
+			aP = false;
 		};
 	});
+	
+	if(aP===true){
+		//animation in progress so end
+		alert('animation is running');
+		return false;
+	}else{
+		//animation is not running
+		alert('animation not running');
+	};
 });
 
 
