@@ -65,7 +65,7 @@ function moveToTitle2(link){
 	}
 	
 	//check to see if animation is active
-	if (m === true){
+	if (m == true){
 		console.log('Animation in progress');
 		return;
 	}
@@ -78,6 +78,7 @@ function moveToTitle2(link){
 	//animation queue
 	curr.queue(function(){
 		m = true;
+		return;
 	});
 	curr.animate({top: calcMove*-1 +'px'},500);
 	curr.animate({left: calcMoveX + 'px'},1000);
@@ -91,6 +92,7 @@ function moveToTitle2(link){
 	});
 	curr.queue(function(){
 		m = false;
+		return;
 	});
 	//end of animation
 	
