@@ -74,6 +74,11 @@ function moveToTitle2(link){
 	});
 	curr.animate({left: calcMoveX + 'px'},1000, function(){
 					curr.addClass('new-title');
+					curr.css({
+						'position': 'fixed',
+						'top': curr.offset().top + 'px',
+						'left': curr.offset().lest + 'px'
+					})
 				});
 	//end of animation
 	
@@ -138,11 +143,7 @@ if (cP === 0){
 //on resize
 $( window ).resize(function() {
 	//get new size
-	$('li').each(function(){
-		$(this).css({
-			'position': 'fixed'
-		})
-	});
+
 	//note: can load another page if width below 680px
 });
 
