@@ -47,6 +47,8 @@ $("#main-nav ul li a").click(function(){
 	 if (!isNaN(clicked) == true){
 		 alert('clicked is numeric');
 		//moveToTitle(clicked);
+	 }else{
+		 alert('There is an issue.');
 	 }
 });
 
