@@ -11,7 +11,7 @@ var wW = $( window ).width();
 
 //on resize
 $( window ).resize(function() {
-	debugPrint("Window hase resized", false, false);
+	debugPrint("Window has resized: Height = " + wH + " Width = " + wW, false, false);
 });
 
 
