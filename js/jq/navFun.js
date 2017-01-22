@@ -84,8 +84,7 @@ function moveToTitle2(link){
 	old.animate({
 		left: '250px'
 		}, {
-			duration: 500, 
-			queue:true
+			duration: 500
 	});
 	//old.queue(function(){
 	//			old.css({
@@ -101,9 +100,11 @@ function moveToTitle2(link){
 	curr.css({'position': 'relative'});
 	
 	//animation queue
-	curr.animate({top: calcMove*-1 +'px'},500);
-	curr.animate({left: calcMoveX + 'px'},1000);
-	curr.queue(function(){
+	curr.animate({top: calcMove*-1 +'px'},{
+		duration:500,
+		queue:false
+	});
+	curr.animate({left: calcMoveX + 'px'},1000, function(){
 					curr.css({
 						'position': 'fixed',
 						'top': curr.position().top - (curr.height())/2,
