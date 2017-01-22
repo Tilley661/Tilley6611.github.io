@@ -14,6 +14,7 @@ $( window ).resize(function() {
 	debugPrint("Window has resized: Height = " + wH + " Width = " + wW, false, false);
 	wH = this.height();
 	wW = this.width();
+	alert('height = ' + this.height() + ' width = ' + this.width());
 });
 
 
