@@ -10,7 +10,7 @@ var wW = $( window ).width();             //current window width
 var qL = $('#main-nav ul li').length;      //how many links
 var cP = 0;                                         //current page init = 0
 var kFK = 1;                                       //keyframe counter
-
+var m = false;                                    //let program know if animation is moving
 
 
 
@@ -64,10 +64,21 @@ function moveToTitle2(link){
 		return;
 	}
 	
+	//check to see if animation is active
+	if (m === true){
+		console.log('Animation in progress');
+		return;
+	}
+	
 	//get old postion
 	
 	
 	curr.css({'position': 'relative'});
+	
+	//animation queue
+	curr.queue(function(){
+		m = true;
+	});
 	curr.animate({top: calcMove*-1 +'px'},500);
 	curr.animate({left: calcMoveX + 'px'},1000);
 	//animation fiished so set new CSS
@@ -77,9 +88,11 @@ function moveToTitle2(link){
 			'top': curr.position().top - (curr.height())/2,
 			'left': curr.position().left
 		});
-	
 	});
-	
+	curr.queue(function(){
+		m = false;
+	});
+	//end of animation
 	
 	
 	
