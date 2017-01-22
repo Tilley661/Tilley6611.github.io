@@ -15,4 +15,11 @@ Navigation - all pages
 .ease-control{
 	transition-timing-function: ease-in-out;
 	transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+     
+  
+  -moz-transition:all 2s;
+    -webkit-transition:all 2s;
+    -o-transition:all 2s;
+    transition:all 2s;
+  
 }
