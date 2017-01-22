@@ -73,7 +73,7 @@ function moveToTitle2(link){
 	});
 	console.log('the height of link = ' + curr.height());
 	console.log('the width of link = ' + curr.width());
-	console.log('the actual value used here = ' + parseInt($(window).width() - curr.width());
+	console.log('the actual value used here = ' + parseInt($(window).width() - curr.width() ) );
 	
 	curr.animate({'margin-left': parseInt($(window).width() - curr.width()) + 'px'},1000, function(){
 					curr.addClass('new-title');
