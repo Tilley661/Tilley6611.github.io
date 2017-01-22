@@ -31,8 +31,8 @@ function moveToTitle2(link){
 		return;
 	}
 	
-	//check to see if animation is active
-	
+	//check to see if init
+	if (!cP === 0){
 	//get old postion
 	//var oldOffset = old.offset();
 	var newPos = $('#main-nav').position();
@@ -66,7 +66,7 @@ function moveToTitle2(link){
 	//				'left': newPosX
 	//			});
 	//		});
-	
+	};
 	 
 	
 	//animation queue for nav to title
