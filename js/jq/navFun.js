@@ -8,7 +8,7 @@
 var wH = $( window ).height();             //current window height
 var wW = $( window ).width();             //current window width
 var qL = $('#main-nav ul li').length;      //how many links
-var cP = 1;                                         //current page
+var cP = 0;                                         //current page init = 0
 var kFK = 1;                                       //keyframe counter
 
 
@@ -55,6 +55,7 @@ var calcMove = currOffset.top - endPos;                                        /
 	//add integer to to create more later	
 	kFK = kFK + 1;
 	
+	
 };
 
 
@@ -74,7 +75,11 @@ $("#main-nav ul li a").click(function(){
 });
 
 //move current page to to title
-moveToTitle(cP);
+
+if (cP == 0){
+		moveToTitle(1);  // se to home
+}
+
 
 
 //how to locate menu item
