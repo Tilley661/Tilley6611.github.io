@@ -73,8 +73,8 @@ function moveToTitle2(link){
 	//animation fiished so set new CSS
 	curr.css({
 			'position': 'fixed',
-			'top': curr.postion().top,
-			'left': curr.position().left
+			'top': curr.offset().top,
+			'left': curr.offset().left
 	});
 	
 	
