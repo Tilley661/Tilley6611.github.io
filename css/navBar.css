@@ -23,3 +23,21 @@ Navigation - all pages
     transition:all 2s;
   
 }
+
+.move-to-title{
+  animation-fill-mode:forwards;
+  animation-name: moveToTitle;
+  animation-duration: 1s;
+}
+
+
+@keyframes moveToTitle {
+   50%{
+     transform:translate(100px,200px);
+     animation-timing-function: ease-in-out;
+   }
+   100%{
+     transform:translate(400px,200px);
+     animation-timing-function: ease-in-out;
+   }
+}
