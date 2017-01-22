@@ -13,17 +13,7 @@ var kFK = 1;                                       //keyframe counter
 
 
 
-//on resize
-$( window ).resize(function() {
-	//get new size
-	wH = $( window ).height();
-	wW = $( window ).width();
-	//note: can load another page if width below 680px
-	
-	//mill need to move all again here?
-	//or maybe just set css for new position
-	//moveTopLeft(cP)
-});
+
 
 
 //the below function moves an item from the navigation to the top right corner
@@ -78,6 +68,15 @@ if (cP === 0){
 		moveToTitle(1);  // se to home
 }
 
+
+//on resize
+$( window ).resize(function() {
+	//get new size
+	wH = $( window ).height();
+	wW = $( window ).width();
+	//note: can load another page if width below 680px
+	moveToTitle(cP);
+});
 
 
 //how to locate menu item
