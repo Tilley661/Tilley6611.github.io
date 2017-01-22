@@ -54,7 +54,7 @@ function moveToTitle(link){
         'OTransition':'oTransitionEnd',
         'MozTransition':'transitionend',
         'WebkitTransition':'webkitTransitionEnd'
-      }
+      };
       
       for(t in transitions){
         if( el.style[t] !== undefined ){
@@ -66,11 +66,8 @@ function moveToTitle(link){
     var transitionEvent = whichTransitionEvent();
     transitionEvent && curr.addEventListener(transitionEvent, function() {
       console.log('move is completed');
-    });
-    
-    
+    }); 
   }
-}
 
 
 
