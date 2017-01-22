@@ -55,16 +55,16 @@ var calcMove = currOffset.top - endPos;                                        /
 	//add integer to to create more later	
 	kFK = kFK + 1;
 	
-}
+};
 
 
 
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
-	var clicked = $(this).parent().attr('data-menu-index')      //get index from data tag
+	var clicked = $(this).parent().attr('data-menu-index');      //get index from data tag
 	
 	                                                                                 //check is number
-	if (!isNaN(clicked) == true){
+	if (isNaN(clicked) === false){
 		 alert('clicked is numeric');
 		 moveToTitle(clicked);
 	 }else{
@@ -74,7 +74,7 @@ $("#main-nav ul li a").click(function(){
 });
 
 //move current page to to title
-MoveToTitle(cP);
+moveToTitle(cP);
 
 
 //how to locate menu item
