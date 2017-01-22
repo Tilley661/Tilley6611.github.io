@@ -23,7 +23,7 @@ function moveToTitle2(link){
 	var endPos = 50;                                                                      //50px from top
 	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
 	var calcMoveX = wW - curr.width() - endPos;
-	
+	 
 	
 	//check to see if page is current - if so exit
 	if (cP == link){
