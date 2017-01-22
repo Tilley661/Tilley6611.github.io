@@ -37,11 +37,10 @@ function moveToTitle2(link){
 	var newPosX = newPos.left;
 	var newPosY = newPos.top;
 	//animation queue for title to nav
-	old.css({'position': 'relative'});
-	old.removeClass("new-title");
+	//old.css({'position': 'relative'});
 	
 	old.animate({
-		top: ($(window).height())/2 + 'px'
+		top: $(window).height() - old.height() + 'px'
 		}, {
 			duration: 500, 
 			//queue:false
@@ -64,26 +63,21 @@ function moveToTitle2(link){
 	 
 	
 	//animation queue for nav to title
-	curr.css({'position': 'relative'});
+	//curr.css({'position': 'fixed'});
 	
 	
 	//animation queue
-	curr.animate({top: calcMove*-1 +'px'},{
+	curr.animate({top: 0 + curr.height() + 'px'},{
 		duration:500,
 		//queue:false
 	});
-	curr.animate({left: calcMoveX + 'px'},1000, function(){
+	curr.animate({left: $(window)/width() - curr.width() + 'px'},1000, function(){
 					curr.addClass('new-title');
-					curr.css({
-						'position': 'fixed',
-						'top': curr.offset().top + 'px',
-						'left': curr.offset().lest + 'px'
-					})
 				});
 	//end of animation
 	
 	//change nav box
-	$('#main-nav').removeClass('resize-nav').addClass('resize-nav');
+	//$('#main-nav').removeClass('resize-nav').addClass('resize-nav');
 	
 	cP = link;
 	
