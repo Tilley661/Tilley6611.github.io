@@ -11,13 +11,17 @@ Navigation - all pages
 	top: 50%;
 	left:0%;
 	transform: translate(0%, -50%);
+	
+	-webkit-transition: all .5s; /* Safari */
+    transition: all .5s;
+	
 }
 
 
 
 
 
-@keyframes moveToTitle {
+/* @keyframes moveToTitle {
    50%{
      transform:translate(100px,200px);
      animation-timing-function: ease-in-out;
@@ -29,4 +33,4 @@ Navigation - all pages
    100%{
 	    font-size:30px;
    }
-}
+} */
