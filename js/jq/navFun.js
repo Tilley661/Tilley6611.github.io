@@ -139,7 +139,11 @@ if (cP === 0){
 $( window ).resize(function() {
 	//get new size
 	$('li').each(function(){
-		$(this).addClass('resize-window');
+		$(this).css({
+			'position': 'fixed',
+			'top': $(this).position().top + 'px'.
+			'left': $(this).position().left + 'px'
+		})
 	});
 	//note: can load another page if width below 680px
 });
