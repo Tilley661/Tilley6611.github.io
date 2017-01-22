@@ -60,7 +60,7 @@ function moveToTitle2(link){
 	
 	//check to see if page is current - if so exit
 	if (cP === link){
-		console.log('current page has been clicked')
+		console.log('current page has been clicked');
 		return;
 	}
 	
@@ -75,7 +75,7 @@ function moveToTitle2(link){
 			'position': 'fixed',
 			'top': curr.postion().top,
 			'left': curr.position().left
-	}};
+	});
 	
 	
 	
