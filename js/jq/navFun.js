@@ -8,7 +8,7 @@
 var wH = $( window ).height();             //current window height
 var wW = $( window ).width();             //current window width
 var qL = $('#main-nav ul li').length;      //how many links
-
+var cP = 1;                                          //current page
 
 //on resize
 $( window ).resize(function() {
@@ -16,12 +16,34 @@ $( window ).resize(function() {
 	wH = $( window ).height();
 	wW = $( window ).width();
 	//note: can load another page if width below 680px
+	
+	//mill need to move all again here?
+	//or maybe just set css for new position
+	//moveTopLeft(cP)
 });
+
+
+//with current page - move to top
+
+//get curr position of object to move
+
+function moveTopLeft(link){
+var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
+var currOffset = curr.offset();                                                     //make offset object
+var endPos = 50;                                                                      //50px from top
+var calcMove = currOffset.top - endPos                                        //calculate move amount
+
+//translate using css
+curr.css(transform:translate(0px, -calcMove));
+
+}
+
+moveTopLeft(cP); //move certain link
 
 
 //how to locate menu item
 //$("#main-nav ul li[data-menu-index='1']").html()
-
+//move an object up -  .css(transform: translate(0px, -200px));
 
 
 
