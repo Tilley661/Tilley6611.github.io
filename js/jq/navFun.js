@@ -4,9 +4,7 @@
 
 //get init vars
 
-//screen variables
-var wH = $( window ).height();         	//current window height
-var wW = $( window ).width();           	//current window width
+//screen variables          	
 var qL = $('#main-nav ul li').length;    	//how many links
 var cP = 0;                                       	//current page init = 0
 var kFK = 1;                                	 	//keyframe counter
@@ -22,7 +20,7 @@ function moveToTitle2(link){
 	var currOffset = curr.offset();                                                     //make offset object
 	var endPos = 50;                                                                      //50px from top
 	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
-	var calcMoveX = wW - curr.width() - endPos;
+	var calcMoveX = $(window).width() - curr.width() - endPos;
 	 
 	
 	//check to see if page is current - if so exit
@@ -43,7 +41,7 @@ function moveToTitle2(link){
 	old.removeClass("new-title");
 	
 	old.animate({
-		top: (wH/2) + 'px'
+		top: ($(window).height())/2 + 'px'
 		}, {
 			duration: 500, 
 			//queue:false
@@ -62,14 +60,7 @@ function moveToTitle2(link){
 				old.removeClass("new-title");
 			}
 	});
-	//old.queue(function(){
-	//			old.css({
-	//				'position': 'fixed',
-	//				'top': newPosY,
-	//				'left': newPosX
-	//			});
-	//		});
-	};
+};
 	 
 	
 	//animation queue for nav to title
@@ -147,10 +138,10 @@ if (cP === 0){
 //on resize
 $( window ).resize(function() {
 	//get new size
-	wH = $( window ).height();
-	wW = $( window ).width();
+	$('li').each(function(){
+		$(this).addClass('resize-window');
+	});
 	//note: can load another page if width below 680px
-	moveToTitle2(cP);
 });
 
 
