@@ -90,7 +90,7 @@ function moveToTitle2(link){
   
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
-	//var clicked = $(this).parent().attr('data-menu-index');
+	var clicked = $(this).parent().attr('data-menu-index');
 	//is a link being animated already?
 	$("li").each(function(){
 		if ($(this).is(':animated')){
@@ -105,11 +105,21 @@ $("#main-nav ul li a").click(function(){
 	
 	if(aP===true){
 		//animation in progress so end
-		alert('animation is running');
+		//alert('animation is running');
 		return false;
 	}else{
-		//animation is not running
-		alert('animation not running');
+		//animation is not running - continue to move
+		console.print('animation not running');
+		if (isNaN(clicked) === false){
+				//number is all good
+				//check if current page
+				if (cP == clicked){
+					console.log('current page has been clicked');
+				}else{
+					//not current so move
+					moveToTitle2(clicked);
+				};
+			};	
 	};
 });
 
@@ -126,18 +136,7 @@ $("#main-nav ul li a").click(function(){
 			alert('you have clicked and no animation');
 			//nothing is being animated
 			//check number
-			if (isNaN(clicked) === false){
-				//number is all good
-				//check if current page
-				if (cP == clicked){
-					console.log('current page has been clicked');
-	
-				}else{
-					//not current so move
-					console.log('clicked is numeric');
-					moveToTitle2(clicked);
-				}
-			}	
+
 		}
 	});
 }); */
