@@ -11,7 +11,7 @@ var qL = $('#main-nav ul li').length;      //how many links
 var cP = 0;                                         //current page init = 0
 var kFK = 1;                                       //keyframe counter
 var aP = false;                                    //is there an animation in progress
-
+var get
 
 
 
@@ -66,8 +66,25 @@ function moveToTitle2(link){
 	//check to see if animation is active
 	
 	//get old postion
+	//var oldOffset = old.offset();
+	var newPos = $('#main-nav').position();
+	var newPosX = newPos.left;
+	var newPosY = newPos.top;
+	
+	//animation queue for title to nav
+	old.animate({top: newPosY + 'px'},500);
+	old.animate({left: newPosX + 'px'},500);
+	old.queue(function(){
+				old.css({
+					'position': 'fixed',
+					'top': newPosY,
+					'left': newPosX
+				});
+			});
 	
 	
+	
+	//animation queue for nav to title
 	curr.css({'position': 'relative'});
 	
 	//animation queue
