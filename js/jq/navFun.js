@@ -57,9 +57,7 @@ function moveToTitle2(link){
 	var calcMoveX = wW - curr.width() - endPos;
 	
 	curr.css({'position': 'relative'})
-	curr.animate({
-		left: "250px"
-	});
+	curr.animate({left: calcMoveX + 'px'},5000);
 	
 	
 }
