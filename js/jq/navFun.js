@@ -74,9 +74,10 @@ function moveToTitle2(link){
 	curr.queue(function(){
 		curr.css({
 			'position': 'fixed',
-			'top': '250px',
-			'left': '250px'
+			'top': curr.offset().top,
+			'left': curr.offset().left
 		});
+	
 	});
 	
 	
