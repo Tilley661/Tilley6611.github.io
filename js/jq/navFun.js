@@ -15,9 +15,7 @@ $( window ).resize(function() {
 	//get new size
 	wH = $( window ).height();
 	wW = $( window ).width();
-	//debugPrint("Window has resized: Height = " + wH + " Width = " + wW, false, false);
-	//alert('height = ' + $(window).height() + ' width = ' + $(window).width());
-	//alert('height = ' + this.height() + ' width = ' + this.width());
+	//note: can load another page if width below 680px
 });
 
 

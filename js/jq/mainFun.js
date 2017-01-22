@@ -23,6 +23,8 @@ function debugPrint(str, clear, bold){
 debugPrint("Debug Section:", false, true);
 
 
+//remove below
+/* 
 //mouse move function
 var x;
 var y;
@@ -84,7 +86,7 @@ $(window).mousemove(function(){
 		$('#in-test').html('cursor is <b>NOT</b> inside tri');
 	}
 });
-
+ */
 
 
 

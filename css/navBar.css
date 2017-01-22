@@ -3,7 +3,11 @@ Navigation - all pages
 */
 
 #main-nav {
+	position:fixed;
 	display:block;
-	color:white;
+	color:red;
 	font-size:24px;
+	top: 50%;
+	left:0%;
+	transform: translate(0%, -50%);
 }
