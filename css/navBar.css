@@ -19,11 +19,11 @@ Navigation - all pages
 
 
 .new-title{
-	font-size:30px;
+	transform: scale(1.5);
+	transform-origin: 100% 0 0;
 	-webkit-transition: all 1s; /* Safari */
     transition: all 1s;
 }
-
 
 
 
