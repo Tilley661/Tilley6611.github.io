@@ -84,7 +84,7 @@ function moveToTitle2(link){
 	
 }
   
-  
+    
   
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
