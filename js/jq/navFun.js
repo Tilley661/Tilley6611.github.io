@@ -27,7 +27,9 @@ $( window ).resize(function() {
 
 
 
-
+function moveToNav(link){
+	
+	
 
 
 
@@ -36,14 +38,14 @@ function moveToTitle(link){
 	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
 	var currOffset = curr.offset();                                                     //make offset object
 	var endPos = 50;                                                                      //50px from top
-	var calcMove = currOffset.top - endPos;                                        //calculate move amount
-
+	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
+	var calcMoveX = wW - curr.width() - endPos;
 
 		//create dynamic keyframe and add a number to the end
 		$.keyframe.define([{
 			name: 'move-to-title-' + kFK,
 			'50%': {'transform': 'translate(0px,-' + calcMove + 'px)'},
-			'100%': {'transform': 'translate(200px,-' + calcMove + 'px)'}
+			'100%': {'transform': 'translate(' + calcMoveX + 'px,-' + calcMove + 'px)'}
 		}]);
 		
 		
