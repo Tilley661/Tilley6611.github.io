@@ -5,6 +5,7 @@ Navigation - all pages
 #main-nav {
 	position:fixed;
 	display:block;
+	background-color:yellow;
 	color:red;
 	font-size:24px;
 	top: 50%;
