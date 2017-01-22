@@ -41,6 +41,9 @@ curr.css("transform", "translate(0px, -" + calcMove + "px)");
 moveTopLeft(cP); //move certain link
 
 
+$("#main-nav ul li a").click(function(){
+	alert('somthing has been clicked');
+});
 //how to locate menu item
 //$("#main-nav ul li[data-menu-index='1']").html()
 //move an object up -  .css(transform: translate(0px, -200px));
