@@ -44,6 +44,32 @@ function moveToTitle(link){
 		//set the curr page
 		cP = link;
 		console.log('Current page is = '+cP);
+		
+		
+    function whichTransitionEvent(){
+      var t;
+      var el = document.createElement('fakeelement');
+      var transitions = {
+        'transition':'transitionend',
+        'OTransition':'oTransitionEnd',
+        'MozTransition':'transitionend',
+        'WebkitTransition':'webkitTransitionEnd'
+      }
+      
+      for(t in transitions){
+        if( el.style[t] !== undefined ){
+          return transitions[t];
+        }
+      }
+    }
+    
+    var transitionEvent = whichTransitionEvent();
+    transitionEvent && curr.addEventListener(transitionEvent, function() {
+      console.log('move is completed');
+    });
+    
+    
+  }
 }
 
 
