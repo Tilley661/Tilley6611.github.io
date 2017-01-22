@@ -71,10 +71,12 @@ function moveToTitle2(link){
 	curr.animate({top: calcMove*-1 +'px'},500);
 	curr.animate({left: calcMoveX + 'px'},1000);
 	//animation fiished so set new CSS
-	curr.delay(1500).css({
+	curr.delay(1500).queue(function(){
+		curr.css({
 			'position': 'fixed',
 			'top': '250px',
 			'left': '250px'
+		});
 	});
 	
 	
