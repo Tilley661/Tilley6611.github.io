@@ -18,6 +18,12 @@ Navigation - all pages
 }
 
 
+.new-title{
+	font-size:30px;
+	-webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+}
+
 
 
 
