@@ -74,7 +74,7 @@ function moveToTitle2(link){
 	curr.queue(function(){
 		curr.css({
 			'position': 'fixed',
-			'top': curr.position().top - curr.height(),
+			'top': curr.position().top - (curr.height())/2,
 			'left': curr.position().left
 		});
 	
