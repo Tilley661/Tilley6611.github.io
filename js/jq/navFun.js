@@ -26,36 +26,39 @@ $( window ).resize(function() {
 });
 
 
-//with current page - move to top
-
-//get curr position of object to move
-
-var moveToTitle = function (link){
-var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
-var currOffset = curr.offset();                                                     //make offset object
-var endPos = 50;                                                                      //50px from top
-var calcMove = currOffset.top - endPos;                                        //calculate move amount
 
 
-	//create dynamic keyframe and add a number to the end
-	$.keyframe.define([{
-		name: 'move-to-title-' + kFK,
-		'50%': {'transform': 'translate(0px,-' + calcMove + 'px)'},
-		'100%': {'transform': 'translate(200px,-' + calcMove + 'px)'}
-	}]);
-	
-	
-	//add class to link to actually move it
-	curr.css( 
-				{	
-					'animation-fill-mode': 'forwards',
-					'animation-duration': '1s',
-					'animation-name': 'move-to-title-' + kFK 
-				});
-	//add integer to to create more later	
-	kFK = kFK + 1;
-	
-	
+
+
+
+//the below function moves an item from the navigation to the top right corner
+function moveToTitle(link){
+	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
+	var currOffset = curr.offset();                                                     //make offset object
+	var endPos = 50;                                                                      //50px from top
+	var calcMove = currOffset.top - endPos;                                        //calculate move amount
+
+
+		//create dynamic keyframe and add a number to the end
+		$.keyframe.define([{
+			name: 'move-to-title-' + kFK,
+			'50%': {'transform': 'translate(0px,-' + calcMove + 'px)'},
+			'100%': {'transform': 'translate(200px,-' + calcMove + 'px)'}
+		}]);
+		
+		
+		//add class to link to actually move it
+		curr.css( 
+					{	
+						'animation-fill-mode': 'forwards',
+						'animation-duration': '1s',
+						'animation-name': 'move-to-title-' + kFK 
+					});
+		//add integer to to create more later	
+		kFK = kFK + 1;
+		//set the curr page
+		cP = link;
+		console.log('Current page is = '+cp);
 };
 
 
