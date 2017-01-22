@@ -43,7 +43,7 @@ function moveToTitle2(link){
 	old.css({'position': 'absolute'});
 	
 	old.animate({
-		top: (wH - b - $(this).height()) + 'px'
+		top: (wH - old.height()) + 'px'
 		}, {
 			duration: 500, 
 			//queue:false
@@ -55,7 +55,7 @@ function moveToTitle2(link){
 			duration: 500
 	});
 	old.animate({
-		left: newPosY + 'px'
+		top: newPosY + 'px'
 		}, {
 			duration: 500
 	});
