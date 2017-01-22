@@ -58,7 +58,7 @@ function moveToTitle(link){
 		kFK = kFK + 1;
 		//set the curr page
 		cP = link;
-		console.log('Current page is = '+cp);
+		console.log('Current page is = '+cP);
 };
 
 
