@@ -60,7 +60,7 @@ function moveToTitle2(link){
 			duration: 500,
 			function(){
 				old.removeClass("new-title");
-			};
+			}
 	});
 	//old.queue(function(){
 	//			old.css({
