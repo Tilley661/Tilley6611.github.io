@@ -159,7 +159,7 @@ if (cP === 0){
 		'position': 'fixed',        				 	//moves with page
 		'top': ($(window.height)/2) - ($(this).height()/2) + 'px',    	//put in center vertically
 		'left': '0px'							//this should act as a home for the nav
-	}):
+	});
 	moveToTitle2(1);  						// set to home
 }
 
