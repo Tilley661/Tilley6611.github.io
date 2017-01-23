@@ -17,6 +17,7 @@ Navigation - all pages
 }
 
 #main-nav ul{
+	display:none;
   	background:yellow;
 }
 
