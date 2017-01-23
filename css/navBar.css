@@ -39,7 +39,7 @@ Navigation - all pages
 }
 
 #main-nav ul{
-	left:-100%;
+	margin-left:-100%;
 	display:none;
   	background:yellow;
 	z-index:2;
