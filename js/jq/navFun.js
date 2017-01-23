@@ -79,7 +79,7 @@ function moveToTitle2(link){
 	
 	//animation queue
 	curr.css({
-		'position': 'fixed'
+		'position': 'absolute' //makesure it is relative to screen
 	});
 	curr.animate({
 		'margin-top': currVert + 'px'
