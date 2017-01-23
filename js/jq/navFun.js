@@ -17,7 +17,6 @@ var b = 50;										//border amount
 function moveToTitle2(link){
 	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
 	var oldT = $("#title-holder li[data-menu-index='" + cP +"']");		//when in title
-	var oldUL = $("#main-nav ul li[data-menu-index='" + cP +"']");		//when back in UL
 	var currOffset = curr.offset();                                                     //make offset object
 	var endPos = 50;                                                                      //50px from top
 	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
@@ -45,7 +44,15 @@ function moveToTitle2(link){
 		//get new selection
 		var oldUL = $("#main-nav ul li[data-menu-index='" + cP +"']");
 		
-		console.log('oldUL value = ' + oldUL.val());
+		oldUL.animate({
+				'top':'200px'
+			},500,function(){
+				 //function after animation	
+				 return;
+		});
+		
+		
+		
 	}
 	
 	
