@@ -73,7 +73,8 @@ function moveToTitle2(link){
 	//animation queue for nav to title
 	//curr.css({'position': 'fixed'});
 	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
-	var currVert = ($(window).height() / 2) * -1;
+	var currO =  $("#main-nav ul li[data-menu-index='" + link +"'] a").offset(); //get offset for curr title
+	var currVert = (currO.top) * -1;
 	var currHoriz = ($(window).width() - currW);
 	console.log('current verticle = ' + currVert + ' current horiz ' + currHoriz);
 	
@@ -82,7 +83,7 @@ function moveToTitle2(link){
 		'position': 'fixed' //makesure it is relative to screen
 	});
 	curr.animate({
-		'margin-top': 0 + 'px'
+		'margin-top': currVert + 'px'
 		     }, 500
 	);
 	
