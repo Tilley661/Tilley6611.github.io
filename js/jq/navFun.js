@@ -90,8 +90,17 @@ function moveToTitle2(link){
 	curr.animate({
 		'margin-left': currHoriz + 'px'
 			}, 1000, function(){
-					curr.addClass('new-title');
-					//fix with css
+					curr.appendTo( $('#title-holder') ); //move link to title
+					curr.css({
+						'position': 'inherit',
+						'top':'0px',
+						'right':'0px'
+					});
+					//curr.addClass('new-title');
+					
+		
+		
+		//fix with css
 					//curr.css({
 					//	'position': 'fixed',
 					//	'top': '200px',
