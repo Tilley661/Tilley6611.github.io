@@ -92,11 +92,11 @@ function moveToTitle2(link){
 			}, 1000, function(){
 					curr.addClass('new-title');
 					//fix with css
-					curr.css({
-						'position': 'fixed',
-						'top': '200px',
-						'left': '200px'
-		});
+					//curr.css({
+					//	'position': 'fixed',
+					//	'top': '200px',
+					//	'left': '200px'
+		//});
 	});
 	//end of animation
 	
