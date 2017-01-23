@@ -82,18 +82,16 @@ function moveToTitle2(link){
 	curr.animate({
 		'margin-left': currHoriz + 'px'
 			}, 500, function(){
-					curr.css({
-						'transform-origin': '100% 0 0'
-					});
-					curr.animate({
-						'font-size':'30px' //get bigger
-					},500, function(){
 						curr.appendTo( $('#title-holder') ); //move link to title
 						curr.css({
 							'position': 'inherit',
 							'margin': '0px 0px 0px 0px',
 							'top':'0px',
 							'right':'0px'
+						});
+						//animate once appended
+						curr.animate({
+							'font-size':'30px' //get bigger
 						});
 					});
 					//curr.addClass('new-title');
