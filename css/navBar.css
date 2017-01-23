@@ -2,6 +2,15 @@
 Navigation - all pages
 */
 
+#title-holder{
+	position:fixed;
+	height:200px;
+	width:200px;
+	background-color:yellow;
+	top:20px;
+	right:20px;
+}
+
 #main-nav{
 	position:absolute;
 	list-style-type:none;
