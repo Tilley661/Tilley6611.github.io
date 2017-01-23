@@ -74,7 +74,7 @@ function moveToTitle2(link){
 	//curr.css({'position': 'fixed'});
 	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
 	var currO =  $("#main-nav ul li[data-menu-index='" + link +"'] a").offset(); //get offset for curr title
-	var currVert = ((currO.top) * -1)+20); //20px for padding
+	var currVert = ((currO.top) * -1) + 20; //20px for padding
 	var currHoriz = ($(window).width() - currW - 50);
 	console.log('current verticle = ' + currVert + ' current horiz ' + currHoriz);
 	
