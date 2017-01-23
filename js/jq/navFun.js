@@ -93,6 +93,7 @@ function moveToTitle2(link){
 					curr.appendTo( $('#title-holder') ); //move link to title
 					curr.css({
 						'position': 'inherit',
+						'margin': '0px 0px 0px 0px',
 						'top':'0px',
 						'right':'0px'
 					});
