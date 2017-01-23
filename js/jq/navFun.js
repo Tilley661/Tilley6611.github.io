@@ -188,7 +188,7 @@ if (cP === 0){
 		
 		$('#main-nav ul').css({
 			'position': 'fixed',	
-			'transform': 'translate(0%,50%)'
+			'transform': 'translate(50%,50%)'
 		});
 		//run function on complete
 		moveToTitle2(1);  //set to home
