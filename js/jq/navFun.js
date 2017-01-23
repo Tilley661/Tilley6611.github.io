@@ -84,12 +84,12 @@ function moveToTitle2(link){
 	});
 	curr.animate({
 		'margin-top': currVert + 'px'
-		     }, 500
+		     }, 250
 	);
 	
 	curr.animate({
 		'margin-left': currHoriz + 'px'
-			}, 1000, function(){
+			}, 500, function(){
 					curr.appendTo( $('#title-holder') ); //move link to title
 					curr.css({
 						'position': 'inherit',
