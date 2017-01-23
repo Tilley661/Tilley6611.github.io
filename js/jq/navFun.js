@@ -207,6 +207,11 @@ $( window ).resize(function() {
 		'height':$(window).height() + 'px',
 		'width':$(window).width() + 'px'
 	});*/
+	//set mins
+	$( window ).css({
+		'min-width':'1024px',
+		'min-height':'1px'
+	});
 	
 	var aa = $(window).height();
 	var ab = $('#main-nav ul').height();
