@@ -3,7 +3,7 @@ Navigation - all pages
 */
 
 
-	#title-holder{
+#title-holder{
 	position:fixed;
 	height:auto;
 	width:auto;
@@ -11,8 +11,7 @@ Navigation - all pages
 	top:20px;
 	right:20px;
 	z-index:1;
-	-webkit-transition: all 1s; /* Safari */
-	transition: all 1s;
+
 }
 
 
@@ -22,9 +21,7 @@ Navigation - all pages
 	    font-size:24px;
 	    padding-top:20px;
 	    padding-right:20px;
-	
-	-webkit-transition: all 1s; /* Safari */
-	transition: all 1s;
+
 }
 
 #main-nav{
@@ -62,8 +59,8 @@ Navigation - all pages
 	transform: scale(1.5);
 	transform-origin: 100% 0 0;
 
-	-webkit-transition: all 1s; /* Safari */
-	transition: all 1s;
+	-webkit-transition: all 3s; /* Safari */
+	transition: all 3s;
 }
 
 /* for info
