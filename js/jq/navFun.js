@@ -185,6 +185,11 @@ if (cP === 0){
 		'margin-left': '0px',
 		'margin-top': ((aa/2) - (ab/2)) + 'px'
 	},1000, function(){
+		
+		$('#main-nav ul').css({
+			'position': 'fixed',	
+			'transform': 'translate(0%,50%)'
+		});
 		//run function on complete
 		moveToTitle2(1);  //set to home
 	})
