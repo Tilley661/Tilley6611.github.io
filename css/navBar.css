@@ -2,7 +2,7 @@
 Navigation - all pages
 */
 
-#main-nav {
+#main-nav{
   position:absolute;
   list-style-type:none;
   top:0px;
@@ -15,8 +15,7 @@ Navigation - all pages
   color:green;
 }
 
-#main-nav li{
-  background-color:black;
+#main-nav ul li{
   position:relative;
   top:50%;
 }
