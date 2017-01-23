@@ -37,7 +37,7 @@ function moveToTitle2(link){
 		},1000, function(){
 						oldT.animate({ 	
 										'margin-right': ($( window ).width() - oldT.width()) + 'px'				
-								}500,function(){
+						},500,function(){
 											oldT.animate({
 													'font-size':'24px'
 											},500);
