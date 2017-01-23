@@ -37,7 +37,7 @@ function moveToTitle2(link){
 
 		oldT.animate({
 			'right':'20px'
-			},3000, function(){
+			}, 3000, function(){
 			    //append to UL
 			oldT.appendTo( $('#main-nav ul') 
 		});
@@ -45,8 +45,7 @@ function moveToTitle2(link){
 		oldUL.animate({
 			'right':'20px',
 			'top': ($( window ).height() - 50) + 'px'
-		});
-	
+		},2000);
 	}
 		    
 	 
