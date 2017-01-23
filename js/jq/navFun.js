@@ -50,16 +50,13 @@ function moveToTitle2(link){
 	});
 	old.animate({
 		'margin-top': oldVert + 'px'
-		}, {
-			duration: 500, 
-			//queue:false
-	});
+		}, duration: 500 
+	);
 
 	old.animate({
 		'margin-left': oldHoriz  + 'px'
-		}, {
-			duration: 500
-	});
+		}, duration: 500
+	);
 	old.animate({
 		'margin-top': 0 + 'px'
 		}, duration: 500,
@@ -84,20 +81,22 @@ function moveToTitle2(link){
 	curr.css({
 		'position': 'fixed'
 	});
-	curr.animate({'margin-top': currVert + 'px'},{
-		duration:500,
-		//queue:false
-	});
+	curr.animate({
+		'margin-top': currVert + 'px'
+		     }, duration:500
+	);
 	
-	curr.animate({'margin-left': currHoriz + 'px'},1000, function(){
+	curr.animate({
+		'margin-left': currHoriz + 'px'
+			}, duration: 1000, function(){
 					curr.addClass('new-title');
 					//fix with css
 					curr.css({
 						'position': 'fixed',
 						'top': '200px',
 						'left': '200px'
-					});
-				});
+		});
+	});
 	//end of animation
 	
 	//change nav box
