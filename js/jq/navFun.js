@@ -37,21 +37,12 @@ function moveToTitle2(link){
 		
 		//remove style attribute from DOM
 		oldT.removeAttr('style');
-		oldT.animate({
-			'right':'20px'
-			}, 3000, function(){
-			    //append to UL
-			oldT.appendTo( $('#main-nav ul')); 
-		});
 		
-
-
-
-		oldUL.animate({
-			'right':'20px',
-			'top': ($( window ).height() - 50) + 'px'
-		},2000);
+		oldT.appendTo( $('#main-nav ul')); 
+		
+		console.log('oldUL value = ' + oldUL.val());
 	}
+
 		    
 	 
 	
