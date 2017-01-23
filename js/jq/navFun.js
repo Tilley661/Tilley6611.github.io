@@ -157,7 +157,7 @@ if (cP === 0){
 	//therfore need to set the screen
 	
 
-	console.log('position should be ' + ($(window.height)/2) - ($('#main-nav ul).height()/2))
+	console.log('position should be ' + ($(window.height)/2) - ($('#main-nav ul').height()/2))
 	$('#main-nav ul').css({
 		'position': 'absolute',        				 	//moves with page
 		'margin-top': ($(window.height)/2) - ($('#main-nav ul').height()/2) + 'px',    	//put in center vertically
