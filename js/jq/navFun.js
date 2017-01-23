@@ -89,7 +89,7 @@ function moveToTitle2(link){
 	console.log('the actual value used here = ' + parseInt($(window).width() - curr.width() ) );
 	
 	curr.animate({'margin-left': currHoriz + 'px'},1000, function(){
-					//curr.addClass('new-title');
+					curr.addClass('new-title');
 				});
 	//end of animation
 	
