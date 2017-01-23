@@ -3,6 +3,7 @@ Navigation - all pages
 */
 
 
+
 #title-holder{
 	position:fixed;
 	height:auto;
@@ -33,14 +34,12 @@ Navigation - all pages
 	margin:0px;
 	width:100%;
 	height:100%;
-	background-color:grey;
-	color:black;
+	background-color:black;
 	font-size:20px;
 }
 
 #main-nav ul{
 	display:none;
-  	background:yellow;
 	z-index:2;
 }
 
@@ -51,6 +50,10 @@ Navigation - all pages
 #main-nav ul li a{
 	height:auto;
 	width:auto;
+}
+
+li a{
+	color:white;
 }
 
 
