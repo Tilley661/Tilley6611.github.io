@@ -97,7 +97,13 @@ function moveToTitle2(link){
 						'top':'0px',
 						'right':'0px'
 					});
-					curr.addClass('new-title');
+					
+	});
+	//make dummy animate to ass to end
+	curr.animate({
+			//dummy animate	
+		}, 1, function(){
+			curr.addClass('new-title');
 	});
 	//end of animation
 	
