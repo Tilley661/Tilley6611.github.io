@@ -162,12 +162,13 @@ if (cP === 0){
 	//console.log('position should be ' + ((aa/2) - (ab/2)) )
 	
 	//make main holder same size as screen
+	/*
 	$('#main-nav').css({
 		'top': '0px',
 		'left': '0px',
 		'height': $(window).height() + 'px',
 		'width': $(window).width() + 'px'
-	});
+	});*/
 	
 	
 	//change to absolute
@@ -195,12 +196,12 @@ if (cP === 0){
 $( window ).resize(function() {
 	//get new size
 	//reponsive nav bg
-	$('#main-nav').css({
+/*	$('#main-nav').css({
 		'top':'0px',
 		'left':'0px',
 		'height':$(window).height() + 'px',
 		'width':$(window).width() + 'px'
-	});
+	});*/
 	
 	var aa = $(window).height();
 	var ab = $('#main-nav ul').height();
