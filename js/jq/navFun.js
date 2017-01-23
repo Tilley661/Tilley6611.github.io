@@ -43,6 +43,7 @@ function moveToTitle2(link){
 	var oldW = $("#main-nav ul li[data-menu-index='" + cP +"'] a").width(); //get width for old title
 	var oldVert = ($(window).height());
 	var oldHoriz = 0;
+	console.log('current verticle = ' + oldVert + ' current horiz ' + oldHoriz);
 		
 	old.css({
 		'position': 'fixed'
@@ -64,6 +65,10 @@ function moveToTitle2(link){
 		}, duration: 500,
 			function(){
 				old.removeClass("new-title");
+				//make relative again
+				old.css({
+					'position': 'relative'
+				});
 			});
 	}
 	 
@@ -73,6 +78,7 @@ function moveToTitle2(link){
 	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
 	var currVert = ($(window).height() / 2) * -1;
 	var currHoriz = ($(window).width() - currW);
+	console.log('current verticle = ' + currVert + ' current horiz ' + currHoriz);
 	
 	//animation queue
 	curr.css({
@@ -82,12 +88,15 @@ function moveToTitle2(link){
 		duration:500,
 		//queue:false
 	});
-	console.log('the height of link = ' + curr.height());
-	console.log('the width of link = ' + curr.width());
-	console.log('the actual value used here = ' + parseInt($(window).width() - curr.width() ) );
 	
 	curr.animate({'margin-left': currHoriz + 'px'},1000, function(){
 					curr.addClass('new-title');
+					//fix with css
+					curr.css({
+						'position': 'fixed',
+						'top': '200px',
+						'left': '200px'
+					});
 				});
 	//end of animation
 	
