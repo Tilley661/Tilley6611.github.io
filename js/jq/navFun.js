@@ -186,7 +186,7 @@ if (cP === 0){
 	$('#main-nav ul').animate({
 		'margin-left': '0px',
 		'margin-top': ((aa/2) - (ab/2)) + 'px'
-	},1000, function(){
+	},250, function(){
 		//run function on complete
 		moveToTitle2(1);  //set to home
 	})
