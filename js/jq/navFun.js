@@ -40,7 +40,14 @@ function moveToTitle2(link){
 						},500,function(){
 											oldT.animate({
 													'font-size':'24px'
-											},500);
+											},500, function(){
+												oldT.animate({
+													'margin-top': ($('#main-nav ul').offset().top + $('#main-nav ul').height()) +'px'
+												},500, function(){
+													oldT.appendTo($('#main-nav ul'));
+												});
+												
+											});
 						});
 		});	
 	}
