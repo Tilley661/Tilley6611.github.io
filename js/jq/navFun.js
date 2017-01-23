@@ -34,16 +34,16 @@ function moveToTitle2(link){
 		
 		oldT.animate({
 				'margin-top': ($( window ).height() - oldT.height() - 20) + 'px'
-		},1000, function(){
+		},250, function(){
 						oldT.animate({ 	
 										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav li').offset().left)) + 'px'				
-						},500,function(){
+						},250,function(){
 											oldT.animate({
-													'font-size':'24px'
-											},500, function(){
-												oldT.animate({
 													'margin-top': ($('#main-nav ul').offset().top + $('#main-nav ul').height()) +'px'
-												},500, function(){
+													},250, function(){
+												oldT.animate({
+													'font-size':'24px'
+												},300, function(){
 													oldT.appendTo($('#main-nav ul'));
 													oldT.removeAttr('style');
 												});
