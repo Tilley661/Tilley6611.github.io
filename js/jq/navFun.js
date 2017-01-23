@@ -61,13 +61,11 @@ function moveToTitle2(link){
 	});
 	old.animate({
 		'margin-top': 0 + 'px'
-		}, {
-			duration: 500//,
-			//function(){
-			//	old.removeClass("new-title");
-			//}
-	});
-}
+		}, duration: 500,
+			function(){
+				old.removeClass("new-title");
+			});
+	}
 	 
 	
 	//animation queue for nav to title
