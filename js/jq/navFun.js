@@ -158,13 +158,25 @@ if (cP === 0){
 	
 	var aa = $(window).height();
 	var ab = $('#main-nav ul').height();
-	console.log('position should be ' + ((aa/2) - (ab/2)) )
+	//console.log('position should be ' + ((aa/2) - (ab/2)) )
+	
+	//change to absolute
 	$('#main-nav ul').css({
-		'position': 'absolute',        				//moves with page
-		'margin-top': ((aa/2) - (ab/2)) + 'px',    		//put in center vertically
-		'margin-left': '0px'					//this should act as a home for the nav
+		'position': 'absolute',	
+		'display': 'none'
 	});
-	moveToTitle2(1);  					// set to home
+	
+	//fade in
+	$('#main-nav ul').fadeIn();
+	
+	//animate to position 0px
+	$('#main-nav ul').animate({
+		'margin-left': '0px',
+		'margin-top': ((aa/2) - (ab/2)) + 'px'
+	},1000, function(){
+		//run function on complete
+		moveToTitle2(1);  //set to home
+	})
 }
 
 
