@@ -36,7 +36,7 @@ function moveToTitle2(link){
 			'font-size':'24px',
 			'margin-top':'200px'
 		},2000, function(){
-			oldT.removeClass('new-title');
+			oldT.parent().removeClass('new-title');
 		});
 		
 	}
