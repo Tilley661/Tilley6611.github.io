@@ -200,7 +200,7 @@ $( window ).resize(function() {
 		'left':'0px',
 		'height':$(window).height() + 'px',
 		'width':$(window).width() + 'px'
-	}):
+	});
 	//note: can load another page if width below 680px
 });
 
