@@ -8,8 +8,8 @@ Navigation - all pages
 	height:auto;
 	width:auto;
 	background:yellow;
-	top:20px;
-	right:20px;
+	top:0px;
+	right:0px;
 	z-index:1;
 
 }
@@ -60,7 +60,7 @@ Navigation - all pages
 	transform-origin: 100% 0 0;
 
 	-webkit-transition: all 3s; /* Safari */
-	transition: all 3s;
+	transition: all 1s;
 }
 
 /* for info
