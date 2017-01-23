@@ -82,6 +82,9 @@ function moveToTitle2(link){
 	curr.animate({
 		'margin-left': currHoriz + 'px'
 			}, 500, function(){
+					curr.css({
+						'transform-origin': '100% 0 0'
+					});
 					curr.animate({
 						'font-size':'30px' //get bigger
 					},500, function(){
