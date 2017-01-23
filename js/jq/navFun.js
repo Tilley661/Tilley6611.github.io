@@ -34,7 +34,9 @@ function moveToTitle2(link){
 	if (cP !== 0){
 		//remove class from holder (shrink)
 		$('#title-holder').removeClass('new-title');
-
+		
+		//remove style attribute from DOM
+		oldT.removeAttr('style');
 		oldT.animate({
 			'right':'20px'
 			}, 3000, function(){
@@ -42,8 +44,8 @@ function moveToTitle2(link){
 			oldT.appendTo( $('#main-nav ul')); 
 		});
 		
-		//remove style attribute from DOM
-		oldUL.removeAttr('style');
+
+
 
 		oldUL.animate({
 			'right':'20px',
