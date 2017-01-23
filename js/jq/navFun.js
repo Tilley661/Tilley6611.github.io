@@ -32,18 +32,40 @@ function moveToTitle2(link){
 	
 	//check to see if init
 	if (cP !== 0){
+		
 		//remove class from holder (shrink)
 		$('#title-holder').removeClass('new-title');
 		
 		//remove style attribute from DOM
 		oldT.removeAttr('style');
 		
+		//append to nav
+		oldT.appendTo( $('#main-nav ul')); 
+		
+		//get new selection
+		var oldUL = $("#main-nav ul li[data-menu-index='" + cP +"']");
+		
+		console.log('oldUL value = ' + oldUL.val());
+	}
+	
+	
+/*	
+	
+		if (cP !== 0){
+		
+		//remove class from holder (shrink)
+		$('#title-holder').removeClass('new-title');
+		
+		//remove style attribute from DOM
+		oldT.removeAttr('style');
+		
+		//append to nav
 		oldT.appendTo( $('#main-nav ul')); 
 		
 		console.log('oldUL value = ' + oldUL.val());
 	}
 
-		    
+	*/	    
 	 
 	
 	//animation queue for nav to title
