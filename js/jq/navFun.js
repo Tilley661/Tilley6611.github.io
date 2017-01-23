@@ -38,16 +38,26 @@ function moveToTitle2(link){
 	var newPosY = newPos.top;
 	//animation queue for title to nav
 	//old.css({'position': 'relative'});
-	
+	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
+	var currVert = ($(window).height() / 2) * -1;
+	var currHoriz = ($(window).width() - currW);
+		
+	var oldW = $("#main-nav ul li[data-menu-index='" + cP +"'] a").width(); //get width for old title
+	var oldVert = ($(window).height();
+	var oldHoriz = 0;
+		
+	old.css({
+		'position': 'fixed'
+	});
 	old.animate({
-		'margin-top': ($(window).height() - old.height())*-1 + 'px'
+		'margin-top': oldVert + 'px'
 		}, {
 			duration: 500, 
 			//queue:false
 	});
 
 	old.animate({
-		'margin-left': 0 + 'px'
+		'margin-left': oldHoriz  + 'px'
 		}, {
 			duration: 500
 	});
@@ -67,7 +77,10 @@ function moveToTitle2(link){
 	
 	
 	//animation queue
-	curr.animate({'margin-top': ($(window).height/2) + 'px'},{
+	curr.css({
+		'position': 'fixed'
+	}):
+	curr.animate({'margin-top': currVert + 'px'},{
 		duration:500,
 		//queue:false
 	});
@@ -75,8 +88,8 @@ function moveToTitle2(link){
 	console.log('the width of link = ' + curr.width());
 	console.log('the actual value used here = ' + parseInt($(window).width() - curr.width() ) );
 	
-	curr.animate({'margin-left': curr.width() + 'px'},1000, function(){
-					curr.addClass('new-title');
+	curr.animate({'margin-left': currHoriz + 'px'},1000, function(){
+					//curr.addClass('new-title');
 				});
 	//end of animation
 	
