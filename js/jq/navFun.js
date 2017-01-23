@@ -40,8 +40,10 @@ function moveToTitle2(link){
 			}, 3000, function(){
 			    //append to UL
 			oldT.appendTo( $('#main-nav ul')); 
-			oldUL.removeAttr('style');
 		});
+		
+		//remove style attribute from DOM
+		oldUL.removeAttr('style');
 
 		oldUL.animate({
 			'right':'20px',
