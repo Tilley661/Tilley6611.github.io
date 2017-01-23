@@ -158,10 +158,10 @@ if (cP === 0){
 	
 	var aa = $(window).height();
 	var ab = $('#main-nav ul').height();
-	console.log('position should be ' + ((aa/2) + (ab/2)) )
+	console.log('position should be ' + ((aa/2) - (ab/2)) )
 	$('#main-nav ul').css({
 		'position': 'absolute',        				//moves with page
-		'margin-top': ((aa/2) + (ab/2)) + 'px',    		//put in center vertically
+		'margin-top': ((aa/2) - (ab/2)) + 'px',    		//put in center vertically
 		'margin-left': '0px'					//this should act as a home for the nav
 	});
 	moveToTitle2(1);  					// set to home
