@@ -93,14 +93,7 @@ function moveToTitle2(link){
 						curr.animate({
 							'font-size':'30px' //get bigger
 						});
-					});
-					//curr.addClass('new-title');
-					//$('#title-holder').addClass('new-title');
 	});
-	//end animation
-	
-	//change nav box
-	//$('#main-nav').removeClass('resize-nav').addClass('resize-nav');
 	
 	cP = link;
 	
