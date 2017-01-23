@@ -97,7 +97,7 @@ function moveToTitle2(link){
 						'top':'0px',
 						'right':'0px'
 					});
-					curr.addClass('new-title');
+					$('#title-holder').addClass('new-title');
 	});
 	//end animation
 	
