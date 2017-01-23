@@ -45,6 +45,7 @@ function moveToTitle2(link){
 													'margin-top': ($('#main-nav ul').offset().top + $('#main-nav ul').height()) +'px'
 												},500, function(){
 													oldT.appendTo($('#main-nav ul'));
+													oldT.removeAttr('style');
 												});
 												
 											});
