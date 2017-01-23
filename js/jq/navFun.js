@@ -35,7 +35,7 @@ function moveToTitle2(link){
 		oldT.animate({
 			'font-size':'24px',
 			'margin-top':'200px'
-		},2000):
+		},2000);
 		
 	}
 	
