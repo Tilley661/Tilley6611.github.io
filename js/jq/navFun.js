@@ -16,7 +16,8 @@ var b = 50;										//border amount
 
 function moveToTitle2(link){
 	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
-	var old = $("#main-nav ul li[data-menu-index='" + cP +"']");
+	var oldT = $("#title-holder li[data-menu-index='" + cP +"']");		//when in title
+	var oldUL = $("#main-nav ul li[data-menu-index='" + cP +"']");		//when back in UL
 	var currOffset = curr.offset();                                                     //make offset object
 	var endPos = 50;                                                                      //50px from top
 	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
@@ -31,43 +32,23 @@ function moveToTitle2(link){
 	
 	//check to see if init
 	if (cP !== 0){
-	//get old postion
-	//var oldOffset = old.offset();
-	var newPos = $('#main-nav').position();
-	var newPosX = newPos.left;
-	var newPosY = newPos.top;
-	//animation queue for title to nav
-	//old.css({'position': 'relative'});
+		//remove class from holder (shrink)
+		$('#title-holder').removeClass('new-title')
 
-		
-	var oldW = $("#main-nav ul li[data-menu-index='" + cP +"'] a").width(); //get width for old title
-	var oldVert = ($(window).height());
-	var oldHoriz = 0;
-	console.log('current verticle = ' + oldVert + ' current horiz ' + oldHoriz);
-		
-	old.css({
-		'position': 'fixed'
-	});
-	old.animate({
-		'margin-top': oldVert + 'px'
-  }, 500
-  );
+		oldT.animate({
+			'right':'20px'
+			},3000, function(){
+			    //append to UL
+			oldT.appendTo( $('#main-nav ul') 
+		});
 
-	old.animate({
-		'margin-left': oldHoriz  + 'px'
-  }, 500
-	);
-	old.animate({
-		'margin-top': 0 + 'px'
-		}, 500,
-			function(){
-				old.removeClass("new-title");
-				//make relative again
-				old.css({
-					'position': 'relative'
-				});
-			});
+		oldUL.animate({
+			'right':'20px',
+			'top': ($( window ).height() - 50) + 'px'
+		});
+	
 	}
+		    
 	 
 	
 	//animation queue for nav to title
