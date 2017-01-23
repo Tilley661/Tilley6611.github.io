@@ -161,11 +161,21 @@ if (cP === 0){
 	var ab = $('#main-nav ul').height();
 	//console.log('position should be ' + ((aa/2) - (ab/2)) )
 	
+	//make main holder same size as screen
+	$('#main-nav').css({
+		'top':'0px',
+		'left':'0px',
+		'height':$(window).height() + 'px',
+		'width':$(window).width() + 'px'
+	}):
+	
+	
 	//change to absolute
 	$('#main-nav ul').css({
 		'position': 'absolute',	
 		'display': 'none'
 	});
+	
 	
 	//fade in
 	$('#main-nav ul').fadeIn();
@@ -184,7 +194,13 @@ if (cP === 0){
 //on resize
 $( window ).resize(function() {
 	//get new size
-
+	//reponsive nav bg
+	$('#main-nav').css({
+		'top':'0px',
+		'left':'0px',
+		'height':$(window).height() + 'px',
+		'width':$(window).width() + 'px'
+	}):
 	//note: can load another page if width below 680px
 });
 
