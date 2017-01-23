@@ -39,7 +39,7 @@ function moveToTitle2(link){
 										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav li').offset().left)) + 'px'				
 						},250,function(){
 											oldT.animate({
-													'margin-top': ($('#main-nav ul').offset().top + $('#main-nav ul').height() - $('#main-nav li').height()) +'px'
+													'margin-top': ($('#main-nav ul li').last().offset().top + $('#main-nav ul li').last().height()) +'px'
 													},250, function(){
 												oldT.animate({
 													'font-size':'24px'
