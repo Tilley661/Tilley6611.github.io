@@ -33,13 +33,16 @@ function moveToTitle2(link){
 	if (cP !== 0){
 		
 		oldT.animate({
-			'margin-top':'200px'
-		},2000, function(){
-			oldT.animate({
-				'font-size':'24px'
-			},500);
-		});
-		
+				'margin-top': ($( window ).height() - oldT.height()) + 'px'
+		},1000, function(){
+						oldT.animate({ 	
+										'margin-right': ($( window ).width() - oldT.width()) + 'px'				
+								}500,function(){
+											oldT.animate({
+													'font-size':'24px'
+											},500);
+						}):
+		});	
 	}
 	
 	
@@ -92,7 +95,7 @@ function moveToTitle2(link){
 						//animate once appended
 						curr.animate({
 							'font-size':'30px' //get bigger
-						});
+						},500);
 	});
 	
 	cP = link;
