@@ -155,10 +155,12 @@ $("#main-nav ul li a").click(function(){
 if (cP === 0){
 	//this means the nav is in the wrong place and no title is put foward.
 	//therfore need to set the screen
-	console.log('position should be ' + ($(window.height)/2) - ($(this).height()/2))
+	
+
+	console.log('position should be ' + ($(window.height)/2) - ($('#main-nav ul).height()/2))
 	$('#main-nav ul').css({
 		'position': 'absolute',        				 	//moves with page
-		'margin-top': ($(window.height)/2) - ($(this).height()/2) + 'px',    	//put in center vertically
+		'margin-top': ($(window.height)/2) - ($('#main-nav ul').height()/2) + 'px',    	//put in center vertically
 		'margin-left': '0px'							//this should act as a home for the nav
 	});
 	moveToTitle2(1);  						// set to home
