@@ -36,7 +36,7 @@ function moveToTitle2(link){
 				'margin-top': ($( window ).height() - oldT.height() - 20) + 'px'
 		},1000, function(){
 						oldT.animate({ 	
-										'margin-right': ($( window ).width() - oldT.width() - 20) + 'px'				
+										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav li').offset().left)) + 'px'				
 						},500,function(){
 											oldT.animate({
 													'font-size':'24px'
