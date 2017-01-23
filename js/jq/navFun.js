@@ -54,11 +54,11 @@ function moveToTitle2(link){
   );
 
 	old.animate({
-		'margin -left': oldHoriz  + 'px'
+		'margin-left': oldHoriz  + 'px'
   }, 500
 	);
 	old.animate({
-		'margin top': 0 + 'px'
+		'margin-top': 0 + 'px'
 		}, 500,
 			function(){
 				old.removeClass("new-title");
@@ -82,7 +82,7 @@ function moveToTitle2(link){
 		'position': 'fixed'
 	});
 	curr.animate({
-		'margi-top': currVert + 'px'
+		'margin-top': currVert + 'px'
 		     }, 500
 	);
 	
