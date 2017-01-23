@@ -82,7 +82,7 @@ function moveToTitle2(link){
 		'position': 'absolute' //makesure it is relative to screen
 	});
 	curr.animate({
-		'margin-top': currVert + 'px'
+		'margin-top': 0 + 'px'
 		     }, 500
 	);
 	
