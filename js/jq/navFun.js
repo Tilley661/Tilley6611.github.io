@@ -36,7 +36,7 @@ function moveToTitle2(link){
 			'font-size':'24px',
 			'margin-top':'200px'
 		},2000, function(){
-			oldT.parent().removeClass('new-title');
+			oldT.removeClass('new-title');
 		});
 		
 	}
@@ -88,7 +88,8 @@ function moveToTitle2(link){
 						'top':'0px',
 						'right':'0px'
 					});
-					$('#title-holder').addClass('new-title');
+					curr.addClass('new-title');
+					//$('#title-holder').addClass('new-title');
 	});
 	//end animation
 	
