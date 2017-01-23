@@ -204,7 +204,7 @@ $( window ).resize(function() {
 	
 	$('#main-nav ul').css({
 		'left':'0px',
-		'top': (($( window ).height() / 2) - ($(this).height() / 2)) + 'px' 
+		'top': (($( window ).height() / 2) - ($('#main-nav ul').height() / 2)) + 'px' 
 	});
 	//note: can load another page if width below 680px
 });
