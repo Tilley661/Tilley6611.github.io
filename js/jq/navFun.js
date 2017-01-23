@@ -163,11 +163,11 @@ if (cP === 0){
 	
 	//make main holder same size as screen
 	$('#main-nav').css({
-		'top':'0px',
-		'left':'0px',
-		'height':$(window).height() + 'px',
-		'width':$(window).width() + 'px'
-	}):
+		'top': '0px',
+		'left': '0px',
+		'height': $(window).height() + 'px',
+		'width': $(window).width() + 'px'
+	});
 	
 	
 	//change to absolute
