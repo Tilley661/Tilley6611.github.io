@@ -202,9 +202,11 @@ $( window ).resize(function() {
 		'width':$(window).width() + 'px'
 	});
 	
+	var aa = $(window).height();
+	var ab = $('#main-nav ul').height();
 	$('#main-nav ul').css({
 		'left':'0px',
-		'top': ($( window ).height() / 2) + 'px' 
+		'margin-top': ((aa/2) - (ab/2)) + 'px' 
 	});
 	//note: can load another page if width below 680px
 });
