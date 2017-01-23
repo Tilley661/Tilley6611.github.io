@@ -32,26 +32,10 @@ function moveToTitle2(link){
 	//check to see if init
 	if (cP !== 0){
 		
-		//remove class from holder (shrink)
-		$('#title-holder').removeClass('new-title');
-		
-		//remove style attribute from DOM
-		oldT.removeAttr('style');
-		
-		//append to nav
-		oldT.appendTo( $('#main-nav ul')); 
-		
-		//get new selection
-		var oldUL = $("#main-nav ul li[data-menu-index='" + cP +"']");
-		
-		oldUL.animate({
-				'right':'20px'
-			},500,function(){
-				 //function after animation	
-				 return;
-		});
-		
-		
+		oldT.animate({
+			'font-size':'24px',
+			'margin-top':'200px'
+		},2000):
 		
 	}
 	
