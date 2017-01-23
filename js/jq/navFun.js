@@ -45,7 +45,7 @@ function moveToTitle2(link){
 		var oldUL = $("#main-nav ul li[data-menu-index='" + cP +"']");
 		
 		oldUL.animate({
-				'margin-top':'200px'
+				'right':'20px'
 			},500,function(){
 				 //function after animation	
 				 return;
