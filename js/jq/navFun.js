@@ -10,7 +10,8 @@ var cP = 0;                                       	//current page init = 0
 var kFK = 1;                                	 	//keyframe counter
 var aP = false;                                 	//is there an animation in progress
 var b = 50;										//border amount
-
+var tN = 24;										//normal text size
+var tT = 30;										//text size for title
 
 
 
@@ -39,7 +40,7 @@ function moveToTitle2(link){
 										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav li').offset().left)) + 'px'				
 						},250,function(){
 											oldT.animate({
-													'font-size':'24px'
+													'font-size': tN + 'px'
 													
 													},250, function(){
 												oldT.animate({
@@ -103,7 +104,7 @@ function moveToTitle2(link){
 						});
 						//animate once appended
 						curr.animate({
-							'font-size':'30px' //get bigger
+							'font-size': tT + 'px' //get bigger
 						},500);
 	});
 	
