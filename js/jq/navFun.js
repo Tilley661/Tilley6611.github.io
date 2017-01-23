@@ -210,6 +210,11 @@ $( window ).resize(function() {
 		'margin-top': ((aa/2) - (ab/2)) + 'px' 
 	});
 	//note: can load another page if width below 680px
+	
+	//on resize, move the current title to its new position
+	
+	
+	
 });
 
 
