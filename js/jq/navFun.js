@@ -30,7 +30,7 @@ function moveToTitle2(link){
 	}
 	
 	//check to see if init
-	if (!cP == 0){
+	if (cP !== 0){
 	//get old postion
 	//var oldOffset = old.offset();
 	var newPos = $('#main-nav').position();
@@ -38,12 +38,10 @@ function moveToTitle2(link){
 	var newPosY = newPos.top;
 	//animation queue for title to nav
 	//old.css({'position': 'relative'});
-	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
-	var currVert = ($(window).height() / 2) * -1;
-	var currHoriz = ($(window).width() - currW);
+
 		
 	var oldW = $("#main-nav ul li[data-menu-index='" + cP +"'] a").width(); //get width for old title
-	var oldVert = ($(window).height();
+	var oldVert = ($(window).height());
 	var oldHoriz = 0;
 		
 	old.css({
@@ -69,17 +67,19 @@ function moveToTitle2(link){
 				old.removeClass("new-title");
 			}
 	});
-};
+}
 	 
 	
 	//animation queue for nav to title
 	//curr.css({'position': 'fixed'});
-	
+	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
+	var currVert = ($(window).height() / 2) * -1;
+	var currHoriz = ($(window).width() - currW);
 	
 	//animation queue
 	curr.css({
 		'position': 'fixed'
-	}):
+	});
 	curr.animate({'margin-top': currVert + 'px'},{
 		duration:500,
 		//queue:false
@@ -121,7 +121,7 @@ $("#main-nav ul li a").click(function(){
 			return false;
 		}else{
 			aP = false;
-		};
+		}
 	});
 	
 	if(aP===true){
@@ -139,9 +139,9 @@ $("#main-nav ul li a").click(function(){
 				}else{
 					//not current so move
 					moveToTitle2(clicked);
-				};
-			};	
-	};
+				}
+			}	
+	}
 });
 
 //move current page to to title
