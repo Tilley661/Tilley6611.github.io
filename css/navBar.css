@@ -57,6 +57,10 @@ li a{
 }
 li a:hover{
 	color:grey;
-	transition:all 1s;
+	transition:all 0.25s;
+}
+li a:active{
+	color:white;
+	transition: all 0.25s;
 }
 
