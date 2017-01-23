@@ -50,16 +50,16 @@ function moveToTitle2(link){
 	});
 	old.animate({
 		'margin-top': oldVert + 'px'
-		}, duration: 500 
-	);
+  }, 500
+  );
 
 	old.animate({
-		'margin-left': oldHoriz  + 'px'
-		}, duration: 500
+		'margin -left': oldHoriz  + 'px'
+  }, 500
 	);
 	old.animate({
-		'margin-top': 0 + 'px'
-		}, duration: 500,
+		'margin top': 0 + 'px'
+		}, 500,
 			function(){
 				old.removeClass("new-title");
 				//make relative again
@@ -82,13 +82,13 @@ function moveToTitle2(link){
 		'position': 'fixed'
 	});
 	curr.animate({
-		'margin-top': currVert + 'px'
-		     }, duration:500
+		'margi-top': currVert + 'px'
+		     }, 500
 	);
 	
 	curr.animate({
 		'margin-left': currHoriz + 'px'
-			}, duration: 1000, function(){
+			}, 1000, function(){
 					curr.addClass('new-title');
 					//fix with css
 					curr.css({
