@@ -33,13 +33,13 @@ function moveToTitle2(link){
 	//check to see if init
 	if (cP !== 0){
 		//remove class from holder (shrink)
-		$('#title-holder').removeClass('new-title')
+		$('#title-holder').removeClass('new-title');
 
 		oldT.animate({
 			'right':'20px'
 			}, 3000, function(){
 			    //append to UL
-			oldT.appendTo( $('#main-nav ul') 
+			oldT.appendTo( $('#main-nav ul')); 
 		});
 
 		oldUL.animate({
@@ -169,7 +169,7 @@ if (cP === 0){
 	},250, function(){
 		//run function on complete
 		moveToTitle2(1);  //set to home
-	})
+	});
 }
 
 
