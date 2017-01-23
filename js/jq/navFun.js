@@ -39,10 +39,11 @@ function moveToTitle2(link){
 										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav li').offset().left)) + 'px'				
 						},250,function(){
 											oldT.animate({
-													'margin-top': ($('#main-nav ul li').last().offset().top) +'px'
+													'font-size':'24px'
+													
 													},250, function(){
 												oldT.animate({
-													'font-size':'24px'
+													'margin-top': ($('#main-nav ul li').last().offset().top) +'px'
 												},300, function(){
 													oldT.appendTo($('#main-nav ul'));
 													oldT.removeAttr('style');
