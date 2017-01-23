@@ -75,7 +75,7 @@ function moveToTitle2(link){
 	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
 	var currO =  $("#main-nav ul li[data-menu-index='" + link +"'] a").offset(); //get offset for curr title
 	var currVert = (currO.top) * -1;
-	var currHoriz = ($(window).width() - $('#main-nav ul').width());
+	var currHoriz = ($(window).width() - currW - 50);
 	console.log('current verticle = ' + currVert + ' current horiz ' + currHoriz);
 	
 	//animation queue
