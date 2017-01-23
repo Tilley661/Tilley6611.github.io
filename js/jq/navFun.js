@@ -40,6 +40,7 @@ function moveToTitle2(link){
 			}, 3000, function(){
 			    //append to UL
 			oldT.appendTo( $('#main-nav ul')); 
+			oldUL.removeAttribute('style');
 		});
 
 		oldUL.animate({
