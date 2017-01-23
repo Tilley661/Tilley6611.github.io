@@ -37,7 +37,7 @@ function moveToTitle2(link){
 		},2000, function(){
 			oldT.animate({
 				'font-size':'24px'
-			}500);
+			},500);
 		});
 		
 	}
