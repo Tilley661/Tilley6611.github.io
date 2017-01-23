@@ -41,6 +41,7 @@ Navigation - all pages
 #main-nav ul{
 	display:none;
 	z-index:2;
+	transition: all 0.25s;
 }
 
 #main-nav ul li {
@@ -52,15 +53,27 @@ Navigation - all pages
 	width:auto;
 }
 
-li a{
-	color:white;
-}
-li a:hover{
-	color:grey;
-	transition:all 0.25s;
-}
-li a:active{
-	color:white;
+
+a:link {
+	text-decoration:  none;
+    color: white;
 	transition: all 0.25s;
 }
 
+a:visited {
+	text-decoration:  none;
+    color: white;
+	transition: all 0.25s;
+}
+
+a:hover {
+  	text-decoration:  none;
+    color: grey;
+	transition: all 0.25s;
+}
+
+a:active {
+	text-decoration:  none;
+    color: white;
+	transition: all 0.25s;
+} 
