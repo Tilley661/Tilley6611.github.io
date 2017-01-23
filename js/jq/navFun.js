@@ -33,10 +33,11 @@ function moveToTitle2(link){
 	if (cP !== 0){
 		
 		oldT.animate({
-			'font-size':'24px',
 			'margin-top':'200px'
 		},2000, function(){
-			oldT.removeClass('new-title');
+			oldT.animate({
+				'font-size':'24px'
+			}500);
 		});
 		
 	}
@@ -81,14 +82,18 @@ function moveToTitle2(link){
 	curr.animate({
 		'margin-left': currHoriz + 'px'
 			}, 500, function(){
-					curr.appendTo( $('#title-holder') ); //move link to title
-					curr.css({
-						'position': 'inherit',
-						'margin': '0px 0px 0px 0px',
-						'top':'0px',
-						'right':'0px'
+					curr.animate({
+						'font-size':'30px' //get bigger
+					},500, function(){
+						curr.appendTo( $('#title-holder') ); //move link to title
+						curr.css({
+							'position': 'inherit',
+							'margin': '0px 0px 0px 0px',
+							'top':'0px',
+							'right':'0px'
+						});
 					});
-					curr.addClass('new-title');
+					//curr.addClass('new-title');
 					//$('#title-holder').addClass('new-title');
 	});
 	//end animation
