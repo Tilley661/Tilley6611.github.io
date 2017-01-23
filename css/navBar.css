@@ -15,7 +15,7 @@ Navigation - all pages
   color:green;
 }
 
-#main-nav ul li{
+#main-nav ul{
   position:relative;
   top:50%;
 }
