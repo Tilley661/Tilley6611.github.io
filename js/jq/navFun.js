@@ -11,7 +11,19 @@ var kFK = 1;                                	 	//keyframe counter
 var aP = false;                                 	//is there an animation in progress
 var b = 50;										//border amount
 var tN = 24;										//normal text size
-var tT = 30;										//text size for title
+var tT = 52;										//text size for title
+
+
+
+//load content in
+function loadContent(page){
+	console.log(page + ' is passed to function');
+	
+	$('#content section').fadeOut();
+	var sS = $("#content section[data-section='" + page + "']"); //get content page
+	sS.fadeIn();
+}
+
 
 
 
@@ -149,8 +161,10 @@ $("#main-nav ul li a").click(function(){
 				if (cP == clicked){
 					console.log('current page has been clicked');
 				}else{
-					//not current so move
+					//not current so move and load content
 					moveToTitle2(clicked);
+					var p = $(this).html();
+					loadContent(p);
 				}
 			}	
 	}
@@ -193,6 +207,7 @@ if (cP === 0){
 	},250, function(){
 		//run function on complete
 		moveToTitle2(1);  //set to home
+		loadContent('Home'); //load home content
 	});
 }
 
@@ -208,10 +223,14 @@ $( window ).resize(function() {
 		'width':$(window).width() + 'px'
 	});*/
 	//set mins
+	
+	/*
 	$( window ).css({
 		'min-width':'1024px',
 		'min-height':'1px'
 	});
+	
+	*/
 	
 	var aa = $(window).height();
 	var ab = $('#main-nav ul').height();
