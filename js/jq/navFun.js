@@ -61,11 +61,11 @@ function moveToTitle2(link){
 					'font-size': tN + 'px'
 				},150, function(){
 					
-					var nT2 = $('#title-holder-2 li a');
+					var nT2 = $('#title-holder-2 li');
 					
 					var rO = $( window ).width() - ( nT2.offset().left + nT2.outerWidth() );
 					console.log('rO = ' + rO);
-					var rO2 = $( window ).width() - ( $('#main-nav ul li a').offset().left + $('#main-nav ul li a').outerWidth() ); //right offset
+					var rO2 = $( window ).width() - ( $('#main-nav ul li').offset().left + $('#main-nav ul li').outerWidth() ); //right offset
 					console.log('rO2 = ' + rO2);
 					var rO3 = rO2 - rO; //amount to move
 					console.log('rO3 = ' + rO3);
