@@ -71,6 +71,7 @@ function moveToTitle2(link){
 						'margin-top': mV2 + 'px'
 					}, 2000,function(){
 				     		console.log('completed animation -detaching');
+						oldT.removeAttr('style');
 						oldT.appendTo($('#main-nav ul'));
 					});
 				});
