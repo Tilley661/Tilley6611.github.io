@@ -63,12 +63,12 @@ function moveToTitle2(link){
 												var nM = ($( window ).width() - oldTa.width() - $('#main-nav ul li a').last().offset().left) // next move
 												console.log('debug: 003 - this move (margin-right) =' + nM);
 												oldTa.animate({
-													'margin-right': nM +'px',
+													//'margin-right': nM +'px',
 												},100, function(){
 													var nM = ($('#main-nav ul li a').last().offset().top);
 													console.log('debug: 004 - this move (margin-top) = ' +nM);
 													oldT.animate({
-														'margin-top': nM +'px',
+														'margin-top': nM +'px'
 														//'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
 													},300, function(){
 														console.log('debug: 005');
