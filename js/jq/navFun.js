@@ -64,11 +64,11 @@ function moveToTitle2(link){
 					var nT2 = $('#title-holder-2 li a');
 					
 					var rO = $( window ).width() - ( nT2.offset().left + nT2.outerWidth() );
-					console.log('rO = ' rO);
+					console.log('rO = ' + rO);
 					var rO2 = $( window ).width() - ( $('#main-nav ul li a').offset().left + $('#main-nav ul li a').outerWidth() ); //right offset
-					console.log('rO2 = ' rO2);
+					console.log('rO2 = ' + rO2);
 					var rO3 = rO2 - rO; //amount to move
-					console.log('rO3 = ' rO3);
+					console.log('rO3 = ' + rO3);
 					
 					nT2.animate({
 						'margin-right': '+=' + rO + 'px'
