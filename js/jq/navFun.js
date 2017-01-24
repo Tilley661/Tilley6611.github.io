@@ -69,17 +69,10 @@ function moveToTitle2(link){
 					var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
 					oldT.animate({
 						'margin-top': mV2 + 'px'
-					}, {duration: 250,
-					    /*
-					    specialEasing:{
-					    	top: 'easeOutBounce'
-					    },
-					    */
-					    complete: function(){
+					}, 250,function(){
 				     		console.log('completed animation -detaching');
 						oldT.removeAttr('style');
 						oldT.appendTo($('#main-nav ul'));
-					    }
 					});
 				});
 			});
