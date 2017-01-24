@@ -74,13 +74,14 @@ function moveToTitle2(link){
 														console.log('debug: 005');
 														oldT.appendTo($('#main-nav ul'));
 														oldT.removeAttr('style');
+														console.log( $('#main-nav ul a').last().html() + ' from top = ' + $('#main-nav ul a').last().offset().top + ' from left  = ' + $('#main-nav ul a').last().offset().left );
 				
 													});
 												});
 											});
 						});
 		});	
-	console.log( $('#main-nav ul a').last().html() + ' from top = ' + $('#main-nav ul a').last().offset().top + ' from left  = ' + $('#main-nav ul a').last().offset().left );
+	
 	}
 	
 	
