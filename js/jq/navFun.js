@@ -47,19 +47,19 @@ function moveToTitle2(link){
 		
 		oldT.animate({
 				'margin-top': ($( window ).height() - oldT.height() - 20) + 'px'
-		},250, function(){
+		},150, function(){
 						oldT.animate({ 	
 										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav ul li a').last().offset().left)) + 'px'				
 						},250,function(){
 											oldT.animate({
 												'font-size': tN + 'px'
 													
-											},250, function(){
+											},150, function(){
 												
 												$("#title-holder li[data-menu-index='" + cP +"'] a").animate({
 													'margin-right': ($( window ).width() - $("#title-holder li[data-menu-index='" + cP +"'] a").width() - $('#main-nav ul li a').last().offset().left) +'px',
-												},500, function(){
-													oldT.delay(400).animate({
+												},100, function(){
+													oldT.animate({
 														'margin-top': ($('#main-nav ul li a').last().offset().top) +'px',
 														//'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
 													},300, function(){
