@@ -57,22 +57,27 @@ function moveToTitle2(link){
 			oldT.animate({
 				'font-size': tN + 'px', //shrink
 				'margin-right': '20px'  //move inline
-			},2000,function(){
+			},150,function(){
 				console.log('debug: 002 - finished shrink');
 				var mH = $( window ).width() - oldT.find('a').width() - $('#main-nav ul li').offset().left; 
 				oldT.animate({
 					'margin-right': mH + 'px'
-				}, 3000, function(){
+				}, 250, function(){
 					console.log('debug: 003 - finished moving left');
 					//move up
 					var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
 					var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
 					oldT.animate({
 						'margin-top': mV2 + 'px'
-					}, 2000,function(){
+					}, {duration: 250,
+					    specialEasing:{
+					    	marginTop: 'easeOutBounce'
+					    },
+					    complete: function(){
 				     		console.log('completed animation -detaching');
 						oldT.removeAttr('style');
 						oldT.appendTo($('#main-nav ul'));
+					    }
 					});
 				});
 			});
