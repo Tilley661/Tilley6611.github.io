@@ -60,14 +60,13 @@ function moveToTitle2(link){
 				nT.animate({
 					'font-size': tN + 'px'
 				},150, function(){
-					var nT2 = $('#title-holder-2 li a');
-					console.log('debug.102');
-					var tM2 = ($('#main-nav ul li').offset().left);
-					console.log('debug.103 - tM2 = ' + tM2);
-					tM2 = 40;
+					
+					var nT2 = $('#title-holder-2 li a'););
+					
+					
 					nT2.animate({
 						'margin-right': ($(this).width()/2) + 'px'
-					},100,function(){
+					},2000,function(){
 						var nT2 = $('#title-holder-2 li');
 						var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
 						var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
