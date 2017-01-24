@@ -52,7 +52,7 @@ function moveToTitle2(link){
 		},150, function(){
 			console.log('debug: 001');
 			oldT.animate({ 	
-				'margin-right': ($( window ).width() - oldT.$('a').outerWidth()) + 'px' // - ($('#main-nav ul li a').last().offset().left)) + 'px'				
+				'margin-right': ($( window ).width() - oldT.find('li a').outerWidth()) + 'px' // - ($('#main-nav ul li a').last().offset().left)) + 'px'				
 			},250,function(){
 				console.log('debug: 002');
 				oldT.appendTo($('#title-holder-2'));
