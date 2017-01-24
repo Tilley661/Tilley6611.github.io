@@ -61,7 +61,7 @@ function moveToTitle2(link){
 					'font-size': tN + 'px'
 
 				},75, function(){
-
+					console.log('current object = ' +oldT);
 					var nM = ($( window ).width() - oldTa.width() - $('#main-nav ul li a').last().offset().left) // next move
 					console.log('debug: 003 - this move (margin-right) =' + nM);
 					oldTa.delay(100).animate({
