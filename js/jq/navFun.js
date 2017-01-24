@@ -70,8 +70,12 @@ function moveToTitle2(link){
 					var rO3 = rO2 - rO; //amount to move
 					console.log('rO3 = ' + rO3);
 					
+					nT2.css({
+						'position':'absolute'
+					});
+					
 					nT2.animate({
-						'margin-right': '+=' + rO + 'px'
+						'left': '40px'
 					},2000,function(){
 						var nT2 = $('#title-holder-2 li');
 						var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
