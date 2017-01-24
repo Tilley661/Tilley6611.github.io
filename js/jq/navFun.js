@@ -60,7 +60,13 @@ function moveToTitle2(link){
 				nT.animate({
 					'font-size': tN + 'px'
 				},200, function(){
-					console.log('debug.101');
+					var nT2 = $('#title-holder-2 li a');
+					console.log('debug.102');
+					nT2.animate({
+						'left': $('#main-nav ul').offset().left + 'px'
+					},200,fucntion(){
+						console.log('debug.103 - prep final move');
+					});
 				});
 			});
 		});		
