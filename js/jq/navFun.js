@@ -56,14 +56,13 @@ function moveToTitle2(link){
 			},250,function(){
 				console.log('debug: 002');
 				oldT.appendTo($('#title-holder-2'));
+				var nT = $('#title-holder-2 li');
+				nT.animate({
+					'font-size': tN + 'px'
+				},200, function(){
+					console.log('debug.101');
+				});
 			});
-		});
-		
-		var nT = $('#title-holder-2 li');
-		nT.animate({
-			'font-size': tN + 'px'
-		},200, function(){
-			console.log('debug.101');
 		});		
 	}
 	
