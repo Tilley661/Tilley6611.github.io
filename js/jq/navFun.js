@@ -55,7 +55,7 @@ function moveToTitle2(link){
 				'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav ul li a').last().offset().left)) + 'px'				
 			},250,function(){
 				console.log('debug: 002');
-				oldT.appendTo($('#title-holder-2');
+				oldT.appendTo($('#title-holder-2'));
 				oldT = ($('#title-holder-2 li');
 				oldT.animate({
 					'font-size': tN + 'px'
