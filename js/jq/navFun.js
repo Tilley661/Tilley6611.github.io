@@ -55,7 +55,7 @@ function moveToTitle2(link){
 													'font-size': tN + 'px'
 													
 													},250, function(){
-												oldT.animate({
+												oldT.delay(400).animate({
 													'margin-top': ($('#main-nav ul li a').last().offset().top) +'px',
 													'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
 												},300, function(){
