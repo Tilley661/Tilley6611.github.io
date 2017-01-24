@@ -56,7 +56,8 @@ function moveToTitle2(link){
 													
 													},250, function(){
 												oldT.animate({
-													'margin-top': ($('#main-nav ul li a').last().offset().top) +'px'
+													'margin-top': ($('#main-nav ul li a').last().offset().top) +'px',
+													'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
 												},300, function(){
 													oldT.appendTo($('#main-nav ul'));
 													oldT.removeAttr('style');
