@@ -65,6 +65,8 @@ function moveToTitle2(link){
 				}, 250, function(){
 					console.log('debug: 003 - finished moving left');
 					//move up
+					console.log('offset 1 = ' + $('#main-nav ul li:nth-of-type(2)').offset().top);
+					console.log('offset 2 = ' + $('#main-nav ul li:nth-of-type(1)').offset().top);
 					var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
 					var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
 					console.log('linkDif = ' + linkDif);
