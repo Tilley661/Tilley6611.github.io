@@ -59,9 +59,11 @@ function moveToTitle2(link){
 												'font-size': tN + 'px'
 													
 											},150, function(){
-												console.log('debug: 003');
+												
+												var nM = ($( window ).width() - oldTa.width() - $('#main-nav ul li a').last().offset().left) // next move
+												console.log('debug: 003 - next move =' + nM);
 												oldTa.animate({
-													'margin-right': (($( window ).width()) - ($("#title-holder li[data-menu-index='" + cP +"'] a").width()) - ($('#main-nav ul li a').last().offset().left)) +'px',
+													'margin-right': nM +'px',
 												},100, function(){
 													console.log('debug: 004');
 													oldT.animate({
