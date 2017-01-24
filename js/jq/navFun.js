@@ -70,9 +70,11 @@ function moveToTitle2(link){
 					oldT.animate({
 						'margin-top': mV2 + 'px'
 					}, {duration: 250,
+					    /*
 					    specialEasing:{
-					    	marginTop: 'easeOutBounce'
+					    	top: 'easeOutBounce'
 					    },
+					    */
 					    complete: function(){
 				     		console.log('completed animation -detaching');
 						oldT.removeAttr('style');
