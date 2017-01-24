@@ -42,27 +42,32 @@ function moveToTitle2(link){
 		return;
 	}
 	
+	
 	//check to see if init
 	if (cP !== 0){
 		
 		oldT.animate({
 				'margin-top': ($( window ).height() - oldT.height() - 20) + 'px'
 		},150, function(){
+						console.log('debug: 001');
 						oldT.animate({ 	
 										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav ul li a').last().offset().left)) + 'px'				
 						},250,function(){
+											console.log('debug: 002');
 											oldT.animate({
 												'font-size': tN + 'px'
 													
 											},150, function(){
-												
+												console.log('debug: 003');
 												$("#title-holder li[data-menu-index='" + cP +"'] a").animate({
 													'margin-right': '200px'//(($( window ).width()) - ($("#title-holder li[data-menu-index='" + cP +"'] a").width()) - ($('#main-nav ul li a').last().offset().left)) +'px',
 												},100, function(){
+													console.log('debug: 004');
 													oldT.animate({
 														'margin-top': ($('#main-nav ul li a').last().offset().top) +'px',
 														//'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
 													},300, function(){
+														console.log('debug: 005');
 														oldT.appendTo($('#main-nav ul'));
 														oldT.removeAttr('style');
 													});
