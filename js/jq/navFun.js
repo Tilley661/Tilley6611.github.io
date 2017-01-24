@@ -70,7 +70,8 @@ function moveToTitle2(link){
 					oldT.animate({
 						'margin-top': mV2 + 'px'
 					}, 2000,function(){
-				     		console.log('completed animation');
+				     		console.log('completed animation -detaching');
+						oldT.appendTo($('#main-nav ul'));
 					});
 				});
 			});
