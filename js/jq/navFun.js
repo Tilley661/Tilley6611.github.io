@@ -67,6 +67,8 @@ function moveToTitle2(link){
 					//move up
 					var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
 					var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
+					console.log('linkDif = ' linkDif);
+					console.log('mV2 = ' mV2);
 					oldT.animate({
 						'margin-top': mV2 + 'px'
 					}, 1000,function(){
