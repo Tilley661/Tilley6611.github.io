@@ -51,7 +51,13 @@ function moveToTitle2(link){
 				'margin-top': ($( window ).height() - oldT.height() - 20) + 'px'
 		},150, function(){
 			console.log('debug: 001 - moved to bottom - detatching');
-			oldT.appendTo($('#title-holder-2'));	
+			oldT.appendTo($('#title-holder-2'));
+			oldT = $('#title-holder-2 li');
+			oldT.animate({
+				'font-size': tN + 'px'
+			},2000,function(){
+				console.log('debug: 002 - finished shrink');
+			});
 		});
 	}
 			
