@@ -69,7 +69,7 @@ function moveToTitle2(link){
 					var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
 					oldT.animate({
 						'margin-top': mV2 + 'px'
-					}, 250,function(){
+					}, 1000,function(){
 				     		console.log('completed animation -detaching');
 						oldT.removeAttr('style');
 						oldT.appendTo($('#main-nav ul'));
