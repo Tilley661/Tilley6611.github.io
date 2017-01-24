@@ -50,36 +50,38 @@ function moveToTitle2(link){
 		oldT.animate({
 				'margin-top': ($( window ).height() - oldT.height() - 20) + 'px'
 		},150, function(){
-						console.log('debug: 001');
-						oldT.animate({ 	
-										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav ul li a').last().offset().left)) + 'px'				
-						},250,function(){
-											console.log('debug: 002');
-											oldT.animate({
-												'font-size': tN + 'px'
-													
-											},75, function(){
-												
-												var nM = ($( window ).width() - oldTa.width() - $('#main-nav ul li a').last().offset().left) // next move
-												console.log('debug: 003 - this move (margin-right) =' + nM);
-												oldTa.delay(100).animate({
-													//'margin-right': nM +'px',
-												},100, function(){
-													var nM = ($('#main-nav ul li a').last().offset().top);
-													console.log('debug: 004 - this move (margin-top) = ' +nM);
-													oldT.animate({
-														'margin-top': nM +'px'
-														//'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
-													},300, function(){
-														console.log('debug: 005');
-														oldT.appendTo($('#main-nav ul'));
-														oldT.removeAttr('style');
-														console.log( $('#main-nav ul a').last().html() + ' from top = ' + $('#main-nav ul a').last().offset().top + ' from left  = ' + $('#main-nav ul a').last().offset().left );
-				
-													});
-												});
-											});
+			console.log('debug: 001');
+			oldT.animate({ 	
+				'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav ul li a').last().offset().left)) + 'px'				
+			},250,function(){
+				console.log('debug: 002');
+				oldT.appendTo($('#title-holder-2');
+				oldT = ($('#title-holder-2 li');
+				oldT.animate({
+					'font-size': tN + 'px'
+
+				},75, function(){
+
+					var nM = ($( window ).width() - oldTa.width() - $('#main-nav ul li a').last().offset().left) // next move
+					console.log('debug: 003 - this move (margin-right) =' + nM);
+					oldTa.delay(100).animate({
+						//'margin-right': nM +'px',
+					},100, function(){
+						var nM = ($('#main-nav ul li a').last().offset().top);
+						console.log('debug: 004 - this move (margin-top) = ' +nM);
+						oldT.animate({
+							'margin-top': nM +'px'
+							//'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
+						},300, function(){
+							console.log('debug: 005');
+							oldT.appendTo($('#main-nav ul'));
+							oldT.removeAttr('style');
+							console.log( $('#main-nav ul a').last().html() + ' from top = ' + $('#main-nav ul a').last().offset().top + ' from left  = ' + $('#main-nav ul a').last().offset().left );
+
 						});
+					});
+				});
+			});
 		});	
 	
 	}
