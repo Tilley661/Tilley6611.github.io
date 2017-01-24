@@ -57,7 +57,7 @@ function moveToTitle2(link){
 				'font-size': tN + 'px'
 			},2000,function(){
 				console.log('debug: 002 - finished shrink');
-				var mH = $( window ).width() - oldT.find('a').width(); 
+				var mH = $( window ).width() - oldT.find('a').width() - $('#main-nav ul li').offset().left; 
 				oldT.animate({
 					'margin-right': mH + 'px'
 				}, 3000, function(){
