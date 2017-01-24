@@ -58,11 +58,11 @@ function moveToTitle2(link){
 											oldT.animate({
 												'font-size': tN + 'px'
 													
-											},150, function(){
+											},75, function(){
 												
 												var nM = ($( window ).width() - oldTa.width() - $('#main-nav ul li a').last().offset().left) // next move
 												console.log('debug: 003 - this move (margin-right) =' + nM);
-												oldTa.delay(50).animate({
+												oldTa.delay(100).animate({
 													//'margin-right': nM +'px',
 												},100, function(){
 													var nM = ($('#main-nav ul li a').last().offset().top);
