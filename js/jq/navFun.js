@@ -62,7 +62,7 @@ function moveToTitle2(link){
 				var mH = $( window ).width() - oldT.find('a').width() - $('#main-nav ul li').offset().left; 
 				oldT.animate({
 					'margin-right': mH + 'px'
-				}, 250, function(){
+				}, 2000, function(){
 					console.log('debug: 003 - finished moving left');
 					//move up
 					console.log('offset 1 = ' + $('#main-nav ul li:nth-of-type(2)').offset().top);
