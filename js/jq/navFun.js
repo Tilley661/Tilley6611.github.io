@@ -48,7 +48,8 @@ function moveToTitle2(link){
 	if (cP !== 0){
 		
 		oldT.animate({
-				'margin-top': ($( window ).height() - oldT.height() - 20) + 'px'
+			'margin-top': ($( window ).height() - oldT.height() - 20) + 'px',
+			'margin-right': '20px'	
 		},150, function(){
 			console.log('debug: 001 - moved to bottom - detatching');
 			oldT.appendTo($('#title-holder-2'));
