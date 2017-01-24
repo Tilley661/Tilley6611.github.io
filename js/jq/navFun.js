@@ -66,7 +66,7 @@ function moveToTitle2(link){
 					console.log('debug.103 - tM2 = ' + tM2);
 					tM2 = -40;
 					nT2.animate({
-						'left':'-40px'
+						'margin-right':'-40px'
 					},200,function(){
 						console.log('debug.103 - prep final move');
 					});
