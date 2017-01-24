@@ -59,7 +59,7 @@ function moveToTitle2(link){
 				var nT = $('#title-holder-2 li');
 				nT.animate({
 					'font-size': tN + 'px'
-				},200, function(){
+				},150, function(){
 					var nT2 = $('#title-holder-2 li a');
 					console.log('debug.102');
 					var tM2 = ($('#main-nav ul li').offset().left);
@@ -67,14 +67,14 @@ function moveToTitle2(link){
 					tM2 = 40;
 					nT2.animate({
 						'margin-right': ($(this).width()/2) + 'px'
-					},200,function(){
+					},100,function(){
 						var nT2 = $('#title-holder-2 li');
 						var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
 						var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
 						console.log('debug.103 - final move = ' + mV2);
-						nT2.delay(200).animate({
+						nT2.delay(50).animate({
 							'margin-top': mV2 + 'px'
-						}, 300, function(){
+						}, 150, function(){
 							console.log('debug.104 - animation complete - detaching from movers');
 							nT2.removeAttr('style');
 							nT2.appendTo($('#main-nav ul'))
@@ -172,7 +172,7 @@ function moveToTitle2(link){
 						//animate once appended
 						curr.animate({
 							'font-size': tT + 'px' //get bigger
-						},500);
+						},150);
 	});
 	
 	cP = link;
