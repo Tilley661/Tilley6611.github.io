@@ -38,14 +38,18 @@
 	
 	
 	<div id="content">
-		<section data-section="Home">
-		<p>This is home</p>
-		<a href="www.google.com">testing click</a>
-		</section>
+	
+		<div class="dummy_top"></div>
+		<div class="dummy_bot"></div>
+		<div class="hide-away-top"></div>
+		
+		<section id="home_content" data-section="Home"></section>
 		
 		<section data-section="Portfolio">
 		<p>This is portfolio</p>
 		</section>
+		
+
 	</div>
 	
 	
@@ -82,12 +86,26 @@
 	<!-- include jquery.keframes 
 	<script src='../js/keyframes/jq-keyframes.min.js'></script>
 	-->
+	<!--include easing-->
+	<script src="js/easing/JQeasing.js"></script>
+	
 	<div id="scriptHolder"></div>
 
-	<script>
-	//load js files
+	<script type="text/javascript">
+	
+	//load files
 	$(document).ready(function(){
-		var scripts = ["js/jq/mainFun.js","js/jq/navFun.js"];
+	
+	//load content
+	//var p = '../resource/content/home/';
+	$('#home_content').load('resource/content/home/home.html'); 
+	console.log($('#home_content').html());
+
+	
+	
+	
+	//load script
+		var scripts = ["js/jq/mainFun.js","js/jq/navFun.js","js/jq/contentScroll.js"];
 		var done = false;
 		var checkDone = function(){
 		if(!done && (!this.readyS || this.readystate == "loaded" || this.readystate == "complete")){

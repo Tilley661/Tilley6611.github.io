@@ -12,6 +12,8 @@ var linkDifGlob = 0;							//get the dif on init load
 var globalLastOffLeft = 0;					// this is a static value unless resized. get from init
 var globalHO = 0;								//dito - but for horizontals
 
+
+
 //load content in
 function loadContent(page){
 	console.log(page + ' is passed to function');

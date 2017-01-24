@@ -1,26 +1,51 @@
-/*
-Main styles for all pages
-*/
-
-
-p{
-	color:white;
-	font-size:20px;
+p {
+     color: white;
+     font-size: 20px;
 }
 
-#content{
-	position:fixed;
-	height:100%;
-	width:100%;
+#content {
+	 height: 100%;
+	top:20%;
+	 position: fixed;
+	 width: 100%;
 }
 
-#content section{
-	/*init*/
-	display:none;
-	width:50%;
-  	margin: 0px auto;
-	margin-top:200px;
-	text-align:center;
+#content section {
+     display: none;
+     height: 80%;
+    margin:0px auto; 
+  	
+     overflow: visible;
+     text-align: center;
+     width: 60%;
 }
 
+.dummy_top {
+    background-color: RGBA(22,50,50,0.9);
+    top: 20%;
+    height:10%;
+    left: 20%;
+    position: fixed;
+    width: 60%;
+	z-index:10;
+}
 
+.dummy_bot {
+    background-color: RGBA(22,50,50,0.9);
+    bottom: 0px;
+    height:10%;
+    left: 20%;
+    position: fixed;
+    width: 60%;
+	z-index:10;
+}
+
+.hide-away-top{
+	background-color: RGBA(80,50,50,0.9);
+    top: 0px;
+    height:20%;
+    left: 20%;
+    position: fixed;
+    width: 60%;
+	z-index:11;
+}
