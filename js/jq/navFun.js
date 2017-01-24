@@ -63,7 +63,7 @@ function moveToTitle2(link){
 					var nT2 = $('#title-holder-2 li a');
 					console.log('debug.102');
 					nT2.animate({
-						'left': $('#main-nav ul').offset().left + 'px'
+						'left': (-1 * $('#main-nav ul li').offset().left) + 'px'
 					},200,function(){
 						console.log('debug.103 - prep final move');
 					});
