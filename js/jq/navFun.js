@@ -69,7 +69,7 @@ function moveToTitle2(link){
 						'margin-right': ($(this).width()/2) + 'px'
 					},200,function(){
 						var nT2 = $('#title-holder-2 li');
-						var mV2 = nT2.offset().top - $('#main-nav ul li').last().offset().top;
+						var mV2 = $('#main-nav ul li').last().offset().top;
 						console.log('debug.103 - final move = ' + mV2);
 						nT2.delay(200).animate({
 							'margin-top': mV2 + 'px'
