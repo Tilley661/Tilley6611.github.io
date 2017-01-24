@@ -30,6 +30,7 @@ function loadContent(page){
 function moveToTitle2(link){
 	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
 	var oldT = $("#title-holder li[data-menu-index='" + cP +"']");		//when in title
+	var oldTa = $("#title-holder li[data-menu-index='" + cP +"'] a");	//get a when in title	
 	var currOffset = curr.offset();                                                     //make offset object
 	var endPos = 50;                                                                      //50px from top
 	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
@@ -59,7 +60,7 @@ function moveToTitle2(link){
 													
 											},150, function(){
 												console.log('debug: 003');
-												$("#title-holder li[data-menu-index='" + cP +"'] a").animate({
+												oldTa.animate({
 													'margin-right': '200px'//(($( window ).width()) - ($("#title-holder li[data-menu-index='" + cP +"'] a").width()) - ($('#main-nav ul li a').last().offset().left)) +'px',
 												},100, function(){
 													console.log('debug: 004');
