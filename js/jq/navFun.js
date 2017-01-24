@@ -71,8 +71,8 @@ function moveToTitle2(link){
 					console.log('rO3 = ' + rO3);
 					
 					
-					nT2.css({
-						'position':'absolute',
+					$('#title-holder-2 li a').css({
+						'position':'fixed',
 						'left': $(this).offset().left + 'px',
 						'top': $(this).offset().top + 'px'
 					});
