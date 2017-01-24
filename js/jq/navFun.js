@@ -72,9 +72,9 @@ function moveToTitle2(link){
 						var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
 						var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
 						console.log('debug.103 - final move = ' + mV2);
-						nT2.delay(50).animate({
+						nT2.delay(100).animate({
 							'margin-top': mV2 + 'px'
-						}, 150, function(){
+						}, 250, function(){
 							console.log('debug.104 - animation complete - detaching from movers');
 							nT2.removeAttr('style');
 							nT2.appendTo($('#main-nav ul'))
