@@ -61,7 +61,7 @@ function moveToTitle2(link){
 					'font-size': tN + 'px'
 				},150, function(){
 					
-					var nT2 = $('#title-holder-2 li a'););
+					var nT2 = $('#title-holder-2 li a');
 					
 					
 					nT2.animate({
