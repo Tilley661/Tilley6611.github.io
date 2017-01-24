@@ -71,8 +71,8 @@ function moveToTitle2(link){
 						var nT2 = $('#title-holder-2 li');
 						var mV2 = nT2.offset().top - $('#main-nav ul li').last().offset().top;
 						console.log('debug.103 - final move = ' + mV2);
-						nT2.animate({
-							'margin-top': '200px'
+						nT2.delay(200).animate({
+							'margin-top': mV2 + 'px'
 						}, 300, function(){
 							console.log('debug.104 - animation complete')
 						});
