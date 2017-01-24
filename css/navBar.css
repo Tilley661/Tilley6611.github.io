@@ -26,6 +26,7 @@ Navigation - all pages
 #title-holder-2 {
 	position: fixed;
 	background-color:yellow;
+	width:100%;
 	bottom: 0px;
 	left: 0px;
 	z-index: 1;
@@ -33,11 +34,8 @@ Navigation - all pages
 
 #title-holder-2 li{
 	display:block;
-	position:fixed;
 	font-size:24px;
 	padding-bottom:20px;
-	padding-left:40px;
-
 }
 /* --- END---Title Holders */
 
