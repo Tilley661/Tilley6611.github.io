@@ -4,7 +4,7 @@ Navigation - all pages
 
 
 
-#title-holder{
+.title-holder-move{
 	position:fixed;
 	height:auto;
 	width:auto;
@@ -16,7 +16,7 @@ Navigation - all pages
 }
 
 
-#title-holder li{
+.title-holder-move li{
 	    display:block;
 	    position:fixed;
 	    font-size:24px;
