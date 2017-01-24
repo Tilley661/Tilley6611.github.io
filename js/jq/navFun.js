@@ -64,7 +64,7 @@ function moveToTitle2(link){
 					console.log('debug.102');
 					nT2.animate({
 						'left': $('#main-nav ul').offset().left + 'px'
-					},200,fucntion(){
+					},200,function(){
 						console.log('debug.103 - prep final move');
 					});
 				});
