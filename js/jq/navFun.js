@@ -62,7 +62,7 @@ function moveToTitle2(link){
 												
 												var nM = ($( window ).width() - oldTa.width() - $('#main-nav ul li a').last().offset().left) // next move
 												console.log('debug: 003 - this move (margin-right) =' + nM);
-												oldTa.animate({
+												oldTa.delay(50).animate({
 													//'margin-right': nM +'px',
 												},100, function(){
 													var nM = ($('#main-nav ul li a').last().offset().top);
