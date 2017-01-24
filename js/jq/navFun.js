@@ -52,7 +52,7 @@ function moveToTitle2(link){
 		},150, function(){
 			console.log('debug: 001');
 			oldT.animate({ 	
-				'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav ul li a').last().offset().left)) + 'px'				
+				'margin-right': ($( window ).width() - oldT.outerWidth() - ($('#main-nav ul li a').last().offset().left)) + 'px'				
 			},250,function(){
 				console.log('debug: 002');
 				oldT.appendTo($('#title-holder-2'));
@@ -83,7 +83,7 @@ function moveToTitle2(link){
 					*/
 					
 					$('#title-holder-2 li a').animate({
-						'margin-right': '40px'
+						//'margin-right': '40px'
 					},2000,function(){
 						var nT2 = $('#title-holder-2 li');
 						var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
