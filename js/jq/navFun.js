@@ -54,7 +54,8 @@ function moveToTitle2(link){
 			oldT.appendTo($('#title-holder-2'));
 			oldT = $('#title-holder-2 li');
 			oldT.animate({
-				'font-size': tN + 'px'
+				'font-size': tN + 'px', //shrink
+				'margin-right': '20px'  //move inline
 			},2000,function(){
 				console.log('debug: 002 - finished shrink');
 				var mH = $( window ).width() - oldT.find('a').width() - $('#main-nav ul li').offset().left; 
