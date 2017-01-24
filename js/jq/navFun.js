@@ -52,17 +52,21 @@ function moveToTitle2(link){
 										'margin-right': ($( window ).width() - oldT.width() - ($('#main-nav ul li a').last().offset().left)) + 'px'				
 						},250,function(){
 											oldT.animate({
-													'font-size': tN + 'px'
+												'font-size': tN + 'px'
 													
-													},250, function(){
-												oldT.delay(400).animate({
-													'margin-top': ($('#main-nav ul li a').last().offset().top) +'px',
-													'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
-												},300, function(){
-													oldT.appendTo($('#main-nav ul'));
-													oldT.removeAttr('style');
-												});
+											},250, function(){
 												
+												$("#title-holder li[data-menu-index='" + cP +"'] a").animate({
+													'margin-right': ($( window ).width() - $("#title-holder li[data-menu-index='" + cP +"'] a").width() - $('#main-nav ul li a').last().offset().left) +'px',
+												},500, function(){
+													oldT.delay(400).animate({
+														'margin-top': ($('#main-nav ul li a').last().offset().top) +'px',
+														//'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
+													},300, function(){
+														oldT.appendTo($('#main-nav ul'));
+														oldT.removeAttr('style');
+													});
+												});
 											});
 						});
 		});	
