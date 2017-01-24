@@ -57,6 +57,12 @@ function moveToTitle2(link){
 				'font-size': tN + 'px'
 			},2000,function(){
 				console.log('debug: 002 - finished shrink');
+				var mH = $( window ).width() - oldT.find('a').width(); 
+				oldT.animate({
+					'margin-right': mH + 'px'
+				}, 3000, function(){
+					console.log('debug: 003 - finished move left');
+				});
 			});
 		});
 	}
