@@ -1,7 +1,3 @@
-//Main functions to call to every page
-
-
-
 //get init vars
 
 //screen variables          	
@@ -12,8 +8,9 @@ var aP = false;                                 	//is there an animation in prog
 var b = 50;										//border amount
 var tN = 24;										//normal text size
 var tT = 52;										//text size for title
-
-
+var linkDifGlob = 0;							//get the dif on init load
+var globalLastOffLeft = 0;					// this is a static value unless resized. get from init
+var globalHO = 0;								//dito - but for horizontals
 
 //load content in
 function loadContent(page){
@@ -23,9 +20,6 @@ function loadContent(page){
 	var sS = $("#content section[data-section='" + page + "']"); //get content page
 	sS.fadeIn();
 }
-
-
-
 
 function moveToTitle2(link){
 	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
@@ -43,7 +37,6 @@ function moveToTitle2(link){
 		return;
 	}
 	
-	
 	//check to see if init
 	if (cP !== 0){
 		
@@ -59,17 +52,17 @@ function moveToTitle2(link){
 				'margin-right': '20px'  //move inline
 			},150,function(){
 				console.log('debug: 002 - finished shrink');
-				var mH = $( window ).width() - oldT.find('a').width() - $('#main-nav ul li:nth-of-type(2)').offset().left; 
+				var mH = $( window ).width() - oldT.find('a').width() - globalHO; 
 				oldT.animate({
 					'margin-right': mH + 'px'
 				}, 250, function(){
 					console.log('debug: 003 - finished moving left');
 					//move up
-					console.log('offset 1 = ' + $('#main-nav ul li:nth-of-type(2)').offset().top);
-					console.log('offset 2 = ' + $('#main-nav ul li:nth-of-type(3)').offset().top);
-					var linkDif = $('#main-nav ul li:nth-of-type(3)').offset().top - $('#main-nav ul li:nth-of-type(2)').offset().top; //second link offset - first
-					var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
-					console.log('linkDif = ' + linkDif);
+					//console.log('offset 1 = ' + $('#main-nav ul li:nth-of-type(2)').offset().top);
+					//console.log('offset 2 = ' + $('#main-nav ul li:nth-of-type(3)').offset().top);
+					//var linkDif = $('#main-nav ul li:nth-of-type(3)').offset().top - $('#main-nav ul li:nth-of-type(2)').offset().top; //second link offset - first
+					var mV2 = globalLastOffLeft + linkDifGlob;
+					console.log('linkDifGlob = ' + linkDifGlob);  //changed to global
 					console.log('mV2 = ' + mV2);
 					oldT.animate({
 						'margin-top': mV2 + 'px'
@@ -83,117 +76,8 @@ function moveToTitle2(link){
 		});
 	}
 			
-			/*
-			oldT.animate({ 	
-				'margin-right': ($( window ).width() - oldT.outerWidth()) + 'px' // - ($('#main-nav ul li a').last().offset().left)) + 'px'				
-			},250,function(){
-				console.log('debug: 002');
-				oldT.appendTo($('#title-holder-2'));
-				var nT = $('#title-holder-2 li');
-				nT.animate({
-					'font-size': tN + 'px'
-				},150, function(){
-					
-					var nT2 = $('#title-holder-2 li a');
-					
-					var rO = $( window ).width() - ( nT2.offset().left + nT2.outerWidth() );
-					console.log('rO = ' + rO);
-					var rO2 = $( window ).width() - ( $('#main-nav ul li').offset().left + $('#main-nav ul li').outerWidth() ); //right offset
-					console.log('rO2 = ' + rO2);
-					var rO3 = rO2 - rO; //amount to move
-					console.log('rO3 = ' + rO3);
-					
-					
-					nT2).css({
-						'position':'absolute',
-						'left': $(this).offset().left + 'px',
-						'top': $(this).offset().top + 'px',
-						'margin':'0 0 0 0',
-						'padding':'0 0 0 0',
-						
-					
-					});
-					
-					
-					$('#title-holder-2 li a').animate({
-						//'margin-right': '40px'
-					},2000,function(){
-						var nT2 = $('#title-holder-2 li');
-						var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
-						var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
-						console.log('debug.103 - final move = ' + mV2);
-						nT2.animate({
-							'margin-top': mV2 + 'px'
-						}, 2000, function(){
-							console.log('debug.104 - animation complete - detaching from movers');
-							nT2.removeAttr('style');
-							nT2.appendTo($('#main-nav ul'))
-							
-						});
-					});
-				});
-			});
-		});		
-	}
-	*/
-	
-	
-	/*
-	
-	$('#title-holder-2 li').animate({
-					
-
-				},75, function(){
-					console.log('current object = ' +oldT);
-					var nM = ($( window ).width() - oldTa.width() - $('#main-nav ul li a').last().offset().left) // next move
-					console.log('debug: 003 - this move (margin-right) =' + nM);
-					oldTa.delay(100).animate({
-						//'margin-right': nM +'px',
-					},100, function(){
-						var nM = ($('#main-nav ul li a').last().offset().top);
-						console.log('debug: 004 - this move (margin-top) = ' +nM);
-						oldT.animate({
-							'margin-top': nM +'px'
-							//'margin-left': ($('#main-nav ul li a').last().offset().left) + 'px'
-						},300, function(){
-							console.log('debug: 005');
-							oldT.appendTo($('#main-nav ul'));
-							oldT.removeAttr('style');
-							console.log( $('#main-nav ul a').last().html() + ' from top = ' + $('#main-nav ul a').last().offset().top + ' from left  = ' + $('#main-nav ul a').last().offset().left );
-
-						});
-					});
-				});
-			});
-		});	
-		
-		
-		*/
-	
-	
-	
-	
-/*	
-	
-		if (cP !== 0){
-		
-		//remove class from holder (shrink)
-		$('#title-holder').removeClass('new-title');
-		
-		//remove style attribute from DOM
-		oldT.removeAttr('style');
-		
-		//append to nav
-		oldT.appendTo( $('#main-nav ul')); 
-		
-		console.log('oldUL value = ' + oldUL.val());
-	}
-
-	*/	    
-	 
-	
 	//animation queue for nav to title
-	//curr.css({'position': 'fixed'});
+
 	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
 	var currO =  $("#main-nav ul li[data-menu-index='" + link +"'] a").offset(); //get offset for curr title
 	var currVert = ((currO.top) * -1) + 20; //20px for padding
@@ -228,15 +112,6 @@ function moveToTitle2(link){
 	cP = link;
 	
 }
-  
-  
-  
- /*  					curr.css({
-						'position': 'fixed',
-						'top': curr.position().top - (curr.height())/2,
-						'left': curr.position().left
-					});
-     */
   
 //add listener to check if anything has been clicked in navigation
 $("#main-nav ul li a").click(function(){
@@ -285,22 +160,11 @@ if (cP === 0){
 	var ab = $('#main-nav ul').height();
 	//console.log('position should be ' + ((aa/2) - (ab/2)) )
 	
-	//make main holder same size as screen
-	/*
-	$('#main-nav').css({
-		'top': '0px',
-		'left': '0px',
-		'height': $(window).height() + 'px',
-		'width': $(window).width() + 'px'
-	});*/
-	
-	
 	//change to absolute
 	$('#main-nav ul').css({
 		'position': 'absolute',	
 		'display': 'none'
 	});
-	
 	
 	//fade in
 	$('#main-nav ul').fadeIn();
@@ -313,6 +177,13 @@ if (cP === 0){
 		//run function on complete
 		moveToTitle2(1);  //set to home
 		loadContent('Home'); //load home content
+		
+		//login behind this - Nothing is moving and 3 links at least in the nav..... take the offset of middle link from last link to give a difrence which never changes unless resized
+		//set the difrence between links when none are moving
+		linkDifGlob = $('#main-nav ul li:nth-of-type(3)').offset().top - $('#main-nav ul li:nth-of-type(2)').offset().top; 
+		globalLO = $('#main-nav ul li').last().offset().top;
+		globalLastOffLeft = $('#main-nav ul li').last().offset().top;
+		globalHO = $('#main-nav ul li:nth-of-type(2)').offset().left;
 	});
 }
 
@@ -321,21 +192,6 @@ if (cP === 0){
 $( window ).resize(function() {
 	//get new size
 	//reponsive nav bg
-/*	$('#main-nav').css({
-		'top':'0px',
-		'left':'0px',
-		'height':$(window).height() + 'px',
-		'width':$(window).width() + 'px'
-	});*/
-	//set mins
-	
-	/*
-	$( window ).css({
-		'min-width':'1024px',
-		'min-height':'1px'
-	});
-	
-	*/
 	
 	var aa = $(window).height();
 	var ab = $('#main-nav ul').height();
@@ -343,12 +199,12 @@ $( window ).resize(function() {
 		'left':'0px',
 		'margin-top': ((aa/2) - (ab/2)) + 'px' 
 	});
-	//note: can load another page if width below 680px
 	
-	//on resize, move the current title to its new position
-	
-	
-	
+	//set the difrence between links when none are moving
+	linkDifGlob = $('#main-nav ul li:nth-of-type(3)').offset().top - $('#main-nav ul li:nth-of-type(2)').offset().top; //second link offset - first
+	globalLastOffLeft = $('#main-nav ul li').last().offset().top;
+	globalHO = $('#main-nav ul li:nth-of-type(2)').offset().left;
+		
 });
 
 
