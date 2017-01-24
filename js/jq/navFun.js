@@ -63,10 +63,12 @@ function moveToTitle2(link){
 					
 					var nT2 = $('#title-holder-2 li a');
 					
-					var rO = $( window ).width() - ( $('#main-nav ul li a').offset().left + $('#main-nav ul li a').outerWidth() ); //right offset
+					var rO = $( window ).width() - ( nT2.offset().left + nT2.outerWidth() );
+					var rO2 = $( window ).width() - ( $('#main-nav ul li a').offset().left + $('#main-nav ul li a').outerWidth() ); //right offset
+					var rO3 = rO2 - rO; //amount to move
 					
 					nT2.animate({
-						'margin-right': rO + 'px'
+						'margin-right': '+=' + rO + 'px'
 					},2000,function(){
 						var nT2 = $('#title-holder-2 li');
 						var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
