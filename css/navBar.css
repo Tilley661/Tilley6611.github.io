@@ -21,18 +21,14 @@ Navigation - all pages
 	font-size:24px;
 	padding-top:20px;
 	padding-right:20px;
-
 }
 
-#title-holder-2{
-	position:fixed;
-	height:auto;
-	width:auto;
-	background:yellow;
-	bottom:0px;
-	left:0px;
-	z-index:1;
-
+#title-holder-2 {
+	position: fixed;
+	background-color:yellow;
+	bottom: 0px;
+	left: 0px;
+	z-index: 1;
 }
 
 #title-holder-2 li{
