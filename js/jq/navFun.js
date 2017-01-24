@@ -69,7 +69,7 @@ function moveToTitle2(link){
 					var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
 					oldT.animate({
 						'margin-top': mV2 + 'px'
-					},2000 ,function{
+					}, 2000,function(){
 				     		console.log('completed animation');
 					});
 				});
