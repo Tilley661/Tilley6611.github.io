@@ -61,7 +61,7 @@ function moveToTitle2(link){
 											},150, function(){
 												console.log('debug: 003');
 												oldTa.animate({
-													'margin-right': '200px'//(($( window ).width()) - ($("#title-holder li[data-menu-index='" + cP +"'] a").width()) - ($('#main-nav ul li a').last().offset().left)) +'px',
+													'margin-right': (($( window ).width()) - ($("#title-holder li[data-menu-index='" + cP +"'] a").width()) - ($('#main-nav ul li a').last().offset().left)) +'px',
 												},100, function(){
 													console.log('debug: 004');
 													oldT.animate({
