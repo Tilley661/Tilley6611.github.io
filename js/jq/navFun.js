@@ -57,7 +57,7 @@ function moveToTitle2(link){
 				console.log('debug: 002');
 				oldT.appendTo($('#title-holder-2'));
 				oldT = ($('#title-holder-2 li'));
-				oldT.animate({
+				($('#title-holder-2 li')).animate({
 					'font-size': tN + 'px'
 
 				},75, function(){
