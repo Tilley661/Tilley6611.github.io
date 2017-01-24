@@ -74,7 +74,10 @@ function moveToTitle2(link){
 					$('#title-holder-2 li a').css({
 						'position':'fixed',
 						'left': $(this).offset().left + 'px',
-						'top': $(this).offset().top + 'px'
+						'top': $(this).offset().top + 'px',
+						'margin':'0 0 0 0',
+						'padding':'0 0 0 0'
+					
 					});
 					
 					nT2.animate({
