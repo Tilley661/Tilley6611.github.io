@@ -70,8 +70,11 @@ function moveToTitle2(link){
 					var rO3 = rO2 - rO; //amount to move
 					console.log('rO3 = ' + rO3);
 					
+					
 					nT2.css({
-						'position':'absolute'
+						'position':'absolute',
+						'left': $(this).offset().left + 'px',
+						'top': $(this).offset().top + 'px'
 					});
 					
 					nT2.animate({
