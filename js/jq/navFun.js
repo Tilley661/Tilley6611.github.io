@@ -63,7 +63,15 @@ function moveToTitle2(link){
 				oldT.animate({
 					'margin-right': mH + 'px'
 				}, 3000, function(){
-					console.log('debug: 003 - finished move left');
+					console.log('debug: 003 - finished moving left');
+					//move up
+					var linkDif = $('#main-nav ul li:nth-of-type(2)').offset().top - $('#main-nav ul li:first-child').offset().top; //second link offset - first
+					var mV2 = $('#main-nav ul li').last().offset().top + linkDif;
+					oldT.animate({
+						'margin-top': mV2 + 'px'
+					},2000 ,function{
+				     		console.log('completed animation');
+					});
 				});
 			});
 		});
