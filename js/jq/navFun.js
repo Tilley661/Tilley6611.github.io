@@ -56,9 +56,23 @@ function moveToTitle2(link){
 			},250,function(){
 				console.log('debug: 002');
 				oldT.appendTo($('#title-holder-2'));
-				oldT = ($('#title-holder-2 li'));
-				($('#title-holder-2 li')).animate({
-					'font-size': tN + 'px'
+			});
+		});
+		
+		var nT = $('#title-holder-2 li');
+		nT.animate({
+			'font-size': tN + 'px'
+		},200, function(){
+			console.log('debug.101');
+		});		
+	}
+	
+	
+	
+	/*
+	
+	$('#title-holder-2 li').animate({
+					
 
 				},75, function(){
 					console.log('current object = ' +oldT);
@@ -83,8 +97,11 @@ function moveToTitle2(link){
 				});
 			});
 		});	
+		
+		
+		*/
 	
-	}
+	
 	
 	
 /*	
