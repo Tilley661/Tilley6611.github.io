@@ -57,7 +57,7 @@ function moveToTitle2(link){
 											},150, function(){
 												
 												$("#title-holder li[data-menu-index='" + cP +"'] a").animate({
-													'margin-right': (($( window ).width()) - ($("#title-holder li[data-menu-index='" + cP +"'] a").width()) - ($('#main-nav ul li a').last().offset().left)) +'px',
+													'margin-right': '200px'//(($( window ).width()) - ($("#title-holder li[data-menu-index='" + cP +"'] a").width()) - ($('#main-nav ul li a').last().offset().left)) +'px',
 												},100, function(){
 													oldT.animate({
 														'margin-top': ($('#main-nav ul li a').last().offset().top) +'px',
