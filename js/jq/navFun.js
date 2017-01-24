@@ -74,7 +74,7 @@ function moveToTitle2(link){
 						console.log('debug.103 - final move = ' + mV2);
 						nT2.animate({
 							'margin-top': mV2 + 'px'
-						}, 250, function(){
+						}, 2000, function(){
 							console.log('debug.104 - animation complete - detaching from movers');
 							nT2.removeAttr('style');
 							nT2.appendTo($('#main-nav ul'))
