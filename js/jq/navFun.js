@@ -68,7 +68,14 @@ function moveToTitle2(link){
 					nT2.animate({
 						'margin-right': ($(this).width()/2) + 'px'
 					},200,function(){
-						console.log('debug.103 - prep final move');
+						var nT2 = $('#title-holder-2 li a');
+						var mV2 = nT2.offset().top - $('#main-nav ul li').last().offset().top;
+						console.log('debug.103 - final move = ' + mV2);
+						nT2.animate({
+							'margin-bottom': mV2 + 'px'
+						}, 300, function(){
+							console.log('debug.104 - animation complete')
+						});
 					});
 				});
 			});
