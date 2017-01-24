@@ -76,7 +76,9 @@ function moveToTitle2(link){
 							'margin-top': mV2 + 'px'
 						}, 300, function(){
 							console.log('debug.104 - animation complete - detaching from movers');
+							nT2.removeAttr('style');
 							nT2.appendTo($('#main-nav ul'))
+							
 						});
 					});
 				});
