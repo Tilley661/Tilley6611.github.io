@@ -3,8 +3,8 @@ Navigation - all pages
 */
 
 
-
-.title-holder-move{
+/*Title Holders */
+#title-holder{
 	position:fixed;
 	height:auto;
 	width:auto;
@@ -15,15 +15,35 @@ Navigation - all pages
 
 }
 
-
-.title-holder-move li{
-	    display:block;
-	    position:fixed;
-	    font-size:24px;
-	    padding-top:20px;
-	    padding-right:20px;
+#title-holder li{
+	display:block;
+	position:fixed;
+	font-size:24px;
+	padding-top:20px;
+	padding-right:20px;
 
 }
+
+#title-holder-2{
+	position:fixed;
+	height:auto;
+	width:auto;
+	background:yellow;
+	bottom:0px;
+	left:0px;
+	z-index:1;
+
+}
+
+#title-holder-2 li{
+	display:block;
+	position:fixed;
+	font-size:24px;
+	padding-bottom:20px;
+	padding-left:40px;
+
+}
+/* --- END---Title Holders */
 
 #main-nav{
 	position:absolute;
