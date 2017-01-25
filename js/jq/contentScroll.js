@@ -4,54 +4,108 @@ console.log('im here');
 
 
 //globals
-//var dummyWidth = 
 
-
-var hitTop = $('.dummy_top');      	//top hiit bar
-var hitBot = $('.dummy_bot');      	//bot hit bar
+var hitTop = $('.dummy_top');      	
+var hitBot = $('.dummy_bot');      	
+var hitTop2 = $('.dummy_top2');      	
+var hitBot2 = $('.dummy_bot2'); 
 var cont = $('#content section');
-var d = 75;										//distance 
-var t = 500;									//time interval
-//var tI= 1;
+var d2 = 5;
+var t2 = 40;
+var moveUpT;
+var timerRunning = '';
 
-function moveUp(){
-	cont.animate({
-		'margin-top': '-=' + d + 'px'
-	}, t, 'linear');
-	//tI = t; //set interval back to original
-	moveUpT = setTimeout(moveUp, t);
+
+function moveUp(s2 = 1){
+	cont.css({
+		'margin-top': '-=' + (s2*d2) + 'px'
+	});
+
+	moveUpT = setTimeout(function(){
+		timerRunning = 'up';
+		moveUp(s2);
+	}, t2);
 }
 
-function moveUpFinal(){
-	//start by adding space
-	cont.animate({
-		'margin-top': '+=' + d + 'px'
-	}, t/2, function(){
-			//take the space back with ease effect
-			cont.animate({
-					'margin-top': '-=' + d + 'px'
-				}, t/2, 'easeOutBack');
+function moveDown(s=1){
+
+	cont.css({
+		'margin-top': '+=' + (s * d2) + 'px'
 	});
-	//tI = t; //set interval back to original
-	clearTimeout(moveUpT);
+
+	moveDownT = setTimeout(function(){
+		timerRunning = 'down';
+		moveDown(s);
+	}, t2);
+}
+
+
+function moveUpFinal(){
+	
+	cont.animate({
+			'margin-top': '-=' + (d2+10) + 'px'
+		}, 500, 'easeOutQuart', function(){
+				clearTimeout(moveUpT);
+				timerRunning = '';
+		});
+}
+
+
+function moveDownFinal(){
+
+	cont.animate({
+			'margin-top': '+=' + (d2+10) + 'px'
+		}, 500, 'easeOutQuart', function(){
+				clearTimeout(moveDownT);
+				timerRunning = '';
+		});	
+	
 }
 
 								
 hitTop.hover(function(){
-
-	if (!cont.is(':animated')){
-		moveUp();
-	}
+	moveUp(1);
 },function(){
 	moveUpFinal();
 });
-	
-
-//hitTop.hover(clearTimeout(moveUpT));
 
 
-
-$( window ).resize(function() {
-	
-	console.log('proof two functions at once');
+hitBot.hover(function(){
+	moveDown(1);
+},function(){
+	moveDownFinal();
 });
+
+
+
+/*
+
+$('#content').mouseover(function(){
+	console.log('timmer running = ' + timerRunning);
+	if(timerRunning !== ''){
+			switch (timerRunning){
+			case 'up':
+			console.log('trying to remove up');
+				moveUpFinal();
+				
+			case 'down':
+			console.log('trying to remove down');
+				moveDownFinal();
+			default:
+				return;
+		}
+	}
+});
+
+/*
+
+function checkHover(ID){
+	if ($("'." + ID + ":hover'").length > 0){
+		console.log('class has worked');
+		return true;
+	}else{
+		return false;
+	}
+}
+
+*/

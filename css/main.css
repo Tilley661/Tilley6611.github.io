@@ -20,32 +20,4 @@ p {
      width: 60%;
 }
 
-.dummy_top {
-    background-color: RGBA(22,50,50,0.9);
-    top: 20%;
-    height:10%;
-    left: 20%;
-    position: fixed;
-    width: 60%;
-	z-index:10;
-}
 
-.dummy_bot {
-    background-color: RGBA(22,50,50,0.9);
-    bottom: 0px;
-    height:10%;
-    left: 20%;
-    position: fixed;
-    width: 60%;
-	z-index:10;
-}
-
-.hide-away-top{
-	background-color: RGBA(80,50,50,0.9);
-    top: 0px;
-    height:20%;
-    left: 20%;
-    position: fixed;
-    width: 60%;
-	z-index:11;
-}

@@ -11,7 +11,7 @@ var tT = 52;										//text size for title
 var linkDifGlob = 0;							//get the dif on init load
 var globalLastOffLeft = 0;					// this is a static value unless resized. get from init
 var globalHO = 0;								//dito - but for horizontals
-
+var cont = $('#content section');           //reset content section
 
 
 //load content in
@@ -141,12 +141,14 @@ $("#main-nav ul li a").click(function(){
 				//number is all good
 				//check if current page
 				if (cP == clicked){
+					resetContent();
 					console.log('current page has been clicked');
 				}else{
 					//not current so move and load content
 					moveToTitle2(clicked);
 					var p = $(this).html();
 					loadContent(p);
+					resetContent();
 				}
 			}	
 	}
@@ -187,6 +189,13 @@ if (cP === 0){
 		globalLastOffLeft = $('#main-nav ul li').last().offset().top;
 		globalHO = $('#main-nav ul li:nth-of-type(2)').offset().left;
 	});
+}
+
+
+function resetContent(){
+	cont.animate({
+						'margin-top': '0px'
+	}, 500);
 }
 
 
