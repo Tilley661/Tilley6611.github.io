@@ -88,8 +88,8 @@ function moveToTitle2(link){
 	
 	//animation queue
 	curr.css({
-		'position': 'fixed'
-		'z-index
+		'position': 'fixed',
+		'z-index':'1000'
 	});
 	curr.animate({
 		'margin-top': currVert + 'px'
@@ -102,7 +102,8 @@ function moveToTitle2(link){
 							'position': 'inherit',
 							'margin': '0px 0px 0px 0px',
 							'top':'0px',
-							'right':'0px'
+							'right':'0px',
+							'z-index':'1'
 						});
 						//animate once appended
 						curr.animate({
