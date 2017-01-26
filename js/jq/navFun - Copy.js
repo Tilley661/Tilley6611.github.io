@@ -24,8 +24,6 @@ function loadContent(page){
 }
 
 function moveToTitle2(link){
-	
-	/*
 	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
 	var oldT = $("#title-holder li[data-menu-index='" + cP +"']");		//when in title
 	var oldTa = $("#title-holder li[data-menu-index='" + cP +"'] a");	//get a when in title	
@@ -79,169 +77,42 @@ function moveToTitle2(link){
 			});
 		});
 	}
+			
+	//animation queue for nav to title
 
-			
+	var currW =  $("#main-nav ul li[data-menu-index='" + link +"'] a").width(); //get width for curr title
+	var currO =  $("#main-nav ul li[data-menu-index='" + link +"'] a").offset(); //get offset for curr title
+	var currVert = ((currO.top) * -1) + 20; //20px for padding
+	var currHoriz = ($(window).width() - currW - 50);
+	console.log('current verticle = ' + currVert + ' current horiz ' + currHoriz);
 	
-	*/
-		
-	//get init values
-	var storePosOfLastT = $('#main-nav li:nth-of-type(3)').find('a').offset().top;
-	var storePosOfLastL = $('#main-nav li:nth-of-type(3)').find('a').offset().left;
-
+	//animation queue
+	curr.css({
+		'position': 'fixed',
+		'z-index':'1000'
+	});
+	curr.animate({
+		'margin-top': currVert + 'px'
+		     }, 250);
+	curr.animate({
+		'margin-left': currHoriz + 'px'
+			}, 500, function(){
+						curr.appendTo( $('#title-holder') ); //move link to title
+						curr.css({
+							'position': 'inherit',
+							'margin': '0px 0px 0px 0px',
+							'top':'0px',
+							'right':'0px',
+							'z-index':'1'
+						});
+						//animate once appended
+						curr.animate({
+							'font-size': tT + 'px' //get bigger
+						},150);
+	});
 	
-	//-------------------------------------move to nav
-	var moveBackToNav = {
-		
-		//call the put from here once appended title text
-		toMove: $("#title-holder li"),
-		holder: $('#title-holder-2'),
-		
-		pickUpLink: function(){
-			oS = this.toMove.offset();
-			console.log('Title text - top: ' + oS.top + ' left: ' + oS.left);
-				
-			this.holder.css({
-					width: this.toMove.find('a').width() + 'px',
-					left: this.toMove.parent().offset().left + 'px',
-					top: oS.top + 'px',
-					fontSize: tT + 'px'
-				});
-				this.toMove.appendTo(this.holder);
-				//----------------------------------start MOVING NEW TITLE!!!
-				moveTopRight.start();
-				return true;
-		},
-		
-		moveDownPage: function(){
-			if(this.pickUpLink()){
-					this.holder.animate({
-						top: $(window).height() - this.holder.offset().top - this.holder.height() + 20 + 'px'
-					},400);
-			}
-			return true
-		},
-		
-		scaleText: function(){
-			if(this.moveDownPage()){
-					this.holder.animate({
-						fontSize: tN + 'px'
-					},400);
-			}	
-			return true;
-		},
-		
-		moveLeftOverPage: function(){
-			if(this.scaleText()){
-					this.holder.animate({
-						left: '40px'
-					},500);
-			}
-			return true
-		},
-		
-		moveBackToNav: function(){
-			console.log('last L = ' + storePosOfLastL);
-			console.log('last T = ' + storePosOfLastT);
-			if(this.moveLeftOverPage()){
-					this.holder.animate({
-						top: storePosOfLastT + 'px',
-						left: storePosOfLastL + 'px'
-					},500, function(){
-						moveBackToNav.holder.find('li').appendTo($('#main-nav ul'));
-					});
-			}
-			return true
-		},
-		
-		start: function(){
-			if (this.moveBackToNav()){
-			console.log('moving back to nav');
-			}
-		}
-	}
+	cP = link;
 	
-	
-	//-------------------------------------move to title
-	
-	var moveTopRight = {
-		
-		toMove: $("#main-nav ul li[data-menu-index='" + link + "']"),
-		holder: $('#title-holder'),
-		
-			
-			
-	pickUpLink: function(){	
-			//get position of link before append
-      oS = this.toMove.offset();
-			
-			console.log('top: ' + oS.top + ' left: ' + oS.left);
-			var wT = this.toMove.find('a').width();
-			//init dosnt need animation
-			this.holder.css({
-				width: wT + 'px',
-				left: '40px',
-				top: oS.top + 'px'
-			});
-			this.toMove.appendTo(this.holder);
-			return true;
-		},
-		
-		
-      moveUpPage: function(){
-			if(this.pickUpLink()){ //check that linbk is picked up
-				this.holder.animate({
-					top: '40px'
-				},200);
-				return true;
-			}
-		},
-		
-		moveAcrossPage: function(){
-			if(this.moveUpPage()){ //check that linbk is picked up
-				this.holder.animate({
-					top: '40px',
-					left: $(window).width() - this.holder.offset().left - this.holder.find('a').width() - 40 + 'px' 
-				},500);
-				return true;
-			}
-		},
-		
-		scaleTextUp: function(){
-			if (this.moveAcrossPage()){
-				this.holder.animate({
-					fontSize: tT + 'px',
-					marginRight: this.holder.find('li a').width() + 'px'
-				},300);
-			}
-			return true;
-		},
-		
-		start: function(){
-			
-			if (this.scaleTextUp()){
-				cP = link;
-				this.holder.removeAttr('style'); //reset
-				return true;
-			}
-		}
-			
-	};
-	
-	//decide which functions to run
-	
-	if (cP == link){
-		console.log('current page has been clicked');
-		return false;
-	}
-	
-	
-	if (cP !== 0 ){
-		console.log('current page != 0 - actual = ' + cP + ' ... moving home');
-		moveBackToNav.start();
-	}else{
-		console.log('current page = 0 - actual = ' + cP + '... moving to page: ' + link);
-		moveTopRight.start();
-	}
 }
   
 //add listener to check if anything has been clicked in navigation

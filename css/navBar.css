@@ -1,21 +1,34 @@
-#title-holder {
-     background: none repeat scroll 0% 0% yellow;
-     height: auto;
-     position: fixed;
-     right: 0px;
-     top: 0px;
-     width: auto;
-	 z-index:4;
 
+
+#title-holder {
+     background-color: RGBA(122,122,122,0.3);
+     height: 10%;
+	 width:95%;
+     position: fixed;
+     right: 5%;
+     top: 5%;
+	 font-size:24px;
+	 z-index:4;
 }
 
+#title-holder-2 {
+     background-color: RGBA(122,122,122,0.3);
+     height: 10%;
+	 width:95%;
+     position: fixed;
+     right: 5%;
+     bottom: 5%;
+	 font-size:24px;
+	 z-index:4;
+}
+/*
 #title-holder li {
      display: block;
      font-size: 24px;
      padding-right: 20px;
      padding-top: 20px;
      position: fixed;
-background-color: RGBA(0,0,0,0.3);
+	background-color: RGBA(0,0,0,0.3);
 	 z-index:1;
 
 }
@@ -37,6 +50,11 @@ background-color: RGBA(0,0,0,0.3);
 	 z-index:1;
 
 }
+
+
+*/
+
+
 
 #main-nav {
      background-color: RGBA(0,90,90,0);
@@ -100,3 +118,5 @@ a:active {
      text-decoration: none;
      transition: all 0.25s ease 0s;
 }
+
+

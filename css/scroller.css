@@ -22,12 +22,12 @@
 }
 
 .dummy_top {
-     background-color: rgba(222, 50, 50, 0);
-     height: 30%;
-     left: 20%;
+     background-color: rgba(222, 50, 50, 0.5);
+     height: 15%;
+     left: 40%;
      position: fixed;
      top: 0%;
-     width: 60%;
+     width: 20%;
      z-index: 2;
 }
 
@@ -42,12 +42,12 @@
 }
 
 .dummy_bot {
-     background-color: rgba(222, 50, 50, 0);
+     background-color: rgba(222, 50, 50, 0.5);
      bottom: 0px;
-     height: 20%;
-     left: 20%;
+     height: 10%;
+     left: 40%;
      position: fixed;
-     width: 60%;
+     width: 20%;
      z-index: 2;
 }
 
@@ -78,3 +78,4 @@
      width: 150px;
      z-index: 1;
 }
+
