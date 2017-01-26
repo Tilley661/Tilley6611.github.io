@@ -88,13 +88,12 @@ function moveToTitle2(link){
 	
 	//animation queue
 	curr.css({
-		'position': 'fixed' //makesure it is relative to screen
+		'position': 'fixed'
+		'z-index
 	});
 	curr.animate({
 		'margin-top': currVert + 'px'
-		     }, 250
-	);
-	
+		     }, 250);
 	curr.animate({
 		'margin-left': currHoriz + 'px'
 			}, 500, function(){

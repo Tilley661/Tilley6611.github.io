@@ -1,95 +1,102 @@
-/*
-Navigation - all pages
-*/
-
-
-/*Title Holders */
-#title-holder{
-	position:fixed;
-	height:auto;
-	width:auto;
-	background:yellow;
-	top:0px;
-	right:0px;
-	z-index:1;
+#title-holder {
+     background: none repeat scroll 0% 0% yellow;
+     height: auto;
+     position: fixed;
+     right: 0px;
+     top: 0px;
+     width: auto;
+	 z-index:4;
 
 }
 
-#title-holder li{
-	display:block;
-	position:fixed;
-	font-size:24px;
-	padding-top:20px;
-	padding-right:20px;
+#title-holder li {
+     display: block;
+     font-size: 24px;
+     padding-right: 20px;
+     padding-top: 20px;
+     position: fixed;
+background-color: RGBA(0,0,0,0.3);
+	 z-index:1;
+
 }
 
 #title-holder-2 {
-	position: fixed;
-	background-color:yellow;
-	width:100%;
-	bottom: 0px;
-	left: 0px;
-	z-index: 1;
+     background-color: yellow;
+     bottom: 0px;
+     left: 0px;
+     position: fixed;
+     width: 100%;
+	 z-index:1;
+
 }
 
-#title-holder-2 li{
-	display:block;
-	font-size:24px;
-	padding-bottom:20px;
-}
-/* --- END---Title Holders */
+#title-holder-2 li {
+     display: block;
+     font-size: 24px;
+     padding-bottom: 20px;
+	 z-index:1;
 
-#main-nav{
-	position:absolute;
-	list-style-type:none;
-	top:0px;
-	left:0px;
-	padding:0px;
-	margin:0px;
-	width:100%;
-	height:100%;
-	background-color:black;
-	font-size:24px;
 }
 
-#main-nav ul{
-	display:none;
-	z-index:2;
+#main-nav {
+     background-color: RGBA(0,90,90,0);
+     font-size: 24px;
+     height: 100%;
+     left: 0px;
+     list-style-type: none;
+     margin: 0px;
+     padding: 0px;
+     position: absolute;
+     top: 0px;
+     width: 100%;
+	 z-index:3;
+
+}
+
+#main-nav ul {
+     display: none;
+     background-color: RGBA(0,0,0,0.3);
+    z-index:1;
+
 }
 
 #main-nav ul li {
-    display: block;
+     display: block;
+	 z-index:1;
+
 }
 
-#main-nav ul li a{
-	height:auto;
-	width:auto;
+#main-nav ul li a {
+     height: auto;
+     width: auto;
+	 z-index:1;
+
 }
 
-
-a{
-	color:white;
+a {
+     color: white;
 }
+
 a:link {
-	text-decoration:  none;
-    color: white;
-	transition: all 0.25s;
+     color: white;
+     text-decoration: none;
+     transition: all 0.25s ease 0s;
 }
 
 a:visited {
-	text-decoration:  none;
-    color: white;
-	transition: all 0.25s;
+     color: white;
+     text-decoration: none;
+     transition: all 0.25s ease 0s;
 }
 
 a:hover {
-  	text-decoration:  none;
-    color: grey;
-	transition: all 0.25s;
+     color: grey;
+     text-decoration: none;
+     transition: all 0.25s ease 0s;
 }
 
 a:active {
-	text-decoration:  none;
-    color: white;
-	transition: all 0.25s;
-} 
+     color: white;
+     text-decoration: none;
+     transition: all 0.25s ease 0s;
+}

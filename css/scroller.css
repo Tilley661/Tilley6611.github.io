@@ -1,45 +1,80 @@
-.dummy_top {
-    background-color: RGBA(222,50,50, 0);
-    top: 0px;
-    height:30%;
-    left: 20%;
-    position: fixed;
-    width: 60%;
-	z-index:12;
+#scroller {
+    position:absolute;
+     z-index: 3;
 }
 
-.hide-away-top{
-	/*background-color: black;*/
-    top: 0px;
-    height:20%;
-    left: 15%;
-    position: fixed;
-    width: 70%;
-	
-	
-	background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1) 50%, rgba(0,0,0,0));
-	
-	z-index:11;
+#content {
+     height: 100%;
+     position: fixed;
+     top: 25%;
+     width: 100%;
+     z-index: 1;
+}
+
+#content section {
+     background-color: rgba(222, 50, 50, 0);
+     display: none;
+     height: 80%;
+     margin: 0px auto;
+     overflow: visible;
+     text-align: center;
+     width: 60%;
+}
+
+.dummy_top {
+     background-color: rgba(222, 50, 50, 0);
+     height: 30%;
+     left: 20%;
+     position: fixed;
+     top: 0%;
+     width: 60%;
+     z-index: 2;
+}
+
+.hide-away-top {
+     background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000 60%, #000000) repeat scroll 0% 0% transparent;
+     height: 20%;
+     left: 15%;
+     position: fixed;
+     top: 0%;
+     width: 70%;
+     z-index: 1;
 }
 
 .dummy_bot {
-    background-color: RGBA(222,50,50, 0);
-    bottom: 0px;
-    height:20%;
-    left: 20%;
-    position: fixed;
-    width: 60%;
-	z-index:12;
+     background-color: rgba(222, 50, 50, 0);
+     bottom: 0px;
+     height: 20%;
+     left: 20%;
+     position: fixed;
+     width: 60%;
+     z-index: 2;
 }
 
-.hide-away-bot{
-    bottom: 0px;
-    height:10%;
-    left: 15%;
-    position: fixed;
-    width: 70%;
-	z-index:11;
-	
-	background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,1) 25%, rgba(0,0,0,0));
+.hide-away-bot {
+     background: linear-gradient(to top, #000000, #000000 25%, rgba(0, 0, 0, 0)) repeat scroll 0% 0% transparent;
+     bottom: 0px;
+     height: 10%;
+     left: 15%;
+     position: fixed;
+     width: 70%;
+     z-index: 1;
 }
 
+#top_arrow {
+     height: 50px;
+     margin-top: -10%;
+     position: fixed;
+     width: 150px;
+     z-index: 1;
+}
+
+#bot_arrow {
+     background: none repeat scroll 0% 0% yellow;
+     bottom: 0%;
+     height: 50px;
+     position: fixed;
+     transform: rotate(180deg);
+     width: 150px;
+     z-index: 1;
+}

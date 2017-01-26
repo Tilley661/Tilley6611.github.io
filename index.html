@@ -40,24 +40,26 @@
 	
 	<div id="content">
 	
-		<div id="dumm_top" class="dummy_top"></div>
-		<div id="dummy_bot" class="dummy_bot"></div>
-		<div id="dummy_top2" class="dummy_top2"></div>
-		<div id="dummy_bot2" class="dummy_bot2"></div>
+	<!-- Content sections -->
+		<section id="home_content" data-section="Home"></section>
+		<section id="portfolio_content" data-section="Portfolio"></section>
+		<section id="about_me_content" data-section="About-Me"></section>
+		<section id="contact_content" data-section="Contact"></section>
+	<!-- Stop content sections -->
+	
+	</div>
+	<div id="scroller">
+		<!-- Scroller -->
+		<div class="dummy_top"></div>
+		<div class="dummy_bot"></div>
+
 		<div class="hide-away-top"></div>
 		<div class="hide-away-bot"></div>
 		
-		<section id="home_content" data-section="Home"></section>
-		
-		<section data-section="Portfolio">
-		<p>This is portfolio</p>
-		</section>
-		
-
+		<canvas id="top_arrow" class="move_arrow"></canvas>
+		<canvas id="bot_arrow" class="move_arrow"></canvas>
+	<!-- Stop scroller -->	
 	</div>
-	
-	
-	
 	
 	
 	
@@ -101,10 +103,16 @@
 	$(document).ready(function(){
 	
 	//load content
-	//var p = '../resource/content/home/';
-	$('#home_content').load('resource/content/home/home.html'); 
-	console.log($('#home_content').html());
-
+	
+	//Maybe preloader for content
+	var holders = ['home_content' , 'portfolio_content' , 'about_me_content' , 'contact_content'];
+	var locations = ['home/home.html' , 'portfolio/portfolio.html' , 'about-me/about-me.html' , 'contact/contact.html'];
+	var basePath = 'resource/content/';
+	for (i=0; i< holders.length; ++i){
+		$('#' + holders[i]).load(basePath + locations[i]); 
+	}
+	
+	//end content load
 	
 	
 	

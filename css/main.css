@@ -3,21 +3,6 @@ p {
      font-size: 20px;
 }
 
-#content {
-	 height: 100%;
-	top:20%;
-	 position: fixed;
-	 width: 100%;
+body{
+	background:black;
 }
-
-#content section {
-     display: none;
-     height: 80%;
-    margin:0px auto; 
-  	
-     overflow: visible;
-     text-align: center;
-     width: 60%;
-}
-
-

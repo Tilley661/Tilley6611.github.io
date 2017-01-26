@@ -2,7 +2,6 @@
 
 console.log('im here');
 
-
 //globals
 
 var hitTop = $('.dummy_top');      	
@@ -13,8 +12,39 @@ var cont = $('#content section');
 var d2 = 5;
 var t2 = 40;
 var moveUpT;
+var moveDownT;
 var timerRunning = '';
 
+
+
+
+
+
+var drawArrow = {
+	canvasID :'move_arrow',
+	
+	draw :function(val){
+		console.log('value = ' + val);
+		var ctx = val.getContext('2d');
+		
+		ctx.beginPath();
+		ctx.moveTo(0,150);
+		ctx.lineTo(150,0);
+		ctx.lineTo(300,150);
+		ctx.lineWidth = 15;
+		ctx.strokeStyle = 'white';
+		ctx.stroke()
+	}
+}
+
+var canvass = document.getElementsByClassName(drawArrow.canvasID);
+
+for (i=0 ; i < canvass.length ; ++i ){
+	if (canvass[i].getContext){
+		drawArrow.draw(canvass[i]);
+		console.log(canvass[i]);
+	}
+}
 
 function moveUp(s2 = 1){
 	cont.css({
@@ -39,42 +69,32 @@ function moveDown(s=1){
 	}, t2);
 }
 
-
-function moveUpFinal(){
-	
-	cont.animate({
-			'margin-top': '-=' + (d2+10) + 'px'
-		}, 500, 'easeOutQuart', function(){
-				clearTimeout(moveUpT);
-				timerRunning = '';
-		});
-}
-
-
-function moveDownFinal(){
-
-	cont.animate({
-			'margin-top': '+=' + (d2+10) + 'px'
-		}, 500, 'easeOutQuart', function(){
-				clearTimeout(moveDownT);
-				timerRunning = '';
-		});	
-	
-}
-
 								
 hitTop.hover(function(){
 	moveUp(1);
 },function(){
-	moveUpFinal();
+	cont.animate({
+		'margin-top': '-=20px'
+	},200, 'easeOutQuart', function(){
+		clearTimeout(moveUpT);
+	});
+	
 });
 
 
 hitBot.hover(function(){
 	moveDown(1);
 },function(){
-	moveDownFinal();
+	cont.animate({
+		'margin-top': '+=20px'
+	},200, 'easeOutQuart', function(){
+		clearTimeout(moveDownT);
+	});
 });
+
+
+
+
 
 
 
