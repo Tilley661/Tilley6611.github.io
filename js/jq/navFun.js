@@ -24,65 +24,6 @@ function loadContent(page){
 }
 
 function moveToTitle2(link){
-	
-	/*
-	var curr = $("#main-nav ul li[data-menu-index='" + link +"']");     //make a curr object
-	var oldT = $("#title-holder li[data-menu-index='" + cP +"']");		//when in title
-	var oldTa = $("#title-holder li[data-menu-index='" + cP +"'] a");	//get a when in title	
-	var currOffset = curr.offset();                                                     //make offset object
-	var endPos = 50;                                                                      //50px from top
-	var calcMove = currOffset.top - endPos;                                    	//calculate move amount
-	var calcMoveX = $(window).width() - curr.width() - endPos;
-	 
-	
-	//check to see if page is current - if so exit
-	if (cP == link){
-		console.log('current page has been clicked');
-		return;
-	}
-	
-	//check to see if init
-	if (cP !== 0){
-		
-		oldT.animate({
-			'margin-top': ($( window ).height() - oldT.height() - 20) + 'px',
-			'margin-right': '20px'	
-		},150, function(){
-			console.log('debug: 001 - moved to bottom - detatching');
-			oldT.appendTo($('#title-holder-2'));
-			oldT = $('#title-holder-2 li');
-			oldT.animate({
-				'font-size': tN + 'px', //shrink
-				'margin-right': '20px'  //move inline
-			},150,function(){
-				console.log('debug: 002 - finished shrink');
-				var mH = $( window ).width() - oldT.find('a').width() - globalHO; 
-				oldT.animate({
-					'margin-right': mH + 'px'
-				}, 250, function(){
-					console.log('debug: 003 - finished moving left');
-					//move up
-					//console.log('offset 1 = ' + $('#main-nav ul li:nth-of-type(2)').offset().top);
-					//console.log('offset 2 = ' + $('#main-nav ul li:nth-of-type(3)').offset().top);
-					//var linkDif = $('#main-nav ul li:nth-of-type(3)').offset().top - $('#main-nav ul li:nth-of-type(2)').offset().top; //second link offset - first
-					var mV2 = globalLastOffLeft + linkDifGlob;
-					console.log('linkDifGlob = ' + linkDifGlob);  //changed to global
-					console.log('mV2 = ' + mV2);
-					oldT.animate({
-						'margin-top': mV2 + 'px'
-					}, 250,function(){
-				     		console.log('completed animation -detaching');
-						oldT.removeAttr('style');
-						oldT.appendTo($('#main-nav ul'));
-					});
-				});
-			});
-		});
-	}
-
-			
-	
-	*/
 		
 	//get init values
 	var storePosOfLastT = $('#main-nav li:nth-of-type(3)').find('a').offset().top;
@@ -104,7 +45,8 @@ function moveToTitle2(link){
 					width: this.toMove.find('a').width() + 'px',
 					left: this.toMove.parent().offset().left + 'px',
 					top: oS.top + 'px',
-					fontSize: tT + 'px'
+					fontSize: tT + 'px',
+					zIndex: '4'
 				});
 				this.toMove.appendTo(this.holder);
 				//----------------------------------start MOVING NEW TITLE!!!
@@ -126,6 +68,9 @@ function moveToTitle2(link){
 					this.holder.animate({
 						fontSize: tN + 'px'
 					},400);
+					this.holder.find('li').animate({
+						marginLeft: '0px'
+					});
 			}	
 			return true;
 		},
@@ -139,7 +84,7 @@ function moveToTitle2(link){
 			return true
 		},
 		
-		moveBackToNav: function(){
+		moveBackToNavigation: function(){
 			console.log('last L = ' + storePosOfLastL);
 			console.log('last T = ' + storePosOfLastT);
 			if(this.moveLeftOverPage()){
@@ -148,13 +93,16 @@ function moveToTitle2(link){
 						left: storePosOfLastL + 'px'
 					},500, function(){
 						moveBackToNav.holder.find('li').appendTo($('#main-nav ul'));
+						moveBackToNav.holder.css({
+							zIndex: '1'
+						});
 					});
 			}
 			return true
 		},
 		
 		start: function(){
-			if (this.moveBackToNav()){
+			if (this.moveBackToNavigation()){
 			console.log('moving back to nav');
 			}
 		}
@@ -172,15 +120,19 @@ function moveToTitle2(link){
 			
 	pickUpLink: function(){	
 			//get position of link before append
-      oS = this.toMove.offset();
+			oS = this.toMove.offset();
 			
+			this.holder.removeAttr('style')
+						
 			console.log('top: ' + oS.top + ' left: ' + oS.left);
 			var wT = this.toMove.find('a').width();
 			//init dosnt need animation
 			this.holder.css({
+				position: 'fixed',
 				width: wT + 'px',
 				left: '40px',
-				top: oS.top + 'px'
+				top: oS.top + 'px',
+				zIndex: '4'
 			});
 			this.toMove.appendTo(this.holder);
 			return true;
@@ -210,17 +162,26 @@ function moveToTitle2(link){
 			if (this.moveAcrossPage()){
 				this.holder.animate({
 					fontSize: tT + 'px',
-					marginRight: this.holder.find('li a').width() + 'px'
-				},300);
+					//marginRight: this.holder.find('li a').width() + 'px'
+				},300);				
 			}
 			return true;
 		},
 		
+		moveToTitlePos: function(){
+				if (this.scaleTextUp()){
+					this.holder.find('li').animate({
+						marginLeft: '-' + this.holder.find('li').width() + 'px' //    '-100px'
+					},1);
+				}
+				return true;
+		},
+		
+		
 		start: function(){
 			
-			if (this.scaleTextUp()){
+			if (this.moveToTitlePos()){
 				cP = link;
-				this.holder.removeAttr('style'); //reset
 				return true;
 			}
 		}
@@ -339,6 +300,42 @@ $( window ).resize(function() {
 		'left':'0px',
 		'margin-top': ((aa/2) - (ab/2)) + 'px' 
 	});
+	
+	var keepTitleInPlace ={
+		
+		
+		//vars
+		obj: $('#title-holder'),
+		//objOffT: this.obj.offset().top,
+		//objOffL: this.obj.offset().left,
+		
+
+		
+		changeCSS: function(px){
+			console.log('pixles is sent = ' + px);
+			this.obj.css({
+				left: '',
+				right: this.obj.find('li').width() - 40 +'px',
+				//left: px +'px',
+				top: '40px' 
+			});
+		},
+		
+		getPerc: function(){
+			a = ( this.obj.find('li').offset().left ) / $( window ).width(); 			//percentage across screen
+			aP = a * $( window ).width();                                          			//in pixles
+			b = 0; 																						//buffer
+			px = aP - b;																				//actual position in pixles
+			
+			this.changeCSS(px);
+		},
+		
+		start: function(){
+			this.getPerc();
+		}
+	}
+	keepTitleInPlace.start();
+	
 	
 	//set the difrence between links when none are moving
 	linkDifGlob = $('#main-nav ul li:nth-of-type(3)').offset().top - $('#main-nav ul li:nth-of-type(2)').offset().top; //second link offset - first
