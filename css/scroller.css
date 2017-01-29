@@ -12,14 +12,18 @@
 }
 
 #content section {
+	position:absolute;
      background-color: rgba(222, 50, 50, 0);
-     display: none;
+	 display:none;
      height: 80%;
      margin: 0px auto;
      overflow: visible;
      text-align: center;
      width: 60%;
+     left:20%
 }
+
+
 
 .dummy_top {
      background-color: rgba(222, 50, 50, 0.5);
@@ -61,21 +65,35 @@
      z-index: 1;
 }
 
-#top_arrow {
-     height: 50px;
-     margin-top: -10%;
-     position: fixed;
-     width: 150px;
-     z-index: 1;
+#top_arrow_holder canvas{
+  position: fixed;
+  top:10%;
+  width:50px;
+  margin-left:-25px;
+  left:50%;
+  z-index:1;
 }
 
-#bot_arrow {
-     background: none repeat scroll 0% 0% yellow;
-     bottom: 0%;
-     height: 50px;
-     position: fixed;
-     transform: rotate(180deg);
-     width: 150px;
-     z-index: 1;
+
+#bot_arrow_holder canvas{
+  position: fixed;
+  bottom:2%;
+  width:50px;
+  margin-left:-25px;
+  left:50%;
+  transform: rotate(180deg);
+  z-index:1;
+}
+
+@keyframes scrollerFadeInOut {
+	0%   { 
+		opacity:1; 
+	}
+	50%  { 
+		opacity:0; 
+	}
+	100% {
+		opacity:1; 
+	}
 }
 

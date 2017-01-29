@@ -6,3 +6,11 @@ p {
 body{
 	background:black;
 }
+
+h1{
+	position:relative;
+	font-size:30px;
+	font-style:bold;
+	color:white;
+	
+}

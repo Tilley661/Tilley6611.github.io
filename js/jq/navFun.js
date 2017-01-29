@@ -14,14 +14,114 @@ var globalHO = 0;								//dito - but for horizontals
 var cont = $('#content section');           //reset content section
 
 
-//load content in
+
+
+//console.debug('current page = ' + cP);
+
+
+/*
+
+var loadContent = {
+	
+	oldTitle: function(){
+		e = $('#title-holder-2 a').html();
+		obj = $("#content section[data-section='" + e + "']");
+		return obj;
+	},
+	
+	newTitle: function(){
+		e = $('#title-holder a').html();
+		obj = $("#content section[data-section='" + e + "']");
+		return obj;
+	},
+	
+	
+	testPage: function(){ 	
+		console.log('----looking here----');
+		console.debug('current page = ' + cP);
+		console.debug('should say old title name =' + this.oldTitle());
+		console.log('^^^^looking here^^^^');
+	},
+	
+	
+	time: 300,
+	
+	checkIfFadingOut: function(){
+		if ( this.oldTitle().is(':hidden') ){
+			clearTimeout(checker);
+			this.showNew(); //if animation has finished then show new content
+		}else{
+			var checker = setTimeout(this.checkIfFadingOut(), 20);	
+		}
+	},
+	
+	showNew: function(){
+		this.newTitle().fadeIn(this.time);
+		this.newTitle().animate({
+			marginTop: '0px'
+		})
+	},
+	
+	hideOld: function(){
+		this.oldTitle().fadeOut(this.time);
+		this.checkIfFadingOut();
+	},
+	
+	start: function(){
+		this.hideOld();
+	}
+	
+}
+
+
+*/
+
+/*
+var initSections = {
+	
+	getSections: function(){
+		
+		//v=p-1;
+		pages = ['Home', 'Portfolio', 'About-Me', 'Contact'];
+		//pageNumbers = [1,2,3,4];
+		
+		console.log('pages length' + pages.length);
+		for (i=0; i < pages.length; ++i){
+			obj = $("#content section[data-section='" + pages[i] + "']");
+			//console.log('changing section object = ' + obj);
+			obj.css({
+				marginTop: '0px',
+			});
+		}
+	},
+	
+	start: function(){
+		this.getSections();
+	}
+}
+
+initSections.start();
+
+*/
+
+//load content in --SS
 function loadContent(page){
 	console.log(page + ' is passed to function');
 	
-	$('#content section').fadeOut();
+	$('#content section').fadeOut(200);
+	
 	var sS = $("#content section[data-section='" + page + "']"); //get content page
-	sS.fadeIn();
+	sS.fadeIn(500, function(){
+		resetContent();
+	});
 }
+
+
+
+
+
+
+
 
 function moveToTitle2(link){
 		
@@ -60,7 +160,7 @@ function moveToTitle2(link){
 						top: $(window).height() - this.holder.offset().top - this.holder.height() + 20 + 'px'
 					},400);
 			}
-			return true
+			return true;
 		},
 		
 		scaleText: function(){
@@ -81,7 +181,7 @@ function moveToTitle2(link){
 						left: '40px'
 					},500);
 			}
-			return true
+			return true;
 		},
 		
 		moveBackToNavigation: function(){
@@ -98,7 +198,7 @@ function moveToTitle2(link){
 						});
 					});
 			}
-			return true
+			return true;
 		},
 		
 		start: function(){
@@ -106,7 +206,7 @@ function moveToTitle2(link){
 			console.log('moving back to nav');
 			}
 		}
-	}
+	};
 	
 	
 	//-------------------------------------move to title
@@ -122,7 +222,7 @@ function moveToTitle2(link){
 			//get position of link before append
 			oS = this.toMove.offset();
 			
-			this.holder.removeAttr('style')
+			this.holder.removeAttr('style');
 						
 			console.log('top: ' + oS.top + ' left: ' + oS.left);
 			var wT = this.toMove.find('a').width();
@@ -238,7 +338,7 @@ $("#main-nav ul li a").click(function(){
 					moveToTitle2(clicked);
 					var p = $(this).html();
 					loadContent(p);
-					resetContent();
+					//loadContent.start();
 				}
 			}	
 	}
@@ -333,7 +433,7 @@ $( window ).resize(function() {
 		start: function(){
 			this.getPerc();
 		}
-	}
+	};
 	keepTitleInPlace.start();
 	
 	
