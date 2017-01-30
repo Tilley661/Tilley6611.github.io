@@ -71,7 +71,40 @@ function moveDown(s=1){
 	}, t2);
 }
 
-								
+
+//-------------------------------SCROLL HANDLERS -----------------------
+hitTop
+	.on("mouseenter", function(){
+		moveUp(1);
+	})
+	.on("mouseleave", function(){
+		cont.animate({
+			'margin-top': '+=20px'
+		},200, 'easeOutQuart', function(){
+			clearTimeout(moveUpT);
+		})
+	});
+
+hitBot
+	.on("mouseenter", function(){
+		moveDown(1);
+	})
+	.on("mouseleave", function(){
+		cont.animate({
+			'margin-top': '-=20px'
+		},200, 'easeOutQuart', function(){
+			clearTimeout(moveDownT);
+		})
+	});
+// ----------------------END OF SCROLL HANDLERS -------------------
+	
+
+/*
+			
+
+superseded hovers
+
+			
 hitTop.hover(function(){
 	moveUp(1);
 },function(){
@@ -94,6 +127,7 @@ hitBot.hover(function(){
 	});
 });
 
+*/
 
 //NOTE this is causeing recursion error but not fatal
 var fadeTog = {
