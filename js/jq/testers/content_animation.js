@@ -58,6 +58,7 @@ var timerFunctions = {
 	//store timers in here timers
 	
 	logMargin: function(){
+		var t = 50;
 		logMarginTimer = setTimeout(function(){              							   		//this i global and can be cleared
 					console.log('Content margin top = ' + getVars.cPos.cMargTop());
 					var a = getVars.cPos.cMargTop();
@@ -65,23 +66,60 @@ var timerFunctions = {
 					scrollPercent = a/b;						//set percentage moved actual/total
 					aControl.test();
 					timerFunctions.logMargin();
-				}, 1000);
+				}, t);
 	},
 };
 
-
+// ------------------CURRENTLY WORKING HERE
 
 var percentTrial = {
 	
 	per_10:{
-		//p:between 0 & 0.1
+		//p:between 0 & 0.1	
+		// TO REMEMBER
+		//This is called when the scroller is between 1% & 10 %
+		//scroll value have not been processed
 		
-		holder: function(){
-			return getVars.cObj().find("data-perc='1_10'");
+		aniProg: function(){
+			var a= scrollPercent *-1; // get pos value remember this will be between 0 - 0.1
+			var max = 0.1;				// max value that can be passed here
+			var aniPerc = a / max		//give percentage of this animation
+	
+			return (aniPerc);				//returns the animation prgress as a percentage 1 - 100
 		},
 		
+		holder: function(){
+			return getVars.cObj().find("[data-perc='1_10']");		//this returns the fuill div belonging to 1_10
+		},
+		
+		//let try move from right to left over the 10%
+		
+		moveLeft: function(){
+			var toMove = this.holder();
+			var startPoint = 300;					//start left 300px
+			var endPoint = 0;						//end at 0px left
+			var prog = this.aniProg();			//get the progress of animation
+			var d = startPoint - endPoint;		//get distance to travel
+			var dis = startPoint - (d*prog);	//get displacement
+			
+			var opStart = 1;
+			var opEnd = 0.2;
+			var opDif = opStart - opEnd;
+			var opVal = opStart - (opDif * prog);
+			console.log('opVal = ' + opVal);
+			toMove.css({
+				left: dis +'px',
+				'opacity': opVal
+			});
+			
+			//add a fade in
+		},
+		
+		
+		
 		start:function(){
-			console.log(this.holder().html());
+			console.log('attempting to move left');
+			this.moveLeft();
 		},
 		
 		debug: function(){

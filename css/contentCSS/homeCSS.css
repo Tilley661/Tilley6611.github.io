@@ -1,0 +1,13 @@
+/*home CSS*/
+
+/* TO REMEMBER
+Content is justified in centre
+left 0px is relative to content box (useful)
+*/
+
+
+#home_content div[data-perc="1_10"]{
+	position:relative;
+	text-align: left;
+	color:yellow;
+}
